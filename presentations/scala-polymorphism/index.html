@@ -57,7 +57,7 @@ new Container("10") map { x => x.toInt * 2 }    // Container(20)
         <h3 style="text-align:left;">Higher-kinded (ranked) polymorphism</h3>
         <p style="font-size:50%;text-align:left;"><b>Kind</b> is the type of a type-constructor (type of of a higher-order type operator).</p><br/>
         <ul style="list-style-type:none;list-style:none; width:100%">
-          <li class="fragment visible" data-fragment-index="0">
+          <li class="fragment roll-in" data-fragment-index="0">
             <h4>Value level:</h4>
             <pre><code data-trim class="scala">
 val x: String
@@ -140,13 +140,13 @@ val naturalTransformation = new (List ~> Option) { //  ~>[List, Option]
           <li data-fragment-index="0" >
               <img src="assets/variance_classes.png" alt="url" title=""  style="margin:0px 0px 30px 0px;">
           </li>
-          <li class="fragment" data-fragment-index="1">
+          <li class="fragment roll-in" data-fragment-index="1">
               <img src="assets/variance_containers1.png" alt="url" title=""  style="margin:0px;">
           </li>
           <li class="fragment" data-fragment-index="3">
               <img src="assets/variance_relations.png" alt="url" title="" style="margin:0px;">
           </li>
-          <li class="fragment" data-fragment-index="2">
+          <li class="fragment roll-in" data-fragment-index="2">
               <img src="assets/variance_containers2.png" alt="url" title=""  style="margin:0px;">
           </li>
         </ul>
@@ -166,7 +166,7 @@ class Foo[T]
             </code></pre>
           </li>
           <li class="fragment roll-in" data-fragment-index="1">
-            <h4>Using-Site Covarince:</h4>
+            <h4>Using-Site Covariance:</h4>
             <pre><code data-trim class="scala">
 def apply(a: Foo[_ <: Employee]): String
 // or by existential type declaration:
@@ -514,7 +514,7 @@ implicit def toShowSyntax[A: Show](a: A)= new ShowSyntax[A] {
           <li>
             We can declare instances outside of the types themselves
             <ul style="width:100%">
-              <li><mark class="green">Int</mark> knows nothing about <mark class="green">Show</mark>.</li>
+              <li><mark class="invert">Int</mark> knows nothing about <mark class="invert">Show</mark>.</li>
             </ul>
           </li>
           <li>This is the open world assumption</li>
