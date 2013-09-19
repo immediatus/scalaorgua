@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>How to be polymorphic in Scala</title>
+    <link rel="stylesheet" href="../../css/reveal.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="../../css/code.css">
+  </head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <div style="height:600px;"><div style="padding:200px 0px 0px 0px;">
+        <h2>How to be<br/>polymorphic in Scala</h2>
+        <p>
+          by&nbsp;
+          <a href="http://linkedin.com/in/polyulya" class="roll"><span data-title="Yuriy Polyulya">Yuriy Polyulya</span></a>
+          &nbsp;/&nbsp;
+          <a href="http://twitter.com/polyulya" class="roll"><span data-title="@polyulya">@polyulya</span></a>
+        </p>
+        </div></div>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Polymorhism</h3>
+        <p style="font-size:50%;text-align:left;">is a programming language feature that allows one interface to be used for a general class of actions.</p><br/>
+        <img src="assets/polymorphism.png" alt="url" title=""><br/><br/>
+        <a style="font-size:50%;" href="http://www.amazon.com/Theories-Programming-Languages-John-Reynolds/dp/0521106974" class="roll">
+          <span data-title="John C. Reynolds. Theories of programming languages. Cambridge University Press, New York, NY, USA, 1999.">John C. Reynolds. Theories of programming languages. Cambridge University Press, New York, NY, USA, 1999.</span>
+        </a>
+      </section>
+
+      <section>
+        <div style="height:600px;"><div style="padding:200px 0px 0px 0px;">
+        <h1>Parametric</h1>
+        </div></div>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Parametric (type as parameter)</h3>
+        <p style="font-size:50%;text-align:left;">defined on functions or a data types so that they can be written generically and it can handle values identically without depending on their type.</p><br/>
+        <pre><code data-trim class="scala">
+class Container[A](val value: A) {              // Type-constructor
+  def map[B](f: A => B): Container[B] =
+    new Container(f(value))
+}
+
+new Container(10) map { x => (x * 2).toString } // Container(“20”)
+new Container("10") map { x => x.toInt * 2 }    // Container(20)
+        </code></pre>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Higher-kinded (ranked) polymorphism</h3>
+        <p style="font-size:50%;text-align:left;"><b>Kind</b> is the type of a type-constructor (type of of a higher-order type operator).</p><br/>
+        <ul style="list-style-type:none;list-style:none; width:100%">
+          <li class="fragment visible" data-fragment-index="0">
+            <h4>Value level:</h4>
+            <pre><code data-trim class="scala">
+val x: String
+val y: List[String]
+
+def id(x: Int):Int = x
+def map(f: Int=> Int, x: Int) = f(x)
+            </code></pre>
+          </li>
+          <li class="fragment roll-in" data-fragment-index="1">
+            <h4>Type level:</h4>
+            <pre><code data-trim class="scala">
+type String     :: *
+type List       :: * -> *
+type Function1 	:: * -> * -> *
+
+type Id[A] = A
+type Map[C[_],A] = C[A]
+            </code></pre>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Higher-kinded (ranked) polymorphism</h3><br/>
+        <ul style="list-style-type:none;list-style:none; width:100%">
+          <li data-fragment-index="0">
+            <ul>
+              <li>Kind systems classify types</li>
+              <li><b>Values</b> are to <b>types</b> as <b>types</b> are to <b>kinds</b></li>
+              <li>“Higher” kinds are the kinds of type constructors</li>
+            </ul><br/><br/>
+          </li>
+          <li class="fragment roll-in" data-fragment-index="1">
+            <h4>Predicative polymorphism:</h4>
+            <pre><code data-trim class="scala">
+trait ~>[T[_],R[_]] {
+  def apply[A](a: T[A]): R[A]
+}
+
+val naturalTransformation = new (List ~> Option) { //  ~>[List, Option]
+  def apply[A](a: List[A]): Option[A] = a.headOption
+}
+            </code></pre>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Declaration-Site Variance</h3>
+        <p style="font-size:50%;text-align:left;">way of propagation types relation rules to type constructor relation rules.</p><br/>
+        <table border="0" cellspacing="2" cellpadding="4" style="table-layout:fixed;width:100%;">
+          <tr>
+            <td style="font-size:75%;background:#3E4147" width="25%"></td>
+            <td style="font-size:75%;background:#3E4147" width="55%">Meaning</td>
+            <td style="font-size:75%;background:#3E4147" width="20%">Scala notation</td>
+          </tr>
+          <tr>
+            <td style="font-size:75%;background:#3E4147">Covariant</td>
+            <td style="font-size:60%;">C[T’] is a subclass of C[T]</td>
+            <td style="font-size:60%;">[+T]</td>
+          </tr>
+          <tr>
+            <td style="font-size:75%;background:#3E4147">Contravariant</td>
+            <td style="font-size:60%;">C[T] is a subclass of C[T’]</td>
+            <td style="font-size:60%;">[-T]</td>
+          </tr>
+          <tr>
+            <td style="font-size:75%;background:#3E4147">Invariant</td>
+            <td style="font-size:60%;">C[T] and C[T’] are not related</td>
+            <td style="font-size:60%;">[T]</td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Declaration-Site Variance</h3>
+        <p style="font-size:50%;text-align:left;">way of propagation types relation rules to type constructor relation rules.</p><br/>
+        <ul style="list-style-type:none;list-style:none; width:100%">
+          <li data-fragment-index="0" >
+              <img src="assets/variance_classes.png" alt="url" title=""  style="margin:0px 0px 30px 0px;">
+          </li>
+          <li class="fragment" data-fragment-index="1">
+              <img src="assets/variance_containers1.png" alt="url" title=""  style="margin:0px;">
+          </li>
+          <li class="fragment" data-fragment-index="3">
+              <img src="assets/variance_relations.png" alt="url" title="" style="margin:0px;">
+          </li>
+          <li class="fragment" data-fragment-index="2">
+              <img src="assets/variance_containers2.png" alt="url" title=""  style="margin:0px;">
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Using-Site Variance</h3>
+        <p style="font-size:50%;text-align:left;">by using upper and lower bounds notations.</p><br/>
+        <ul style="list-style-type:none;list-style:none; width:100%">
+          <li data-fragment-index="0">
+            <h4>For types:</h4>
+            <pre><code data-trim class="scala">
+case class Employee(name: String)
+case class Developer(yearsOfExperince: Int)
+// and container:
+class Foo[T]
+            </code></pre>
+          </li>
+          <li class="fragment roll-in" data-fragment-index="1">
+            <h4>Using-Site Covarince:</h4>
+            <pre><code data-trim class="scala">
+def apply(a: Foo[_ <: Employee]): String
+// or by existential type declaration:
+def apply(a: Foo[X] forSome { type X <: Employee}): String
+            </code></pre>
+          </li>
+          <li class="fragment roll-in" data-fragment-index="2">
+            <h4>Using-Site Contravariance:</h4>
+            <pre><code data-trim class="scala">
+def apply[A](a: Foo[_ >: Employee]): String
+// or by existential type declaration:
+def apply(a: Foo[X] forSome { type X >: Employee}): String
+            </code></pre>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <div style="height:600px;"><div style="padding:200px 0px 0px 0px;">
+        <h1>Inclusion</h1>
+        </div></div>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Inclusion (Inheritance and Subtyping)</h3>
+        <p style="font-size:50%;text-align:left;">is a form of type polymorphism in which a subtype is a data-type that is related to another data-type (the super-type) by some notion of substitutability.</p><br/>
+        <ul style="list-style-type:none;list-style:none; width:100%">
+          <li data-fragment-index="0">
+            <h4 style="text-align:left;">Subtype polymorphism:</h4>
+            <pre><code data-trim class="scala">
+class Animal
+trait Furry extends Animal
+trait HasLegs extends Animal
+trait FourLegged extends Animal with HasLegs
+class Cat extends Animal with Furry with FourLegged
+
+val cat = new Cat()
+            </code></pre>
+          </li>
+          <li class="fragment roll-in" data-fragment-index="1">
+            <br/>
+            <h4 style="text-align:left;">Constructor calls:</h4>
+            <style>
+              .nav li {display:inline;}
+            </style>
+            <div class="nav">
+              <ul style="font-size:75%;font-weight:bold;">
+                <li class="fragment roll-in" data-fragment-index="1">Cat()</li>
+                <li class="fragment roll-in" data-fragment-index="2">-> FourLegged()</li>
+                <li class="fragment roll-in" data-fragment-index="3">-> HasLegs()</li>
+                <li class="fragment roll-in" data-fragment-index="4">-> Furry()</li>
+                <li class="fragment roll-in" data-fragment-index="5">-> Animal()</li>
+                <li class="fragment roll-in" data-fragment-index="6">-> AnyRef()</li>
+                <li class="fragment roll-in" data-fragment-index="7">-> Any()</li>
+              </ul>
+            </div>
+            </li>
+          </ul>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Traits in Scala</h3>
+        <section>
+          <h4 style="text-align:left;">1. “Rich Interface” role:</h4>
+          <pre style="height:520px;"><code data-trim class="scala" style="max-height:100%;height:100%;">
+trait RichIterable[A] {
+  def iterator: Iterator[A]           // contract method
+
+  def foreach(f: A => Unit) = {
+    val iter = iterator
+    while (iter.hasNext) f(iter.next)
+  }
+
+  def foldLeft[B](seed: B)(f: (B, A) => B) = {
+    var result = seed
+    foreach(e => result = f(result, e))
+    result
+  }
+}
+
+val richSet =
+  new java.util.HashSet[Int]
+  with RichIterable[Int]
+
+richSet.add(1)
+richSet.add(2)
+richSet.foldLeft(0)((x, y) => x + y)  // == 3
+          </code></pre>
+        </section>
+        <section>
+          <h4 style="text-align:left;">2. “Stackable modification” role:</h4>
+          <pre><code data-trim class="scala">
+trait IgnoreCaseSet extends java.util.Set[String] {
+  abstract override def add(e: String) = {
+    super.add(e.toLowerCase)
+  }
+
+  abstract override def contains(e: String) = {
+    super.contains(e.toLowerCase)
+  }
+}
+
+val set =
+  new java.util.HashSet[String]
+  with IgnoreCaseSet
+
+set.add(“HI THERE“)       // uppercase
+set.contains(“hi there“)  // lowercase
+          </code></pre>
+        </section>
+        <section>
+          <h4 style="text-align:left;">3. “Multiple View” role:</h4>
+          <pre><code data-trim class="scala">
+//Facets
+trait Entity { ... }
+trait InventoryItemSet { ... }
+trait PurchaseLimiter { ... }
+trait MailNotifier { ... }
+trait Versioned { ... }
+trait Transactional { ... }
+
+// Composition
+val order = new Order(customer)
+   with Entity
+   with InventoryItemSet
+   with PurchaseLimiter
+   with MailNotifier
+   with Versioned
+   with Transactional
+          </code></pre>
+        </section>
+      </section>
+
+      <section>
+        <div style="height:600px;"><div style="padding:200px 0px 0px 0px;">
+        <h1>Overloading</h1>
+        </div></div>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Overloading</h3>
+        <p style="font-size:50%;text-align:left;">allows creating several methods with the same name which differ from each other in the type of the input and the output of the function.</p><br/>
+        <h4 style="text-align:left;">Operators overload:</h4>
+        <pre><code data-trim class="scala">
+case class Complex(re: Double, im: Double) {
+  def + (another: Complex) =
+    new Complex(Re + another.re, Im + another.im)
+
+  def unary_- =
+    new Complex(-Re, -Im)
+}
+
+Complex(2, 5) + Complex(1, -2)  // == Complex(3, 3)
+-Complex(1, -2)                 // == Complex(-1, 2)
+        </code></pre>
+      </section>
+
+      <section>
+        <div style="height:600px;"><div style="padding:200px 0px 0px 0px;">
+        <h1>Coercion</h1>
+        </div></div>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Coercion</h3>
+        <p style="font-size:50%;text-align:left;">is the operation of converting an argument or an operand to the type expected by a function or an operator.</p><br/>
+        <h4 style="text-align:left;">Coercion by implicit conversions:</h4>
+        <pre><code data-trim class="scala">
+case class Complex(re: Double, im: Double) {
+  def + (another: Complex) =
+    new Complex(re + another.re, im + another.im)
+}
+
+//implicit conversion: a form of coercion
+implicit def doubleToComplex(d: Double) = Complex(d, 0)
+
+Complex(2.0, 5.0) + 5.0   // == Complex(7, 5)
+5.0 - Complex(1.0, -2.0)  // == Complex(4, -2)
+        </code></pre>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Implicits in Scala</h3>
+        <section>
+          <h4 style="text-align:left;">1.1. Implicit Conversion:</h4>
+          <ul style="list-style-type:none;list-style:none; width:100%">
+            <li data-fragment-index="0">
+              <pre><code data-trim class="scala">
+val str: String = "test - ok"
+
+//C/C++ style condition expression:
+if(str) println(str)  //error: type mismatch
+              </code></pre>
+            </li>
+            <li class="fragment roll-in" data-fragment-index="1">
+              <br/>
+              <p style="font-size:75%;"><b>AnyRef</b> to <b>Boolean</b> coversion needed</p>
+            </li>
+            <li class="fragment roll-in" data-fragment-index="2">
+              <pre><code data-trim class="scala">
+implicit def anyRefIsNotNull(x: AnyRef): Boolean = x != null
+
+//C/C++ style condition expression:
+if(str) println(str)  //out: test - ok
+              </code></pre>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h4 style="text-align:left;">1.2. Syntax extension by implicit conversions:</h4>
+          <ul style="list-style-type:none;list-style:none; width:100%">
+            <li data-fragment-index="0">
+              <p style="font-size:75%;">Ternary operator similar to <b>?</b> in C/C++:</p>
+              <pre><code data-trim class="scala">
+val res: String = (4*4 > 14) ? "GT" | "LT or EQ"
+              </code></pre>
+            </li>
+            <li class="fragment roll-in" data-fragment-index="1">
+              <p style="font-size:75%;">Implicit coversion from Boolean to <b>something with ? method</b>:</p>
+              <pre><code data-trim class="scala">
+implicit def boolToOperator(c: Boolean) = new {
+  def ?[A](t: => A) = new {
+    def |(f: => A) = if(c) t else f
+  }
+}
+              </code></pre>
+            </li>
+            <li class="fragment roll-in" data-fragment-index="2">
+              <p style="font-size:75%;">Or:</p>
+              <pre><code data-trim class="scala">
+class MakeIfTrue(b: => Boolean) {
+  def ?[A](t: => A) = new IfTrue[A](b,t)
+}
+
+class IfTrue[A](b: => Boolean, t: => A) {
+  def |(f: => A) = if (b) t else f
+}
+
+implicit def autoMakeIfTrue(b: => Boolean) = new MakeIfTrue(b)
+              </code></pre>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h4 style="text-align:left;">2. Implicit parameters:</h4>
+          <pre><code data-trim class="scala">
+def multiplier(i: Int)(implicit factor: Int) {
+  println(i * factor)
+}
+
+implicit val factor = 2
+
+val res1 = multiplier(2)      // res: 4
+val res2 = multiplier(2)(3)   // res: 6
+          </code></pre>
+        </section>
+      </section>
+
+      <section>
+        <div style="height:600px;"><div style="padding:200px 0px 0px 0px;">
+        <h1>Type-Classes</h1>
+        </div></div>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Type-Classes</h3>
+        <p style="font-size:50%;text-align:left;">is a type system construct that supports ad hoc polymorphism. This is achieved by adding constraints to type variables in parametrically polymorphic types.</p><br/>
+        <ul style="list-style-type:none;list-style:none; width:100%">
+          <li data-fragment-index="0">
+            <h4 style="text-align:left;">In Haskell:</h4>
+            <pre><code data-trim class="haskell">
+class Show a where
+  show :: a -> String
+            </code></pre>
+            <br/>
+          </li>
+          <li class="fragment roll-in" data-fragment-index="1">
+            <h4 style="text-align:left;">In Scala:</h4>
+            <pre><code data-trim class="scala">
+trait Show[A] {
+  def shows(a: A): String
+}
+
+//OR Haskell notation:
+trait Show[A] {
+  def shows: A => String
+}            </code></pre>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Type-Classes</h3>
+        <p style="font-size:50%;text-align:left;">is a type system construct that supports ad hoc polymorphism. This is achieved by adding constraints to type variables in parametrically polymorphic types.</p><br/>
+        <h4 style="text-align:left;">Type-classes implementation:</h4>
+        <pre><code data-trim class="scala">
+// Type-calss Int instance
+implicit val IntShow = new Show[Int] {
+  def shows(a: Int) = a.toString
+}
+
+//Type-class List instance:
+implicit def ListShow[T] = new Show[List[T]] {
+  def shows(a: List[T]) = a.mkString(", ")
+}
+        </code></pre>
+        <br/>
+        <h4 style="text-align:left;">Using a Type-classes</h4>
+        <pre><code data-trim class="scala">
+def shows[A](a : A)(implicit sh: Show[A]) = sh.shows(a)
+//OR:
+def shows[A : Show](a : A) = implicitly[Show[A]].shows(a)
+
+// must have a "Show[Int]" instance in scope
+shows(42)
+        </code></pre>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Type-Classes</h3>
+        <p style="font-size:50%;text-align:left;">is a type system construct that supports ad hoc polymorphism. This is achieved by adding constraints to type variables in parametrically polymorphic types.</p><br/>
+        <h4 style="text-align:left;">Pimps Type-classes (syntax extension)</h4>
+        <pre><code data-trim class="scala">
+trait ShowSyntax[A] {
+  def shows: String
+}
+
+implicit def toShowSyntax[A: Show](a: A)= new ShowSyntax[A] {
+  def shows = implicitly[Show[A]].shows(a)
+}
+        </code></pre>
+        <br/>
+        <h4 style="text-align:left;">Using a syntax extension</h4>
+        <pre><code data-trim class="scala">
+// must have a "Show[Int]" instance in scope
+42.shows
+        </code></pre>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">What have we gained?</h3>
+        <ul style="width:100%;line-height:150%">
+          <li>
+            We can declare instances outside of the types themselves
+            <ul style="width:100%">
+              <li><mark class="green">Int</mark> knows nothing about <mark class="green">Show</mark>.</li>
+            </ul>
+          </li>
+          <li>This is the open world assumption</li>
+          <li>
+            In Scala, we can override the typeclass instance by putting a new one in scope:
+            <pre><code data-trim class="scala">
+println(5.shows)    // prints '5‘
+
+localy {
+   implicit val AltIntShow = new Show[Int] {
+      def shows(i : Int) = (1 to i) map(_ => "|") mkString
+   }
+
+   println(5.shows)   // prints '|||||'
+}
+            </code></pre>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <div style="height:600px;"><div style="padding:200px 0px 0px 0px;">
+        <ul style="width:100%;list-style-type:none;list-style:none;align:center;text-align:center;">
+          <li data-fragment-index="0"><h2>Questions?</h2><br/></li>
+          <li class="fragment roll-in" data-fragment-index="1"><h2>Remarks?</h2></li>
+        </ul>
+        </div></div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="../../js/reveal.min.js"></script>
+  <script src="../../js/head.min.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      rollingLinks: true,
+      history: true,
+      center: false,
+      theme: Reveal.getQueryHash().theme,
+      transition: 'default',
+      dependencies: [
+          { src: '../../js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../js/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '../../js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+     });
+  </script>
+  <script type="text/javascript" src="../../js/highlight.js"></script>
+  <script type="text/javascript" src="../../js/zoom.js"></script>
+</body>
+</html>
