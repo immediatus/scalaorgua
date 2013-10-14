@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Functional refactoringin in Scala</title>
+    <link rel="stylesheet" href="../../css/reveal.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="../../css/code.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <div style="height:600px;"><div style="padding:200px 0px 0px 0px;">
+        <h2>Functional refactoring in Scala</h2>
+        <p>
+          by&nbsp;
+          <a href="http://linkedin.com/in/polyulya" class="roll"><span data-title="Yuriy Polyulya">Yuriy Polyulya</span></a>
+          &nbsp;/&nbsp;
+          <a href="http://twitter.com/polyulya" class="roll"><span data-title="@polyulya">@polyulya</span></a>
+          &nbsp;/&nbsp;
+          <a href="http://cogita-et-visa.blogspot.com" class="roll"><span data-title="+blog">+blog</span></a>
+        </p>
+        </div></div>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Some update method for:</h3>
+        <p style="font-size:50%;text-align:left;">Chess game player score update method. For player with: id, name, last name, games and score fields stored in MongoDB.</p><br/>
+        <h4 style="text-align:left;">User class:</h4>
+        <pre><code data-trim class="scala">
+case class User(
+  id        : String,
+  name      : String,
+  lastName  : String,
+  games     : Long,
+  score     : Double)
+        </code></pre>
+        <br/>
+        <h4 style="text-align:left;">Database documet:</h4>
+        <pre><code data-trim class="scala">
+{ "_id" : "yuriy_polyulya@epam.com",
+  "name" : "Yuriy",
+  "last-name" : "Polyulya",
+  "games" : 15,
+  "score" : 100.0 }
+        </code></pre>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Can looks like:</h3>
+        <pre style="height:600px;"><code data-trim class="scala" style="max-height:100%;height:100%;">
+def updateScore(id : String, gameScore : Double): Option[DBObject] = {
+  val users = MongoClient("localhost")("chess")("users")
+  val q = MongoDBObject(ID -> id)
+
+ users.findOne(q) match {
+    case Some(dbo)  =>
+
+      val games = dbo.getAs[Long]("games")
+      val score = dbo.getAs[Double]("score")
+
+      (games, score) match {
+        case (Some(g), Some(s)) =>
+
+          val gamesU = g + 1
+          val scoreU = s + gameScore
+
+          val update = $set("games" -> gamesU, "score" -> scoreU)
+
+          users.update(q, update)
+          users.findOne(q)
+
+        case _ => None
+      }
+    case None => None
+  }
+}
+        </code></pre>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Main problems:</h3>
+        <br/>
+        <ul style="list-style-type:none;list-style:none; width:100%"> 
+        <ul style="list-style-type:none;list-style:none; width:100%">
+          <li class="fragment roll-in" data-fragment-index="1">
+          <h4 style="text-align:left;">1. Direct dependency:</h4>
+          <pre><code data-trim class="scala">
+  val users = MongoClient("localhost")("chess")("users")
+          </code></pre><br/>
+          </li>
+          <li class="fragment roll-in" data-fragment-index="2">
+          <h4 style="text-align:left;">2. Complexity:</h4>
+          <pre><code data-trim class="scala">
+  ... match {
+        case Some(dbo)  =>
+          ... match {
+              case (Some(g), Some(s)) =>
+                ...
+              case _ => None
+          }
+        case None => None
+    }
+          </code></pre><br/>
+          </li>
+          <li class="fragment roll-in" data-fragment-index="3">
+          <h4 style="text-align:left;">3. Direct fields using, more...</h4>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="../../js/reveal.min.js"></script>
+  <script src="../../js/head.min.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      rollingLinks: true,
+      history: true,
+      center: false,
+      theme: Reveal.getQueryHash().theme,
+      transition: 'default',
+      dependencies: [
+          { src: '../../js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../js/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '../../js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+     });
+  </script>
+  <script type="text/javascript" src="../../js/highlight.js"></script>
+  <script type="text/javascript" src="../../js/zoom.js"></script>
+</body>
+</html>

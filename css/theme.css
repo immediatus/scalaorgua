@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
 
- @font-face {
+@font-face {
   font-family: 'League Gothic';
   src: url("../font/league_gothic-webfont.eot");
   src: url("../font/league_gothic-webfont.eot?#iefix") format("embedded-opentype"), url("../font/league_gothic-webfont.woff") format("woff"), url("../font/league_gothic-webfont.ttf") format("truetype"), url("../font/league_gothic-webfont.svg#LeagueGothicRegular") format("svg");
@@ -141,4 +141,5 @@ body {
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -ms-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -o-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
-  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+}
