@@ -84,12 +84,12 @@ def updateScore(id : String, gameScore : Double): Option[DBObject] = {
       </section>
 
       <section>
-        <h3 style="text-align:left;">Main problems:</h3>
+        <h3 style="text-align:left;">Design Issues:</h3>
         <br/>
-        <ul style="list-style-type:none;list-style:none; width:100%"> 
+        <ul style="list-style-type:none;list-style:none; width:100%">
         <ul style="list-style-type:none;list-style:none; width:100%">
           <li class="fragment roll-in" data-fragment-index="1">
-          <h4 style="text-align:left;">1. Direct dependency:</h4>
+          <h4 style="text-align:left;">1. High-coupling:</h4>
           <pre><code data-trim class="scala">
   val users = MongoClient("localhost")("chess")("users")
           </code></pre><br/>
@@ -112,6 +112,128 @@ def updateScore(id : String, gameScore : Double): Option[DBObject] = {
           <h4 style="text-align:left;">3. Direct fields using, more...</h4>
           </li>
         </ul>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">High-coupling fix:</h3>
+        <section>
+          <br/>
+          <ul style="list-style-type:none;list-style:none; width:100%">
+            <li class="fragment roll-in" data-fragment-index="1">
+            <h4 style="text-align:left;">1. Service Locator (global collection factory/storage):</h4>
+            <pre><code data-trim class="scala">
+object ChessMongoCollections {
+  lazy val users = MongoClient("localhost")("chess")("users") // or def
+}
+
+...
+
+val users = ChessMongoCollections.users
+            </code></pre><br/>
+            </li>
+            <li class="fragment roll-in" data-fragment-index="2">
+            <h4 style="text-align:left;">2. Dependency Injection:</h4>
+            <pre><code data-trim class="scala">
+def updateScore(
+  id : String,
+  gameScore : Double,
+  users : MongoCollection): Option[DBObject] = {
+
+...
+
+}
+            </code></pre><br/>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4 style="text-align:left;">Dependency injection after curring:</h4>
+          <pre style="height:600px;width:960px"><code data-trim class="scala" style="max-height:100%;height:100%;">
+def updateScore(id : String, setScore : Double): Collection => Option[DBObject] =
+  users => {
+    val q = MongoDBObject(ID -> id)
+
+    users.findOne(q) match {
+      case Some(dbo)  =>
+
+        val games = dbo.getAs[Long]("games")
+        val score = dbo.getAs[Double]("score")
+
+        (games, score) match {
+          case (Some(g), Some(s)) =>
+            val gamesU = g + 1
+            val scoreU = s + newScore
+
+            val update = $set("games" -> gamesU, "score" -> scoreU)
+
+            users.update(q, update)
+            users.findOne(q)
+
+          case _ => None
+        }
+      case None => None
+    }
+  }
+          </code></pre>
+        </section>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Mongo-Collection Reader:</h3>
+        <p style="font-size:50%;text-align:left;">Reader - for computations which read values from a shared environment.</p><br/>
+        <section>
+         <pre><code data-trim class="scala">
+case class DB[R](read : MongoCollection => R) {
+  def apply(c : MongoCollection): R = read(c)
+}
+          </code></pre>
+          <br/>
+          <ul style="list-style-type:none;list-style:none; width:100%">
+            <li class="fragment roll-in" data-fragment-index="1">
+              <h4 style="text-align:left;">Posible issue:</h4>
+              <p style="font-size:50%;">MongoCollection don't represent data inside it:</p>
+              <pre><code data-trim class="scala">
+val collectin = MongoClient("localhost")("chess")("games")
+
+// substitute "games" instead "user"!!!
+updateScore("a@epam.com", 2.0)(collectin)
+              </code></pre>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4 style="text-align:left;">Solution:</h4>
+          <p style="font-size:50%;text-align:left;">Use "Tagged type" to mark MongoCollection:</p>
+          <pre><code data-trim class="scala">
+type Tagged[U] = { type Tag = U }
+type @@[T, U] = T with Tagged[U]
+
+def withTag[T](c: MongoCollection) = c.asInstanceOf[MongoCollection @@ T]
+
+type #>[Tag, R] = MongoCollection @@ Tag => R
+          </code></pre>
+          <br/>
+          <p style="font-size:50%;text-align:left;">And DB reader:</p>
+          <pre><code data-trim class="scala">
+case class DB[CTag, R](read : Tag #> R) {
+  def apply(c : MongoCollection @@ CTag): R = read(c)
+}
+          </code></pre>
+        </section>
+        <br/>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">MongoCollection Reader:</h3>
+        <p style="font-size:50%;text-align:left;"></p><br/>
+        <br/>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">MongoCollection Reader:</h3>
+        <p style="font-size:50%;text-align:left;"></p><br/>
+
+        <br/>
       </section>
 
     </div>

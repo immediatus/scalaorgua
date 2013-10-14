@@ -30,6 +30,10 @@ body {
   text-shadow: 2px 2px 0px #333;
 }
 
+section p {
+  letter-spacing: 0.07em;
+}
+
 ::selection {
   color: white;
   background: #ff5e99;
@@ -58,8 +62,6 @@ body {
 .reveal h3 {
   text-transform: uppercase;
 }
-
-
 
 /*********************************************
  * LINKS
