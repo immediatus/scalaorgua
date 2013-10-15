@@ -191,7 +191,7 @@ case class DB[R](read : MongoCollection => R) {
           <ul style="list-style-type:none;list-style:none; width:100%">
             <li class="fragment roll-in" data-fragment-index="1">
               <h4 style="text-align:left;">Posible issue:</h4>
-              <p style="font-size:50%;">MongoCollection don't represent data inside it:</p>
+              <p style="font-size:50%;">MongoCollection class don't represent data inside it:</p>
               <pre><code data-trim class="scala">
 val collectin = MongoClient("localhost")("chess")("games")
 
@@ -217,6 +217,7 @@ type #>[Tag, R] = MongoCollection @@ Tag => R
           <pre><code data-trim class="scala">
 case class DB[CTag, R](read : Tag #> R) {
   def apply(c : MongoCollection @@ CTag): R = read(c)
+  def map[B](f : R => B): DB[CTag, B] = DB { read andThen f }
 }
           </code></pre>
         </section>
@@ -224,17 +225,87 @@ case class DB[CTag, R](read : Tag #> R) {
       </section>
 
       <section>
-        <h3 style="text-align:left;">MongoCollection Reader:</h3>
+        <h3 style="text-align:left;">Mongo-Collection Reader:</h3>
+        <p style="font-size:50%;text-align:left;">Extend DB Reader for: pass values from function to function, and execute sub-computations in a modified environment.</p><br/>
+        <ul style="list-style-type:none;list-style:none; width:100%">
+          <li data-fragment-index="1">
+            <h4 style="text-align:left;">Lift exist function to Reader:</h4>
+            <pre><code data-trim class="scala">
+case class DB[CTag, R](read : Tag #> R) {
+  ...
+
+  def map[B](f : R => B): DB[CTag, B] = DB { read andThen f }
+}
+            </code></pre>
+            <br/>
+          </li>
+          <li class="fragment roll-in" data-fragment-index="2">
+            <h4 style="text-align:left;">Combine two Readers:</h4>
+            <pre><code data-trim class="scala">
+case class DB[CTag, R](read : Tag #> R) {
+  ...
+
+  def flatMap[B](f : R => DB[CTag, B]): DB[CTag, B] =
+    DB { c => (read andThen f)(c).read(c) }
+}
+            </code></pre>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Mongo-Collection Reader:</h3>
         <p style="font-size:50%;text-align:left;"></p><br/>
+        <h4 style="text-align:left;">DB Reader class:</h4>
+        <pre style="width:960px"><code data-trim class="scala">
+case class DB[CTag, R](read : CTag => R) {
+  def apply(c : MongoCollection @@ CTag): R = read(c)
+  
+  def map[B](f : R => B): DB[CTag, B] = DB { read andThen f }
+  
+  def flatMap[B](f : R => DB[CTag, B]): DB[CTag, B] = 
+    DB { c => (read andThen f)(c).read(c) }
+}
+        </code></pre>
+        <br/>
+        <h4 style="text-align:left;">DB Reader object (for "pure" method):</h4>
+        <pre style="width:960px"><code data-trim class="scala">
+object DB {
+  def pure[CTag, R](value : => R): DB[CTag, R] = DB { _ => value }
+
+  implicit def funcToDB[CTag, R](f : CTag #> R): DB[CTag, R] = 
+    DB(f)
+}
+        </code></pre>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Update method with DB Reader:</h3>
+        <br/>
+        <h4 style="text-align:left;">Functionality decomposition:</h4>
+        <pre style="width:960px"><code data-trim class="scala">
+def getById(id : String): Users #> Option[DBObject] =
+  _.findOne(MongoDBObject(ID -> id))
+
+def updateById(id : String, update : DBObject): Users #> Unit =
+  _.update(MongoDBObject(ID -> id), update)
+
+        </code></pre>
+        <br/>
+        <h4 style="text-align:left;">DB Reader object (for "pure" method):</h4>
+        <pre style="width:960px"><code data-trim class="scala">
+
+        </code></pre>
         <br/>
       </section>
 
       <section>
-        <h3 style="text-align:left;">MongoCollection Reader:</h3>
+        <h3 style="text-align:left;">Mongo-Collection Reader:</h3>
         <p style="font-size:50%;text-align:left;"></p><br/>
 
         <br/>
       </section>
+
 
     </div>
   </div>
