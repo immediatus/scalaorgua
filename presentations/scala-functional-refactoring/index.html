@@ -195,7 +195,7 @@ case class DB[R](read : MongoCollection => R) {
               <pre><code data-trim class="scala">
 val collectin = MongoClient("localhost")("chess")("games")
 
-// substitute "games" instead "user"!!!
+// substitute "users" collection instead "games" collection!!!
 updateScore("a@epam.com", 2.0)(collectin)
               </code></pre>
             </li>
@@ -217,7 +217,6 @@ type #>[Tag, R] = MongoCollection @@ Tag => R
           <pre><code data-trim class="scala">
 case class DB[CTag, R](read : Tag #> R) {
   def apply(c : MongoCollection @@ CTag): R = read(c)
-  def map[B](f : R => B): DB[CTag, B] = DB { read andThen f }
 }
           </code></pre>
         </section>
@@ -258,12 +257,12 @@ case class DB[CTag, R](read : Tag #> R) {
         <p style="font-size:50%;text-align:left;"></p><br/>
         <h4 style="text-align:left;">DB Reader class:</h4>
         <pre style="width:960px"><code data-trim class="scala">
-case class DB[CTag, R](read : CTag => R) {
+case class DB[CTag, R](read : CTag #> R) {
   def apply(c : MongoCollection @@ CTag): R = read(c)
-  
+
   def map[B](f : R => B): DB[CTag, B] = DB { read andThen f }
-  
-  def flatMap[B](f : R => DB[CTag, B]): DB[CTag, B] = 
+
+  def flatMap[B](f : R => DB[CTag, B]): DB[CTag, B] =
     DB { c => (read andThen f)(c).read(c) }
 }
         </code></pre>
@@ -273,8 +272,7 @@ case class DB[CTag, R](read : CTag => R) {
 object DB {
   def pure[CTag, R](value : => R): DB[CTag, R] = DB { _ => value }
 
-  implicit def funcToDB[CTag, R](f : CTag #> R): DB[CTag, R] = 
-    DB(f)
+  implicit def funcToDB[CTag, R](f : CTag #> R): DB[CTag, R] = DB(f)
 }
         </code></pre>
       </section>
@@ -282,30 +280,114 @@ object DB {
       <section>
         <h3 style="text-align:left;">Update method with DB Reader:</h3>
         <br/>
-        <h4 style="text-align:left;">Functionality decomposition:</h4>
-        <pre style="width:960px"><code data-trim class="scala">
+        <section>
+          <h4 style="text-align:left;">Functionality decomposition:</h4>
+          <pre style="width:960px"><code data-trim class="scala">
+trait Users
+
 def getById(id : String): Users #> Option[DBObject] =
   _.findOne(MongoDBObject(ID -> id))
+
 
 def updateById(id : String, update : DBObject): Users #> Unit =
   _.update(MongoDBObject(ID -> id), update)
 
+
+def updateScore(id : String, newScore : Double): User #> Option[DBObject] =
+  ...
+          </code></pre>
+        </section>
+        <section>
+          <h4 style="text-align:left;">Updated 'updateScore' method:</h4>
+          <pre style="width:960px"><code data-trim class="scala">
+def updateScore(id : String, newScore : Double): User #> Option[DBObject] =
+  for {
+    dboOpt <- getById(id)
+
+    update = for {
+      dbo   <- dboOpt
+      games <- dbo.getAs[Long]("games")
+      score <- dbo.getAs[Double]("score")
+      gamesU = games + 1
+      scoreU = score + newScore
+    } yield $set("games" -> gamesU, "score" -> scoreU)
+
+    _ <- updateById(id, update)
+    updated <- getById(id)
+  } yield updated
+          </code></pre>
+          <p style="font-size:50%;text-align:left;"><i>
+          Looks better but have a compile time error.<br/><br/>
+          Type mismatch - <b>updateById(id, update)</b><br/>
+          found: <b>Option[DBObject]</b><br/>
+          required: <b>DBObject</b>
+          </i></p>
+        </section>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Mongo-Collection Reader Transformer:</h3>
+        <p style="font-size:50%;text-align:left;">Special types that allow us to roll two containers DB & Option into a single one that shares the behaviour of both.</p>
+        <pre style="width:960px"><code data-trim class="scala">
+case class DBTOpt[CTag, R](run : DB[CTag, Option[R]]) {
+  def map[B](f : R => B): DBTOpt[CTag, B] = DBTOpt { DB { run(_) map f } }
+
+  def flatMap[B](f : R => DBTOpt[CTag, B]): DBTOpt[CTag, B] =
+    DBTOpt { DB { c => run(c) map f match {
+      case Some(r)  => r.run(c)
+      case None     => None
+    }}}
+}
         </code></pre>
         <br/>
-        <h4 style="text-align:left;">DB Reader object (for "pure" method):</h4>
+        <h4 style="text-align:left;">DB Transformer (for "pure" method and implicit conversion):</h4>
         <pre style="width:960px"><code data-trim class="scala">
+object DBTOpt {
+  def pure[CTag, R](value : => Option[R]): DBTOpt[CTag, R] =
+    DBTOpt { DB { _ => value } }
 
+  implicit def toDBT[CTag, R](db : DB[CTag, Option[R]]): DBTOpt[CTag, R] =
+    DBTOpt { db }
+
+  implicit def fromDBT[CTag, R](dbto : DBTOpt[CTag, R]): DB[CTag, Option[R]] = 
+   dbto.run
+}
         </code></pre>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Update method with DB Reader & Transformer:</h3>
+        </br>
+        <pre style="width:960px"><code data-trim class="scala">
+def updateScore(id : String, newScore : Double): DB[Users, Option[DBObject]] =
+  for {
+    dbo   <- DBTOpt { getById(id) }
+    games <- DBTOpt.pure { dbo.getAs[Long]("games") }
+    score <- DBTOpt.pure { dbo.getAs[Double]("score") }
+
+    gamesU = games + 1
+    scoreU = score + newScore
+    update = $set("games" -> gamesU, "score" -> scoreU)
+
+    _ <- updateById(id, update)
+    updated <- getById(id)
+  } yield updated
+        </code></pre>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Dependency Resolver:</h3>
+        <p style="font-size:50%;text-align:left;">Special types that allow us to roll two containers DB & Option into a single one that shares the behaviour of both.</p><br/>
+
         <br/>
       </section>
 
       <section>
         <h3 style="text-align:left;">Mongo-Collection Reader:</h3>
-        <p style="font-size:50%;text-align:left;"></p><br/>
+        <p style="font-size:50%;text-align:left;">Special types that allow us to roll two containers DB & Option into a single one that shares the behaviour of both.</p><br/>
 
         <br/>
       </section>
-
 
     </div>
   </div>
