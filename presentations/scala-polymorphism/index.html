@@ -45,8 +45,8 @@
         <h3 style="text-align:left;">Parametric (type as parameter)</h3>
         <p style="font-size:50%;text-align:left;">defined on functions or a data types so that they can be written generically and it can handle values identically without depending on their type.</p><br/>
         <pre><code data-trim class="scala">
-class Container[A](val value: A) {              // Type-constructor
-  def map[B](f: A => B): Container[B] =
+class Container[A](val value : A) {              // Type-constructor
+  def map[B](f : A => B): Container[B] =
     new Container(f(value))
 }
 
@@ -62,11 +62,11 @@ new Container("10") map { x => x.toInt * 2 }    // Container(20)
           <li class="fragment roll-in" data-fragment-index="0">
             <h4>Value level:</h4>
             <pre><code data-trim class="scala">
-val x: String
-val y: List[String]
+val x : String
+val y : List[String]
 
-def id(x: Int):Int = x
-def map(f: Int=> Int, x: Int) = f(x)
+def id(x : Int):Int = x
+def map(f : Int=> Int, x: Int) = f(x)
             </code></pre>
           </li>
           <li class="fragment roll-in" data-fragment-index="1">
@@ -97,11 +97,11 @@ type Map[C[_],A] = C[A]
             <h4>Predicative polymorphism:</h4>
             <pre><code data-trim class="scala">
 trait ~>[T[_],R[_]] {
-  def apply[A](a: T[A]): R[A]
+  def apply[A](a : T[A]): R[A]
 }
 
 val naturalTransformation = new (List ~> Option) { //  ~>[List, Option]
-  def apply[A](a: List[A]): Option[A] = a.headOption
+  def apply[A](a : List[A]): Option[A] = a.headOption
 }
             </code></pre>
           </li>
@@ -170,7 +170,7 @@ class Foo[T]
           <li class="fragment roll-in" data-fragment-index="1">
             <h4>Using-Site Covariance:</h4>
             <pre><code data-trim class="scala">
-def apply(a: Foo[_ <: Employee]): String
+def apply(a : Foo[_ <: Employee]): String
 // or by existential type declaration:
 def apply(a: Foo[X] forSome { type X <: Employee}): String
             </code></pre>
@@ -180,7 +180,7 @@ def apply(a: Foo[X] forSome { type X <: Employee}): String
             <pre><code data-trim class="scala">
 def apply[A](a: Foo[_ >: Employee]): String
 // or by existential type declaration:
-def apply(a: Foo[X] forSome { type X >: Employee}): String
+def apply(a : Foo[X] forSome { type X >: Employee}): String
             </code></pre>
           </li>
         </ul>
@@ -235,14 +235,14 @@ val cat = new Cat()
           <h4 style="text-align:left;">1. “Rich Interface” role:</h4>
           <pre style="height:520px;"><code data-trim class="scala" style="max-height:100%;height:100%;">
 trait RichIterable[A] {
-  def iterator: Iterator[A]           // contract method
+  def iterator : Iterator[A]           // contract method
 
-  def foreach(f: A => Unit) = {
+  def foreach(f : A => Unit) = {
     val iter = iterator
     while (iter.hasNext) f(iter.next)
   }
 
-  def foldLeft[B](seed: B)(f: (B, A) => B) = {
+  def foldLeft[B](seed : B)(f : (B, A) => B) = {
     var result = seed
     foreach(e => result = f(result, e))
     result
@@ -262,7 +262,7 @@ richSet.foldLeft(0)((x, y) => x + y)  // == 3
           <h4 style="text-align:left;">2. “Stackable modification” role:</h4>
           <pre><code data-trim class="scala">
 trait IgnoreCaseSet extends java.util.Set[String] {
-  abstract override def add(e: String) = {
+  abstract override def add(e : String) = {
     super.add(e.toLowerCase)
   }
 
@@ -313,8 +313,8 @@ val order = new Order(customer)
         <p style="font-size:50%;text-align:left;">allows creating several methods with the same name which differ from each other in the type of the input and the output of the function.</p><br/>
         <h4 style="text-align:left;">Operators overload:</h4>
         <pre><code data-trim class="scala">
-case class Complex(re: Double, im: Double) {
-  def + (another: Complex) =
+case class Complex(re : Double, im : Double) {
+  def + (another : Complex) =
     new Complex(Re + another.re, Im + another.im)
 
   def unary_- =
@@ -337,16 +337,16 @@ Complex(2, 5) + Complex(1, -2)  // == Complex(3, 3)
         <p style="font-size:50%;text-align:left;">is the operation of converting an argument or an operand to the type expected by a function or an operator.</p><br/>
         <h4 style="text-align:left;">Coercion by implicit conversions:</h4>
         <pre><code data-trim class="scala">
-case class Complex(re: Double, im: Double) {
-  def + (another: Complex) =
+case class Complex(re : Double, im : Double) {
+  def + (another : Complex) =
     new Complex(re + another.re, im + another.im)
 }
 
 //implicit conversion: a form of coercion
 implicit def doubleToComplex(d: Double) = Complex(d, 0)
 
-Complex(2.0, 5.0) + 5.0   // == Complex(7, 5)
-5.0 - Complex(1.0, -2.0)  // == Complex(4, -2)
+Complex(2.0, 5.0) + 5.0   // == Complex(7.0, 5.0)
+5.0 + Complex(1.0, -2.0)  // == Complex(6.0, -2.0)
         </code></pre>
       </section>
 
@@ -384,15 +384,15 @@ if(str) println(str)  //out: test - ok
             <li data-fragment-index="0">
               <p style="font-size:75%;">Ternary operator similar to <b>?</b> in C/C++:</p>
               <pre><code data-trim class="scala">
-val res: String = (4*4 > 14) ? "GT" | "LT or EQ"
+val res : String = (4*4 > 14) ? "GT" | "LT or EQ"
               </code></pre>
             </li>
             <li class="fragment roll-in" data-fragment-index="1">
               <p style="font-size:75%;">Implicit coversion from Boolean to <b>something with ? method</b>:</p>
               <pre><code data-trim class="scala">
-implicit def boolToOperator(c: Boolean) = new {
-  def ?[A](t: => A) = new {
-    def |(f: => A) = if(c) t else f
+implicit def boolToOperator(c : Boolean) = new {
+  def ?[A](t : => A) = new {
+    def |(f : => A) = if(c) t else f
   }
 }
               </code></pre>
@@ -400,12 +400,12 @@ implicit def boolToOperator(c: Boolean) = new {
             <li class="fragment roll-in" data-fragment-index="2">
               <p style="font-size:75%;">Or:</p>
               <pre><code data-trim class="scala">
-class MakeIfTrue(b: => Boolean) {
-  def ?[A](t: => A) = new IfTrue[A](b,t)
+class MakeIfTrue(b : => Boolean) {
+  def ?[A](t : => A) = new IfTrue[A](b,t)
 }
 
-class IfTrue[A](b: => Boolean, t: => A) {
-  def |(f: => A) = if (b) t else f
+class IfTrue[A](b : => Boolean, t : => A) {
+  def |(f : => A) = if (b) t else f
 }
 
 implicit def autoMakeIfTrue(b: => Boolean) = new MakeIfTrue(b)
@@ -417,7 +417,7 @@ implicit def autoMakeIfTrue(b: => Boolean) = new MakeIfTrue(b)
         <section>
           <h4 style="text-align:left;">2. Implicit parameters:</h4>
           <pre><code data-trim class="scala">
-def multiplier(i: Int)(implicit factor: Int) {
+def multiplier(i : Int)(implicit factor : Int) {
   println(i * factor)
 }
 
@@ -456,7 +456,7 @@ trait Show[A] {
 
 //OR Haskell notation:
 trait Show[A] {
-  def shows: A => String
+  def shows : A => String
 }            </code></pre>
           </li>
         </ul>
@@ -467,14 +467,14 @@ trait Show[A] {
         <p style="font-size:50%;text-align:left;">is a type system construct that supports ad hoc polymorphism. This is achieved by adding constraints to type variables in parametrically polymorphic types.</p><br/>
         <h4 style="text-align:left;">Type-classes implementation:</h4>
         <pre><code data-trim class="scala">
-// Type-calss Int instance
+// Type-class Int instance
 implicit val IntShow = new Show[Int] {
-  def shows(a: Int) = a.toString
+  def shows(a : Int) = a.toString
 }
 
 //Type-class List instance:
 implicit def ListShow[T] = new Show[List[T]] {
-  def shows(a: List[T]) = a.mkString(", ")
+  def shows(a : List[T]) = a.mkString(", ")
 }
         </code></pre>
         <br/>
@@ -495,10 +495,10 @@ shows(42)
         <h4 style="text-align:left;">Pimps Type-classes (syntax extension)</h4>
         <pre><code data-trim class="scala">
 trait ShowSyntax[A] {
-  def shows: String
+  def shows : String
 }
 
-implicit def toShowSyntax[A: Show](a: A)= new ShowSyntax[A] {
+implicit def toShowSyntax[A : Show](a : A)= new ShowSyntax[A] {
   def shows = implicitly[Show[A]].shows(a)
 }
         </code></pre>

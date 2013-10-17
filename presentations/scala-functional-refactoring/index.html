@@ -349,7 +349,7 @@ object DBTOpt {
   implicit def toDBT[CTag, R](db : DB[CTag, Option[R]]): DBTOpt[CTag, R] =
     DBTOpt { db }
 
-  implicit def fromDBT[CTag, R](dbto : DBTOpt[CTag, R]): DB[CTag, Option[R]] = 
+  implicit def fromDBT[CTag, R](dbto : DBTOpt[CTag, R]): DB[CTag, Option[R]] =
    dbto.run
 }
         </code></pre>
@@ -377,16 +377,89 @@ def updateScore(id : String, newScore : Double): DB[Users, Option[DBObject]] =
 
       <section>
         <h3 style="text-align:left;">Dependency Resolver:</h3>
-        <p style="font-size:50%;text-align:left;">Special types that allow us to roll two containers DB & Option into a single one that shares the behaviour of both.</p><br/>
+        <br/>
+        <h4 style="text-align:left;">DB interpreter:</h4>
+        <pre><code data-trim class="scala">
+trait CollectionProvider[CTag] {
+  def apply[R](db : DB[CTag, R]): R
+}
+        </code></pre>
+        <br/>
+        <h4 style="text-align:left;">Companion with factory method:</h4>
+        <pre><code data-trim class="scala">
+object CollectionProvider {
+  def apply[CTag](host : String, db : String, collection : String) =
+    new CollectionProvider[CTag] {
+      val coll = withTag[CTag](MongoClient(host)(db)(collection))
+      def apply[R](db : DB[CTag, R]): R = db(coll)
+    }
+}
+        </code></pre>
+      </section>
 
+      <section>
+        <h3 style="text-align:left;">Dependency Resolver:</h3>
+        <br/>
+        <h4 style="text-align:left;">Code:</h4>
+        <pre><code data-trim class="scala">
+
+        </code></pre>
+        <br/>
+        <h4 style="text-align:left;">Concrete instances:</h4>
+        <pre><code data-trim class="scala">
+lazy val usersCollection_Test =
+  CollectionProvider[Users]("localhost", "chess-test", "users")
+
+lazy val usersCollection_Prod =
+  CollectionProvider[Users]("localhost", "chess-online", "users")
+        </code></pre>
+        <br/>
+        <h4 style="text-align:left;">"Injection"</h4>
+        <pre><code data-trim class="scala">
+
+        </code></pre>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Reader Monad:</h3>
         <br/>
       </section>
 
       <section>
-        <h3 style="text-align:left;">Mongo-Collection Reader:</h3>
-        <p style="font-size:50%;text-align:left;">Special types that allow us to roll two containers DB & Option into a single one that shares the behaviour of both.</p><br/>
+        <h3 style="text-align:left;">Reader Monad:</h3>
+        <pre style="width:960px"><code data-trim class="scala">
+type RTOpt[A, B] = ReaderT[Option, A, B]
 
-        <br/>
+object RTOpt extends KleisliFunctions with KleisliInstances {
+  def apply[A, B](f : A => Option[B]): RTOpt[A, B] = kleisli(f)
+  def pure[A, B](r : => Option[B]): RTOpt[A, B] = kleisli(_ => r)
+}
+        </code></pre>
+        <pre style="width:960px"><code data-trim class="scala">
+type MC[Tag] = MongoCollection @@ Tag
+
+implicit def toR[Tag, R](f : MC[Tag] => R) = Reader(f)
+implicit def toRTOpt[Tag, R](f : Reader[MC[Tag], Option[R]]) = RTOpt { f }
+        </code></pre>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Reader Monad:</h3>
+        <pre style="width:960px"><code data-trim class="scala">
+def updateScore(id : String, newScore : Double): Users #> Option[DBObject] =
+  for {
+    dbo   <- RTOpt { getById(id) }
+    games <- RTOpt.pure { dbo.getAs[Double]("games") }
+    score <- RTOpt.pure { dbo.getAs[Double]("score") }
+
+    gamesU = games + 1
+    scoreU = score + newScore
+    update = $set("games" -> gamesU, "score" -> scoreU)
+
+    _ <- updateById(id, update)
+    updated <- getById(id)
+  } yield updated
+        </code></pre>
       </section>
 
     </div>
