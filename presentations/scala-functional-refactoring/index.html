@@ -87,7 +87,6 @@ def updateScore(id : String, gameScore : Double): Option[DBObject] = {
         <h3 style="text-align:left;">Design Issues:</h3>
         <br/>
         <ul style="list-style-type:none;list-style:none; width:100%">
-        <ul style="list-style-type:none;list-style:none; width:100%">
           <li class="fragment roll-in" data-fragment-index="1">
           <h4 style="text-align:left;">1. High-coupling:</h4>
           <pre><code data-trim class="scala">
@@ -378,15 +377,24 @@ def updateScore(id : String, newScore : Double): DB[Users, Option[DBObject]] =
       <section>
         <h3 style="text-align:left;">Dependency Resolver:</h3>
         <br/>
-        <h4 style="text-align:left;">DB interpreter:</h4>
-        <pre><code data-trim class="scala">
+        <section>
+          <h4 style="text-align:left;">Resolver:</h4>
+          <pre><code data-trim class="scala">
+object resolve {
+  def apply[T, R](f : T => R)(implicit a : T) = f(a)
+}
+
+          </code></pre>
+        </section>
+        <section>
+          <h4 style="text-align:left;">DB interpreter:</h4>
+          <pre><code data-trim class="scala">
 trait CollectionProvider[CTag] {
   def apply[R](db : DB[CTag, R]): R
 }
-        </code></pre>
-        <br/>
-        <h4 style="text-align:left;">Companion with factory method:</h4>
-        <pre><code data-trim class="scala">
+          </code></pre>
+          <h4 style="text-align:left;">Companion with factory method:</h4>
+          <pre><code data-trim class="scala">
 object CollectionProvider {
   def apply[CTag](host : String, db : String, collection : String) =
     new CollectionProvider[CTag] {
@@ -394,57 +402,103 @@ object CollectionProvider {
       def apply[R](db : DB[CTag, R]): R = db(coll)
     }
 }
-        </code></pre>
+          </code></pre>
+        </section>
       </section>
 
       <section>
-        <h3 style="text-align:left;">Dependency Resolver:</h3>
+        <h3 style="text-align:left;">Dependency injection:</h3>
         <br/>
-        <h4 style="text-align:left;">Code:</h4>
-        <pre><code data-trim class="scala">
+        <section>
+          <h4 style="text-align:left;">Code:</h4>
+          <pre><code data-trim class="scala">
+def parseDouble(s : String): Option[Double] = ...
 
-        </code></pre>
-        <br/>
-        <h4 style="text-align:left;">Concrete instances:</h4>
-        <pre><code data-trim class="scala">
-lazy val usersCollection_Test =
-  CollectionProvider[Users]("localhost", "chess-test", "users")
+def programm(id : String): CollectionProvider[Users] => Unit =
+  ctx => {
+    println(s"Enter game result for '$id'")
+    parseDouble(readLine) map {
+      score => ctx(updateScore(id, score))
+    } map {
+      dbo => println(s"Updated: $dbo")
+    }
+  }
 
-lazy val usersCollection_Prod =
-  CollectionProvider[Users]("localhost", "chess-online", "users")
-        </code></pre>
-        <br/>
-        <h4 style="text-align:left;">"Injection"</h4>
-        <pre><code data-trim class="scala">
+          </code></pre>
+        </section>
+        <section>
+          <h4 style="text-align:left;">Concrete instances:</h4>
+          <pre><code data-trim class="scala">
+object inProduction {
+  implicit lazy val users =
+    CollectionProvider[Users]("localhost", "chess-online", "users")
 
-        </code></pre>
+  implicit lazy val games =
+    CollectionProvider[Games]("localhost", "chess-online", "games")
+}
+          </code></pre>
+          <br/>
+          <h4 style="text-align:left;">"Injection":</h4>
+          <pre><code data-trim class="scala">
+import inProduction._
+
+resolve(programm("a@epam.com"))
+          </code></pre>
+        </section>
       </section>
 
       <section>
         <h3 style="text-align:left;">Reader Monad:</h3>
+        <p style="font-size:50%;text-align:left;">The Reader monad (also called the Environment monad). Represents a computation, which can read values from a shared environment, pass values from function to function, and execute sub-computations in a modified environment.</p>
         <br/>
+        <h4 style="text-align:left;">Computation type:</h4>
+        <p style="font-size:50%;text-align:left;">Computations which read values from a shared environment.</p>
+        <br/>
+        <h4 style="text-align:left;">Useful for:</h4>
+        <p style="font-size:50%;text-align:left;">Maintaining variable bindings, or other shared environment.</p>
+        <br/>
+        <h4 style="text-align:left;">Type:</h4>
+        <pre><code data-trim class="scala">
+type Reader[E, A] = ReaderT[Id, E, A]
+        </code></pre>
       </section>
 
       <section>
-        <h3 style="text-align:left;">Reader Monad:</h3>
+        <h3 style="text-align:left;">Monad Transformer:</h3>
+        <p style="font-size:50%;text-align:left;"><b>Monad transformers</b>: special types that allow us to roll two monads into a single one that shares the behaviour of both. We will begin with an example to illustrate why transformers are useful and show a simple example of how they work.</p>
+        <br/>
+        <h4 style="text-align:left;">Type:</h4>
+        <pre><code data-trim class="scala">
+type ReaderT[F[_], E, A] = Kleisli[F, E, A]
+        </code></pre>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Reader Monad & Monad Transformer (Scalaz):</h3>
+        <br/>
         <pre style="width:960px"><code data-trim class="scala">
-type RTOpt[A, B] = ReaderT[Option, A, B]
+import scalaz._, Scalaz._
+
+//usage already defined in scalaz: type =?>[E, A] = ReaderT[Option, E, A]
 
 object RTOpt extends KleisliFunctions with KleisliInstances {
-  def apply[A, B](f : A => Option[B]): RTOpt[A, B] = kleisli(f)
-  def pure[A, B](r : => Option[B]): RTOpt[A, B] = kleisli(_ => r)
+  def apply[A, B](f : A => Option[B]): A =?> B = kleisli(f)
+  def pure[A, B](r : => Option[B]): A =?> B = kleisli(_ => r)
 }
         </code></pre>
+        <br/>
+        <h4 style="text-align:left;">And implicit conversions:</h4>
         <pre style="width:960px"><code data-trim class="scala">
 type MC[Tag] = MongoCollection @@ Tag
 
 implicit def toR[Tag, R](f : MC[Tag] => R) = Reader(f)
-implicit def toRTOpt[Tag, R](f : Reader[MC[Tag], Option[R]]) = RTOpt { f }
-        </code></pre>
+implicit def toRTOpt[Tag, R](f : Reader[MC[Tag], Option[R]]) = RTOpt(f)
+        </code></pre>                             <F5>
       </section>
 
       <section>
-        <h3 style="text-align:left;">Reader Monad:</h3>
+        <h3 style="text-align:left;">Update method (with Scalaz):</h3>
+        <br/>
         <pre style="width:960px"><code data-trim class="scala">
 def updateScore(id : String, newScore : Double): Users #> Option[DBObject] =
   for {
@@ -460,6 +514,27 @@ def updateScore(id : String, newScore : Double): Users #> Option[DBObject] =
     updated <- getById(id)
   } yield updated
         </code></pre>
+        <br/>
+        <ul style="list-style-type:none;list-style:none; width:100%">
+          <li class="fragment roll-in" data-fragment-index="1">
+          <h4 style="text-align:left;"><mark class="red">High-coupling&nbsp;&nbsp;- RESOLVED</mark></h4>
+          <br/>
+          </li>
+          <li class="fragment roll-in" data-fragment-index="2">
+          <h4 style="text-align:left;"><mark class="red">Complexity&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- RESOLVED</mark></h4>
+          </li>
+        </ul>
+
+
+      </section>
+
+      <section>
+        <div style="height:600px;"><div style="padding:200px 0px 0px 0px;">
+        <ul style="width:100%;list-style-type:none;list-style:none;align:center;text-align:center;">
+          <li data-fragment-index="0"><h2>Questions?</h2><br/></li>
+          <li class="fragment roll-in" data-fragment-index="1"><h2>Remarks?</h2></li>
+        </ul>
+        </div></div>
       </section>
 
     </div>
