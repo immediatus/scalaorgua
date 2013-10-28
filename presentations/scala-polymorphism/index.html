@@ -76,7 +76,7 @@ def map(f : Int=> Int, x: Int) = f(x)
             <pre><code data-trim class="scala">
 type String     :: *
 type List       :: * -> *
-type Function1 	:: * -> * -> *
+type Function1  :: * -> * -> *
 
 type Id[A] = A
 type Map[C[_],A] = C[A]
@@ -98,7 +98,7 @@ type Map[C[_],A] = C[A]
           <li class="fragment roll-in" data-fragment-index="1">
             <h4>Predicative polymorphism:</h4>
             <pre><code data-trim class="scala">
-trait ~>[T[_],R[_]] {
+trait ~>[T[_],R[_]] {  // T & R - have predicates [_]
   def apply[A](a : T[A]): R[A]
 }
 
@@ -237,7 +237,7 @@ val cat = new Cat()
           <h4 style="text-align:left;">1. “Rich Interface” role:</h4>
           <pre style="height:520px;"><code data-trim class="scala" style="max-height:100%;height:100%;">
 trait RichIterable[A] {
-  def iterator : Iterator[A]           // contract method
+  def iterator : java.util.Iterator[A]  // contract method
 
   def foreach(f : A => Unit) = {
     val iter = iterator
@@ -268,8 +268,11 @@ trait IgnoreCaseSet extends java.util.Set[String] {
     super.add(e.toLowerCase)
   }
 
-  abstract override def contains(e: String) = {
-    super.contains(e.toLowerCase)
+  abstract override def contains(e: Object) = {
+    e match {
+      case s: String  => super.contains(s.toLowerCase)
+      case o          => super.contains(o)
+    }
   }
 }
 
@@ -277,8 +280,8 @@ val set =
   new java.util.HashSet[String]
   with IgnoreCaseSet
 
-set.add(“HI THERE“)       // uppercase
-set.contains(“hi there“)  // lowercase
+set.add("HI THERE")       // uppercase
+set.contains("hi there")  // lowercase
           </code></pre>
         </section>
         <section>
