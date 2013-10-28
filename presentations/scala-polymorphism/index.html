@@ -262,7 +262,7 @@ richSet.foldLeft(0)((x, y) => x + y)  // == 3
         </section>
         <section>
           <h4 style="text-align:left;">2. “Stackable modification” role:</h4>
-          <pre><code data-trim class="scala">
+          <pre style="height:520px;"><code data-trim class="scala">
 trait IgnoreCaseSet extends java.util.Set[String] {
   abstract override def add(e : String) = {
     super.add(e.toLowerCase)
@@ -320,10 +320,10 @@ val order = new Order(customer)
         <pre><code data-trim class="scala">
 case class Complex(re : Double, im : Double) {
   def + (another : Complex) =
-    new Complex(Re + another.re, Im + another.im)
+    new Complex(re + another.re, im + another.im)
 
   def unary_- =
-    new Complex(-Re, -Im)
+    new Complex(-re, -im)
 }
 
 Complex(2, 5) + Complex(1, -2)  // == Complex(3, 3)
