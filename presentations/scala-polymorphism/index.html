@@ -262,7 +262,7 @@ richSet.foldLeft(0)((x, y) => x + y)  // == 3
         </section>
         <section>
           <h4 style="text-align:left;">2. “Stackable modification” role:</h4>
-          <pre style="height:500px;"><code data-trim class="scala" style="max-height:100%;height:100%;">
+          <pre style="height:470px;"><code data-trim class="scala" style="max-height:100%;height:100%;">
 trait IgnoreCaseSet extends java.util.Set[String] {
   abstract override def add(e : String) = {
     super.add(e.toLowerCase)
