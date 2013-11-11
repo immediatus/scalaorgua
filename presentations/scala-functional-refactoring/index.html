@@ -195,7 +195,7 @@ case class DB[R](read : MongoCollection => R) {
 val collection = MongoClient("localhost")("chess")("games")
 
 // substitute "games" collection instead of "users" collection!!!
-updateScore("a@epam.com", 2.0)(collectin)
+updateScore("a@epam.com", 2.0)(collection)
               </code></pre>
             </li>
           </ul>
