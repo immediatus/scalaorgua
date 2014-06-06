@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="Новый документ 1">
+  <defs
+     id="defs4">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3982">
+      <stop
+         style="stop-color:#bcbcbc;stop-opacity:1"
+         offset="0"
+         id="stop3984" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop3986" />
+    </linearGradient>
+    <filter
+       inkscape:collect="always"
+       id="filter3777">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.82074894"
+         id="feGaussianBlur3779" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       inkscape:collect="always"
+       id="filter3777-3">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.82074894"
+         id="feGaussianBlur3779-2" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       inkscape:collect="always"
+       id="filter3777-38">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.82074894"
+         id="feGaussianBlur3779-4" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       inkscape:collect="always"
+       id="filter3777-2">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.82074894"
+         id="feGaussianBlur3779-24" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter3917">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="2.3535715"
+         id="feGaussianBlur3919" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter3963">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.5642857"
+         id="feGaussianBlur3965" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter3967">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.5642857"
+         id="feGaussianBlur3969" />
+    </filter>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3982"
+       id="radialGradient3988"
+       cx="206.5762"
+       cy="543.2453"
+       fx="206.5762"
+       fy="543.2453"
+       r="139.39598"
+       gradientTransform="matrix(1,0,0,0.14127309,-19.285714,507.92793)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3982"
+       id="radialGradient3996"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.85453985,0,0,0.14127309,19.855193,446.30862)"
+       cx="206.5762"
+       cy="543.2453"
+       fx="206.5762"
+       fy="543.2453"
+       r="139.39598" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3982-9"
+       id="radialGradient3996-3"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.85453985,0,0,0.14127309,19.855193,446.30862)"
+       cx="206.5762"
+       cy="543.2453"
+       fx="206.5762"
+       fy="543.2453"
+       r="139.39598" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3982-9">
+      <stop
+         style="stop-color:#bcbcbc;stop-opacity:1"
+         offset="0"
+         id="stop3984-2" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop3986-8" />
+    </linearGradient>
+    <radialGradient
+       r="139.39598"
+       fy="543.2453"
+       fx="206.5762"
+       cy="543.2453"
+       cx="206.5762"
+       gradientTransform="matrix(0.85453985,0,0,0.14127309,410.65922,544.03652)"
+       gradientUnits="userSpaceOnUse"
+       id="radialGradient4013"
+       xlink:href="#linearGradient3982-9"
+       inkscape:collect="always" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3982-1"
+       id="radialGradient3996-8"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.85453985,0,0,0.14127309,19.855193,446.30862)"
+       cx="206.5762"
+       cy="543.2453"
+       fx="206.5762"
+       fy="543.2453"
+       r="139.39598" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3982-1">
+      <stop
+         style="stop-color:#bcbcbc;stop-opacity:1"
+         offset="0"
+         id="stop3984-0" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop3986-3" />
+    </linearGradient>
+    <radialGradient
+       r="139.39598"
+       fy="543.2453"
+       fx="206.5762"
+       cy="543.2453"
+       cx="206.5762"
+       gradientTransform="matrix(0.85453985,0,0,0.14127309,512.75265,282.40172)"
+       gradientUnits="userSpaceOnUse"
+       id="radialGradient4013-5"
+       xlink:href="#linearGradient3982-1"
+       inkscape:collect="always" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3982-16"
+       id="radialGradient3996-6"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.85453985,0,0,0.14127309,19.855193,446.30862)"
+       cx="206.5762"
+       cy="543.2453"
+       fx="206.5762"
+       fy="543.2453"
+       r="139.39598" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3982-16">
+      <stop
+         style="stop-color:#bcbcbc;stop-opacity:1"
+         offset="0"
+         id="stop3984-8" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop3986-4" />
+    </linearGradient>
+    <radialGradient
+       r="139.39598"
+       fy="543.2453"
+       fx="206.5762"
+       cy="543.2453"
+       cx="206.5762"
+       gradientTransform="matrix(0.85453985,0,0,0.14127309,122.75267,203.83029)"
+       gradientUnits="userSpaceOnUse"
+       id="radialGradient4013-0"
+       xlink:href="#linearGradient3982-16"
+       inkscape:collect="always" />
+    <filter
+       inkscape:collect="always"
+       id="filter4082"
+       x="-0.027658216"
+       width="1.0553164"
+       y="-0.27643676"
+       height="1.5528735">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="2.7355721"
+         id="feGaussianBlur4084" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter4086"
+       x="-0.027658216"
+       width="1.0553164"
+       y="-0.27643676"
+       height="1.5528735">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="2.7355721"
+         id="feGaussianBlur4088" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter4090"
+       x="-0.027658216"
+       width="1.0553164"
+       y="-0.27643676"
+       height="1.5528735">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="2.7355721"
+         id="feGaussianBlur4092" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter4094"
+       x="-0.027658216"
+       width="1.0553164"
+       y="-0.27643676"
+       height="1.5528735">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="2.7355721"
+         id="feGaussianBlur4096" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="392.52648"
+     inkscape:cy="527.92226"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1056"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g3971"
+       inkscape:export-filename="/home/yuriy_polyulya/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/manifesto.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3921"
+         d="M 346.42857,280.93361 C 352.14286,468.79075 572.8101,528.83036 572.8101,528.83036"
+         style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3967)"
+         sodipodi:nodetypes="cc" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3923"
+         d="M 320,480.21932 C 615,497.36218 696.42857,358.07647 696.42857,358.07647"
+         style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3963)" />
+    </g>
+    <g
+       id="g3975"
+       inkscape:export-filename="/home/yuriy_polyulya/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/manifesto.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <g
+         id="g3955">
+        <path
+           style="fill:none;stroke:#ffffff;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           d="M 346.07143,279.86218 C 351.78572,467.71932 572.50001,528.4336 572.50001,528.4336"
+           id="path3921-4"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;stroke:#ffffff;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           d="m 319.64286,479.14789 c 295,17.14286 375,-119.99999 375,-119.99999"
+           id="path3923-0"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cc" />
+      </g>
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:10;stroke-miterlimit:4;stroke-opacity:1;filter:url(#filter3917)"
+       d="m 419.92073,212.97051 c 7.79977,-0.40292 15.68748,-0.60833 23.65071,-0.60833 80.73944,0 153.71509,21.11568 205.98821,55.12789 m 75.87998,90.44302 c 3.92596,12.03795 5.98896,24.50905 5.98896,37.28624 0,54.12543 -37.0196,102.75836 -95.85209,136.23897 m -170.90622,46.13447 c -6.96713,0.32061 -14.003,0.48371 -21.09884,0.48371 -80.44295,0 -153.17904,-20.96089 -205.41152,-54.75372 m -76.45668,-90.81721 c -3.92595,-12.03794 -5.98895,-24.50904 -5.98895,-37.28622 0,-43.30758 23.70046,-83.09878 63.31164,-114.4253"
+       id="path3888"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csccsccsccsc"
+       inkscape:export-filename="/home/yuriy_polyulya/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/manifesto.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 419.77786,212.25622 c 7.79977,-0.40292 15.68748,-0.60833 23.65071,-0.60833 80.73944,0 153.71509,21.11568 205.98821,55.12789 m 75.87998,90.44302 c 3.92596,12.03795 5.98896,24.50905 5.98896,37.28624 0,54.12543 -37.0196,102.75836 -95.85209,136.23897 m -170.90622,46.13447 c -6.96713,0.32061 -14.003,0.48371 -21.09884,0.48371 -80.44295,0 -153.17904,-20.96089 -205.41152,-54.75372 m -76.45668,-90.81721 c -3.92595,-12.03794 -5.98895,-24.50904 -5.98895,-37.28622 0,-43.30758 23.70046,-83.09878 63.31164,-114.4253"
+       id="path3888-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csccsccsccsc"
+       inkscape:export-filename="/home/yuriy_polyulya/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/manifesto.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:url(#radialGradient4013-5);fill-opacity:1;stroke:none;filter:url(#filter4082);opacity:0.33984375"
+       d="m 570.86518,357.63004 c -0.18064,0.50151 -0.26704,1.02117 -0.26704,1.53125 0,12.27362 53.12235,22.21875 118.67422,22.21875 65.55187,0 118.70093,-9.94513 118.70093,-22.21875 0,-0.5126 -0.11133,-1.02731 -0.29375,-1.53125 l -236.81436,0 z"
+       id="path3980-8"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/yuriy_polyulya/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/manifesto.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:url(#radialGradient3996);fill-opacity:1;stroke:none;filter:url(#filter4090);opacity:0.33984375"
+       d="m 77.967717,521.53694 c -0.180641,0.50151 -0.267043,1.02117 -0.267043,1.53125 0,12.27362 53.122356,22.21875 118.674216,22.21875 65.55187,0 118.70093,-9.94513 118.70093,-22.21875 0,-0.5126 -0.11133,-1.02731 -0.29375,-1.53125 l -236.814353,0 z"
+       id="path3980"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/yuriy_polyulya/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/manifesto.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g3781"
+       transform="translate(2.8571427,251.42857)"
+       inkscape:export-filename="/home/yuriy_polyulya/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/manifesto.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         rx="10.1015"
+         ry="9.0913725"
+         y="182.62083"
+         x="76.771591"
+         height="87.88327"
+         width="240.41631"
+         id="rect2985"
+         style="fill:none;stroke:#000000;stroke-width:10;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3777)" />
+      <rect
+         rx="10.1015"
+         ry="9.0913725"
+         y="182.11577"
+         x="76.771599"
+         height="87.88327"
+         width="240.41631"
+         id="rect2985-6"
+         style="fill:none;stroke:#ffd265;stroke-width:7;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <path
+       style="fill:url(#radialGradient4013);fill-opacity:1;stroke:none;filter:url(#filter4094);opacity:0.33984375"
+       d="m 468.77175,619.26484 c -0.18065,0.50151 -0.26705,1.02117 -0.26705,1.53125 0,12.27362 53.12236,22.21875 118.67422,22.21875 65.55187,0 118.70093,-9.94513 118.70093,-22.21875 0,-0.5126 -0.11133,-1.02731 -0.29375,-1.53125 l -236.81435,0 z"
+       id="path3980-1"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/yuriy_polyulya/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/manifesto.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g3781-2"
+       transform="translate(387.30597,348.65686)"
+       inkscape:export-filename="/home/yuriy_polyulya/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/manifesto.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         rx="10.1015"
+         ry="9.0913725"
+         y="182.62083"
+         x="76.771591"
+         height="87.88327"
+         width="240.41631"
+         id="rect2985-0"
+         style="fill:none;stroke:#000000;stroke-width:10;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3777-3)" />
+      <rect
+         rx="10.1015"
+         ry="9.0913725"
+         y="182.11577"
+         x="76.771599"
+         height="87.88327"
+         width="240.41631"
+         id="rect2985-6-4"
+         style="fill:none;stroke:#ff98cc;stroke-width:7;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3781-1"
+       transform="translate(493.02025,87.228283)"
+       inkscape:export-filename="/home/yuriy_polyulya/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/manifesto.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         rx="10.1015"
+         ry="9.0913725"
+         y="182.62083"
+         x="76.771591"
+         height="87.88327"
+         width="240.41631"
+         id="rect2985-61"
+         style="fill:none;stroke:#000000;stroke-width:10;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3777-38)" />
+      <rect
+         rx="10.1015"
+         ry="9.0913725"
+         y="182.11577"
+         x="76.771599"
+         height="87.88327"
+         width="240.41631"
+         id="rect2985-6-45"
+         style="fill:none;stroke:#74ff8a;stroke-width:7;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <path
+       style="fill:url(#radialGradient4013-0);fill-opacity:1;stroke:none;filter:url(#filter4086);opacity:0.33984375"
+       d="m 180.86519,279.05861 c -0.18064,0.50151 -0.26704,1.02117 -0.26704,1.53125 0,12.27362 53.12236,22.21875 118.67422,22.21875 65.55187,0 118.70093,-9.94513 118.70093,-22.21875 0,-0.5126 -0.11133,-1.02731 -0.29375,-1.53125 l -236.81436,0 z"
+       id="path3980-7"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/yuriy_polyulya/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/manifesto.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g3781-6"
+       transform="translate(101.59168,8.656855)"
+       inkscape:export-filename="/home/yuriy_polyulya/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/manifesto.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         rx="10.1015"
+         ry="9.0913725"
+         y="182.62083"
+         x="76.771591"
+         height="87.88327"
+         width="240.41631"
+         id="rect2985-4"
+         style="fill:none;stroke:#000000;stroke-width:10;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3777-2)" />
+      <rect
+         rx="10.1015"
+         ry="9.0913725"
+         y="182.11577"
+         x="76.771599"
+         height="87.88327"
+         width="240.41631"
+         id="rect2985-6-46"
+         style="fill:none;stroke:#5ce1ff;stroke-width:7;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:31px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#e8e8e8;font-family:Sans;-inkscape-font-specification:Sans Bold;stroke-opacity:1"
+       x="198.57144"
+       y="246.6479"
+       id="text3845"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yuriy_polyulya/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/manifesto.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3847"
+         x="198.57144"
+         y="246.6479">Responsive</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:31px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#e8e8e8;font-family:Sans;-inkscape-font-specification:Sans Bold;stroke-opacity:1"
+       x="86.711418"
+       y="487.73221"
+       id="text3845-5"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yuriy_polyulya/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/manifesto.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3847-2"
+         x="86.711418"
+         y="487.73221">Event-Driven</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:31px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#e8e8e8;font-family:Sans;-inkscape-font-specification:Sans Bold;stroke-opacity:1"
+       x="616.71143"
+       y="323.44653"
+       id="text3845-6"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yuriy_polyulya/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/manifesto.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3847-8"
+         x="616.71143"
+         y="323.44653">Resilent</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:31px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#e8e8e8;font-family:Sans;-inkscape-font-specification:Sans Bold;stroke-opacity:1"
+       x="512.42572"
+       y="586.30365"
+       id="text3845-8"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yuriy_polyulya/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/manifesto.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3847-9"
+         x="512.42572"
+         y="586.30365">Scalable</tspan></text>
+  </g>
+</svg>

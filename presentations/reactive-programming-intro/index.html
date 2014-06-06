@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>How to be polymorphic in Scala</title>
+    <link rel="stylesheet" href="../../css/reveal.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="../../css/code.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <div style="height:600px;"><div style="padding:200px 0px 0px 0px;">
+        <h2>Functional Reactive Programming<br/>Introduction</h2>
+        <p>
+          by&nbsp;
+          <a href="http://linkedin.com/in/polyulya" class="roll"><span data-title="Yuriy Polyulya">Yuriy Polyulya</span></a>
+          &nbsp;/&nbsp;
+          <a href="http://twitter.com/polyulya" class="roll"><span data-title="@polyulya">@polyulya</span></a>
+          &nbsp;/&nbsp;
+          <a href="http://cogita-et-visa.blogspot.com" class="roll"><span data-title="+blog">+blog</span></a>
+        </p>
+        </div></div>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Reactive Programming</h3>
+        <p style="font-size:50%;text-align:left;vertical-align:bottom;">is a programming paradigm oriented around <b>data flows</b> and the propagation of change. 
+        </p>
+        <br/>
+        <h4 style="text-align:left;margin:0;">Reactive manifesto (<a href="http://www.reactivemanifesto.org" class="roll"><span data-title="here">here</span></a>):</h4>
+        <section style="padding:0;">
+          <img src="assets/manifesto.png" alt="url" title=""><br/><br/>
+        </section>
+        <section>
+          <div style="display:inline-block;">
+          <div style="display:inline-block;width:60%;vertical-align:top;">
+            <ul style="line-height:200%;font-size:85%;">
+              <li class="fragment roll-in" data-fragment-index="1"><i>react to&nbsp;&nbsp;&nbsp;EVENT</i>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;<b>Event-Driven</b></li>
+              <li class="fragment roll-in" data-fragment-index="2"><i>react to&nbsp;&nbsp;&nbsp;LOAD</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;<b>Scalable</b></li>
+              <li class="fragment roll-in" data-fragment-index="3"><i>react to&nbsp;&nbsp;&nbsp;FAILURE</i>&nbsp;-&nbsp;&nbsp;<b>Resilient</b></li>
+              <li class="fragment roll-in" data-fragment-index="4"><i>react to&nbsp;&nbsp;&nbsp;USERS</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;<b>Responsive</b></li>
+            </ul>
+          </div>
+          <div style="display:inline-block;width:35%;"><img style="align:right;" src="assets/manifesto.png" alt="url" title=""></div>
+          </div>
+        </section>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">How:</h3>
+        <br/>
+        <ul style="list-style-type:none;list-style:none;width:100%;">
+          <li class="fragment" data-fragment-index="0">
+            <h4 style="text-align:left;margin:0;">Never block</h4>
+            <p style="font-size:50%;text-align:left;vertical-align:bottom;">Blocking kills scalability (and performance)</p>
+            <ul style="text-align:left;margin:0;font-size:75%;">
+              <li class="fragment roll-in" data-fragment-index="2">Never hold resources what you don’t use</li>
+              <li class="fragment roll-in" data-fragment-index="3">Use non-blocking IO</li>
+              <li class="fragment roll-in" data-fragment-index="4">Use lock-free concurrency</li>
+            </ul>
+          </li>
+          <li class="fragment" data-fragment-index="5">
+            </br>
+            <h4 style="text-align:left;margin:0;">Go Async</h4>
+            <ul style="text-align:left;margin:0;font-size:75%;">
+              <li class="fragment roll-in" data-fragment-index="6">Use asynchronous event/message passing</li>
+              <li class="fragment roll-in" data-fragment-index="7">Think in workflow, how the events flow in the system</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Tools:</h3>
+        <p style="font-size:50%;text-align:left;">needs to be reactive from top to bottom</p><br/>
+        <section>
+          <h4 style="text-align:left;margin:0;">Actors</h4>
+          </br>
+          <ul style="text-align:left;margin:0;font-size:75%;width:100%;">
+            <li class="fragment roll-in" data-fragment-index="1">Share NOTHING</li>
+            <li class="fragment roll-in" data-fragment-index="2">Isolated lightweight event-based processes</li>
+            <li class="fragment roll-in" data-fragment-index="3">Communicates through asynchronous &amp; non-blocking message passing</li>
+            <li class="fragment roll-in" data-fragment-index="4">Location transparent (distributable)</li>
+          </ul>
+        </section>
+        <section>
+          <h4 style="text-align:left;margin:0;">Agents</h4>
+          </br>
+          <ul style="text-align:left;margin:0;font-size:75%;width:100%;">
+            <li class="fragment roll-in" data-fragment-index="1">Reactive memory cells</li>
+            <li class="fragment roll-in" data-fragment-index="2">Send a update function to the Agent</li>
+            <li class="fragment roll-in" data-fragment-index="3">Reads are “free” (dereferences the Ref)</li>
+            <li class="fragment roll-in" data-fragment-index="4">Composes easy</li>
+          </ul>
+        </section>
+        <section>
+          <h4 style="text-align:left;margin:0;">Futures/Dataflow</h4>
+          </br>
+          <ul style="text-align:left;margin:0;font-size:75%;width:100%;">
+            <li class="fragment roll-in" data-fragment-index="1">Write-once / Read-many</li>
+            <li class="fragment roll-in" data-fragment-index="2">Freely sharable</li>
+            <li class="fragment roll-in" data-fragment-index="3">Allows non-blocking composition</li>
+            <li class="fragment roll-in" data-fragment-index="4">Build in model for managing failure</li>
+          </ul>
+        </section>
+        <section>
+          <h4 style="text-align:left;margin:0;">Reactive Extensions (Rx)</h4>
+          </br>
+          <ul style="text-align:left;margin:0;font-size:75%;width:100%;">
+            <li class="fragment roll-in" data-fragment-index="1">Extend Futures with the concept of a Stream</li>
+            <li class="fragment roll-in" data-fragment-index="2">Composable in a type-safe way</li>
+            <li class="fragment roll-in" data-fragment-index="3">Event-based &apm; asynchronous</li>
+            <li class="fragment roll-in" data-fragment-index="4">Observable ⇛ Push Collections</li>
+          </ul>
+        </section>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Amdahl’s Law</h3>
+        <img src="assets/amdahls.png" alt="url" title=""><br/><br/>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Functional Reactive Programming (FRP)</h3>
+        <p style="font-size:50%;text-align:left;">as the only true way to overcome ever-changing data</p><br/>
+
+        <ul style="list-style-type:none;list-style:none; width:100%">
+          <li class="fragment roll-in" data-fragment-index="0">
+            <h4>Non-reactive:</h4>
+            <pre><code data-trim class="scala">
+x = 42
+y = x + 1   // x == 42, y == 43
+x = x + 1   // x == 43, y == 43
+            </code></pre>
+          </li>
+          <li class="fragment roll-in" data-fragment-index="1">
+            </br>
+            <h4>Reactive:</h4>
+            <pre><code data-trim class="scala">
+x = 42
+y = x + 1   // x == 42, y == 43
+x = x + 1   // x == 43, y == 44 !!!
+            </code></pre>
+          </li>
+          <li class="fragment roll-in" data-fragment-index="2">
+            </br>
+            <h4>State and Behavior Are Joined:</h4>
+            <pre><code data-trim class="scala">
+f(g(h(x)))  // with 'x' changing over time
+            </code></pre>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">What we can do:</h3>
+        <br/>
+        <ul style="text-align:left;margin:0;font-size:100%;width:100%;">
+          <li class="fragment roll-in" data-fragment-index="1">Filter</li>
+          <li class="fragment roll-in" data-fragment-index="2">Merge (composing)</li>
+          <li class="fragment roll-in" data-fragment-index="3">Zip (combining)</li>
+          <li class="fragment roll-in" data-fragment-index="4">Throttle</li>
+          <li class="fragment roll-in" data-fragment-index="5">Map</li>
+          <li class="fragment roll-in" data-fragment-index="6">Memo (buffering)</li>
+          <li class="fragment roll-in" data-fragment-index="7">...</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Higher-kinded (ranked) polymorphism</h3><br/>
+
+      </section>
+
+    </div>
+  </div>
+
+  <script src="../../js/reveal.min.js"></script>
+  <script src="../../js/head.min.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      rollingLinks: true,
+      history: true,
+      center: false,
+      theme: Reveal.getQueryHash().theme,
+      transition: 'default',
+      dependencies: [
+          { src: '../../js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../js/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '../../js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+     });
+  </script>
+  <script type="text/javascript" src="../../js/highlight.js"></script>
+  <script type="text/javascript" src="../../js/zoom.js"></script>
+</body>
+</html>
