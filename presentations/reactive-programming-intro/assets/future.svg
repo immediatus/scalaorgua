@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg4966"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="future.svg">
+  <defs
+     id="defs4968" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="185.15759"
+     inkscape:cy="560.63007"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1056"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4971">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#00b2c6;fill-opacity:1;stroke:#ffffff;stroke-width:3.36447239;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect4974"
+       width="181.0641"
+       height="95.349815"
+       x="415.89651"
+       y="196.83012"
+       rx="8.2034035"
+       ry="7.3377042"
+       inkscape:export-filename="/home/yury/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/future.png"
+       inkscape:export-xdpi="119.99694"
+       inkscape:export-ydpi="119.99694" />
+    <g
+       id="g5124"
+       inkscape:export-filename="/home/yury/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/future.png"
+       inkscape:export-xdpi="119.99694"
+       inkscape:export-ydpi="119.99694"
+       transform="matrix(0.93718914,0.34882161,-0.34882161,0.93718914,302.14735,-49.115777)">
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path4138"
+         d="M 50.002551,199.79343 C 162.12948,198.78327 171.72594,210.40004 171.72594,210.40004"
+         style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4602"
+         d="m 163.13964,193.60624 c 9.59645,15.15229 8.08122,16.66752 8.08122,16.66752 l -17.17259,7.57614"
+         style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path4138-3"
+         d="M 49.750009,199.57201 C 161.87694,198.56185 171.4734,210.17862 171.4734,210.17862"
+         style="fill:none;stroke:#ffffff;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4602-1"
+         d="m 163.096,193.60625 c 9.59645,15.15229 8.08122,16.66752 8.08122,16.66752 l -17.17259,7.57614"
+         style="fill:none;stroke:#ffffff;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="390"
+       y="182.36218"
+       id="text5603"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yury/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/future.png"
+       inkscape:export-xdpi="119.99694"
+       inkscape:export-ydpi="119.99694"><tspan
+         sodipodi:role="line"
+         id="tspan5605"
+         x="390"
+         y="182.36218"
+         style="font-size:24px;font-weight:bold;-inkscape-font-specification:Sans Bold;fill:#ffffff;fill-opacity:1">Promise[Bicycle]</tspan></text>
+    <rect
+       style="fill:#00b2c6;fill-opacity:1;stroke:#ffffff;stroke-width:3.36447239;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect4974-2"
+       width="181.0641"
+       height="95.349815"
+       x="111.79385"
+       y="370.1973"
+       rx="8.2034035"
+       ry="7.3377042"
+       inkscape:export-filename="/home/yury/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/future.png"
+       inkscape:export-xdpi="119.99694"
+       inkscape:export-ydpi="119.99694" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="95.040184"
+       y="358.58652"
+       id="text5603-3"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yury/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/future.png"
+       inkscape:export-xdpi="119.99694"
+       inkscape:export-ydpi="119.99694"><tspan
+         sodipodi:role="line"
+         id="tspan5605-2"
+         x="95.040184"
+         y="358.58652"
+         style="font-size:24px;font-weight:bold;-inkscape-font-specification:Sans Bold;fill:#ffffff;fill-opacity:1">Future[Bicycle]</tspan></text>
+    <g
+       id="g5124-5"
+       inkscape:export-filename="/home/yury/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/future.png"
+       inkscape:export-xdpi="119.99694"
+       inkscape:export-ydpi="119.99694"
+       transform="matrix(0.93718914,0.34882161,-0.34882161,0.93718914,330.45737,265.35384)">
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path4138-0"
+         d="M 50.002551,199.79343 C 162.12948,198.78327 171.72594,210.40004 171.72594,210.40004"
+         style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4602-6"
+         d="m 163.13964,193.60624 c 9.59645,15.15229 8.08122,16.66752 8.08122,16.66752 l -17.17259,7.57614"
+         style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path4138-3-7"
+         d="M 49.750009,199.57201 C 161.87694,198.56185 171.4734,210.17862 171.4734,210.17862"
+         style="fill:none;stroke:#ffffff;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4602-1-2"
+         d="m 163.096,193.60625 c 9.59645,15.15229 8.08122,16.66752 8.08122,16.66752 l -17.17259,7.57614"
+         style="fill:none;stroke:#ffffff;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g5124-1"
+       inkscape:export-filename="/home/yury/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/future.png"
+       inkscape:export-xdpi="119.99694"
+       inkscape:export-ydpi="119.99694"
+       transform="matrix(-0.93718914,0.34882161,0.34882161,0.93718914,399.54263,102.49668)">
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path4138-1"
+         d="M 50.002551,199.79343 C 162.12948,198.78327 171.72594,210.40004 171.72594,210.40004"
+         style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4602-17"
+         d="m 163.13964,193.60624 c 9.59645,15.15229 8.08122,16.66752 8.08122,16.66752 l -17.17259,7.57614"
+         style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path4138-3-3"
+         d="M 49.750009,199.57201 C 161.87694,198.56185 171.4734,210.17862 171.4734,210.17862"
+         style="fill:none;stroke:#ffffff;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4602-1-5"
+         d="m 163.096,193.60625 c 9.59645,15.15229 8.08122,16.66752 8.08122,16.66752 l -17.17259,7.57614"
+         style="fill:none;stroke:#ffffff;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="67.325882"
+       y="139.17523"
+       id="text5603-0"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yury/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/future.png"
+       inkscape:export-xdpi="119.99694"
+       inkscape:export-ydpi="119.99694"><tspan
+         sodipodi:role="line"
+         id="tspan5605-5"
+         x="67.325882"
+         y="139.17523"
+         style="font-size:24px;font-weight:bold;-inkscape-font-specification:Sans Bold;fill:#ffffff;fill-opacity:1">complete(bicycle)</tspan><tspan
+         sodipodi:role="line"
+         x="67.325882"
+         y="169.17523"
+         style="font-size:24px;font-weight:bold;-inkscape-font-specification:Sans Bold;fill:#ffffff;fill-opacity:1"
+         id="tspan5699">failure(reason)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="435.86078"
+       y="533.46875"
+       id="text5603-0-3"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yury/work/projects/scalaorgua/presentations/reactive-programming-intro/assets/future.png"
+       inkscape:export-xdpi="119.99694"
+       inkscape:export-ydpi="119.99694"><tspan
+         sodipodi:role="line"
+         id="tspan5605-5-8"
+         x="435.86078"
+         y="533.46875"
+         style="font-size:24px;font-weight:bold;-inkscape-font-specification:Sans Bold;fill:#ffffff;fill-opacity:1">onComplete(ride)</tspan><tspan
+         sodipodi:role="line"
+         x="435.86078"
+         y="563.46875"
+         style="font-size:24px;font-weight:bold;-inkscape-font-specification:Sans Bold;fill:#ffffff;fill-opacity:1"
+         id="tspan5699-9">failure(cry)</tspan></text>
+  </g>
+</svg>

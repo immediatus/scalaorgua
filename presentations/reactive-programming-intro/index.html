@@ -30,7 +30,7 @@
 
       <section>
         <h3 style="text-align:left;">Reactive Programming</h3>
-        <p style="font-size:50%;text-align:left;vertical-align:bottom;">is a programming paradigm oriented around <b>data flows</b> and the propagation of change. 
+        <p style="font-size:50%;text-align:left;vertical-align:bottom;">is a programming paradigm oriented around <b>data flows</b> and the propagation of change.
         </p>
         <br/>
         <h4 style="text-align:left;margin:0;">Reactive manifesto (<a href="http://www.reactivemanifesto.org" class="roll"><span data-title="here">here</span></a>):</h4>
@@ -53,7 +53,7 @@
       </section>
 
       <section>
-        <h3 style="text-align:left;">How:</h3>
+        <h3 style="text-align:left;">How to be reactive:</h3>
         <br/>
         <ul style="list-style-type:none;list-style:none;width:100%;">
           <li class="fragment" data-fragment-index="0">
@@ -77,8 +77,18 @@
       </section>
 
       <section>
-        <h3 style="text-align:left;">Tools:</h3>
+        <h3 style="text-align:left;">Reactive tools:</h3>
         <p style="font-size:50%;text-align:left;">needs to be reactive from top to bottom</p><br/>
+        <section>
+          <h4 style="text-align:left;margin:0;">Futures &amp; Promices (Dataflow)</h4>
+          </br>
+          <ul style="text-align:left;margin:0;font-size:75%;width:100%;">
+            <li class="fragment roll-in" data-fragment-index="1">Write-once / Read-many</li>
+            <li class="fragment roll-in" data-fragment-index="2">Freely sharable</li>
+            <li class="fragment roll-in" data-fragment-index="3">Allows non-blocking composition</li>
+            <li class="fragment roll-in" data-fragment-index="4">Build in model for managing failure</li>
+          </ul>
+        </section>
         <section>
           <h4 style="text-align:left;margin:0;">Actors</h4>
           </br>
@@ -100,16 +110,6 @@
           </ul>
         </section>
         <section>
-          <h4 style="text-align:left;margin:0;">Futures/Dataflow</h4>
-          </br>
-          <ul style="text-align:left;margin:0;font-size:75%;width:100%;">
-            <li class="fragment roll-in" data-fragment-index="1">Write-once / Read-many</li>
-            <li class="fragment roll-in" data-fragment-index="2">Freely sharable</li>
-            <li class="fragment roll-in" data-fragment-index="3">Allows non-blocking composition</li>
-            <li class="fragment roll-in" data-fragment-index="4">Build in model for managing failure</li>
-          </ul>
-        </section>
-        <section>
           <h4 style="text-align:left;margin:0;">Reactive Extensions (Rx)</h4>
           </br>
           <ul style="text-align:left;margin:0;font-size:75%;width:100%;">
@@ -124,6 +124,17 @@
       <section>
         <h3 style="text-align:left;">Amdahl’s Law</h3>
         <img src="assets/amdahls.png" alt="url" title=""><br/><br/>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Most modern web frameworks</h3><br/>
+        <img src="assets/webfw.png" alt="url" title=""><br/>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">How would it needed to work</h3>
+        <p style="font-size:50%;text-align:left;">do not call us, we will call you</p><br/>
+        <img src="assets/reactwebfw.png" alt="url" title=""><br/>
       </section>
 
       <section>
@@ -161,21 +172,87 @@ f(g(h(x)))  // with 'x' changing over time
       <section>
         <h3 style="text-align:left;">What we can do:</h3>
         <br/>
-        <ul style="text-align:left;margin:0;font-size:100%;width:100%;">
+        <ul style="text-align:left;margin:0;font-size:100%;width:100%;line-height:200%;">
           <li class="fragment roll-in" data-fragment-index="1">Filter</li>
           <li class="fragment roll-in" data-fragment-index="2">Merge (composing)</li>
           <li class="fragment roll-in" data-fragment-index="3">Zip (combining)</li>
           <li class="fragment roll-in" data-fragment-index="4">Throttle</li>
-          <li class="fragment roll-in" data-fragment-index="5">Map</li>
+          <li class="fragment roll-in" data-fragment-index="5">Map (transforming)</li>
           <li class="fragment roll-in" data-fragment-index="6">Memo (buffering)</li>
           <li class="fragment roll-in" data-fragment-index="7">...</li>
         </ul>
       </section>
 
       <section>
-        <h3 style="text-align:left;">Higher-kinded (ranked) polymorphism</h3><br/>
-
+        <h3 style="text-align:left;">Futures &amp; Promises</h3><br/>
+        <ul style="list-style-type:none;list-style:none;margin:0;width:100%;line-height:200%;">
+          <li style="text-align:left;" class="fragment roll-in" data-fragment-index="1">"I promise that I will buy you a bicycle when you are old enough to cycling"<br/><br/></li>
+          <li style="text-align:right;" class="fragment roll-in" data-fragment-index="2"><br/><br/>"When I (in the future) get a bicycle I will ride a bike to school"</li>
+        </ul>
       </section>
+
+      <section>
+        <h3 style="text-align:left;">Futures &amp; Promises</h3>
+        <img src="assets/future.png" alt="url" title=""><br/>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Futures &amp; Promises</h3>
+        <p style="font-size:50%;text-align:left;">transforming the future</p><br/>
+        <img src="assets/map.png" alt="url" title=""><br/>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Futures &amp; Promises</h3>
+        <p style="font-size:50%;text-align:left;">if the future is not that bright</p><br/>
+        <img src="assets/mapFailure.png" alt="url" title=""><br/>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Futures &amp; Promises</h3>
+        <p style="font-size:50%;text-align:left;">composing (chaining) futures</p>
+        <img src="assets/compose.png" alt="url" title=""><br/>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Futures &amp; Promises</h3>
+        <p style="font-size:50%;text-align:left;">flatting futures</p><br/>
+        <img src="assets/flatMap.png" alt="url" title=""><br/>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Futures &amp; Promises</h3>
+        <p style="font-size:50%;text-align:left;">sequence futures</p>
+        <img src="assets/futureSequence.png" alt="url" title=""><br/>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">When should Futures used:</h3><br/>
+        <ul style="text-align:left;margin:0;font-size:100%;width:100%;line-height:200%;">
+          <li class="fragment roll-in" data-fragment-index="1">For using other services (ws, db, etc)</li>
+          <li class="fragment roll-in" data-fragment-index="2">For parallel work</li>
+          <li class="fragment roll-in" data-fragment-index="3">Background work</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 style="text-align:left;">Home work:</h3><br/>
+        <ul style="text-align:left;margin:0;font-size:100%;width:100%;line-height:200%;">
+          <li class="fragment roll-in" data-fragment-index="1">Actors / Agents</li>
+          <li class="fragment roll-in" data-fragment-index="1">Iteratee / Reactive Streams</li>
+        </ul>
+      </section>
+
+      <section>
+        <div style="height:600px;"><div style="padding:200px 0px 0px 0px;">
+        <ul style="width:100%;list-style-type:none;list-style:none;align:center;text-align:center;">
+          <li data-fragment-index="0"><h2>Questions?</h2><br/></li>
+          <li class="fragment roll-in" data-fragment-index="1"><h2>Remarks?</h2><br/></li>
+          <li class="fragment roll-in" data-fragment-index="2"><h2>Thank you!</h2></li>
+        </ul>
+        </div></div>
+      </section>
+
 
     </div>
   </div>
