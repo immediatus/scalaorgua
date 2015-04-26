@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>How to be polymorphic in Scala</title>
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/code.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <h3 style="text-align:left;">Content:</h3>
+        <ul style="width:100%">
+          <li style="padding-top: 20px">
+            <a href="http://scala.org.ua/presentations/scala-polymorphism/" class="roll">
+              <span data-title="How to be polymorphic in scala">How to be polymorphic in scala</span>
+            </a>
+          </li>
+          <li style="padding-top: 20px">
+            <a href="http://scala.org.ua/presentations/scala-functional-refactoring/" class="roll">
+              <span data-title="Functional refactoring in scala">Functional refactoring in scala</span>
+            </a>
+          </li>
+          <li style="padding-top: 20px">
+            <a href="http://scala.org.ua/presentations/reactive-programming-intro/" class="roll">
+              <span data-title="Functional reactive programming introduction">Functional reactive programming introduction</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="js/reveal.min.js"></script>
+  <script src="js/head.min.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      rollingLinks: true,
+      history: true,
+      center: false,
+      theme: Reveal.getQueryHash().theme,
+      transition: 'default',
+      dependencies: [
+          { src: 'js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'js/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+     });
+  </script>
+  <script type="text/javascript" src="js/highlight.js"></script>
+  <script type="text/javascript" src="js/zoom.js"></script>
+</body>
+</html>
