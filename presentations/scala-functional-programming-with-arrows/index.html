@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Functional programming with arrows</title>
+    <link rel="stylesheet" href="../../css/reveal.css">
+    <link rel="stylesheet" href="../../css/theme2.css">
+    <link rel="stylesheet" href="../../css/code2.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <div style="height:600px;"><div style="padding:200px 0px 0px 0px;">
+        <h2>Functional programming with arrows</h2>
+        <p>
+          by&nbsp;
+          <a href="http://linkedin.com/in/polyulya" class="roll"><span data-title="Yuriy Polyulya">Yuriy Polyulya</span></a>
+          &nbsp;@
+          <a href="http://workday.github.io/" class="roll"><span data-title="Workday">Workday</span></a>
+        </p>
+        </div></div>
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Baseline & Goals:</h3>
+        <section>
+          <p style="font-size:50%;text-align:left;">The most imaportant ideas in modern functional programming are:</p>
+          <ul style="list-style-type:decimal;font-size:150%;width:100%;padding-bottom:100px;">
+            <li class="fragment roll-in" style="padding-top:50px;" data-fragment-index="0">
+              It's all about data
+              <p style="font-size:33%;text-align:left;margin-top:10px;">functional programming is all about putting data first.
+              The firts is defining what kinds of data we have in a problem domain, and what kinds of transformations we want on them.
+              Then we building up the data structures and the code to do the transformations.</>
+            </li>
+            <li class="fragment roll-in" style="padding-top:50px;" data-fragment-index="1">
+              Managing of side-effect
+              <p style="font-size:33%;text-align:left;margin-top:10px;">functional programming is not about pure functions any more. Eventually, programs will produce side-effects and side-effect management is a puzzle with many parts.</p>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <div style="height:600px;"><div style="padding:200px 0px 0px 0px;">
+          <p style="color:#602749;font-size:150%;font-family:'Lobster', sans-serif;">"to show one of technics of managing your data &amp; control side-effect"</p>
+          </div></div>
+        </section>
+        <section>
+          <ul style="list-style-type:decimal;font-size:100%;width:100%;padding-top:40px;line-height:2;">
+            <li>Function and Combinators</br><p style="font-size:40%;text-align:left;padding-left:200px;line-height: 0.2em;">* Product &amp; CoProduct Type</p>
+            </li>
+            <li>Arrows and Applicatives</li>
+            <li>Arrows and Monads</li>
+            <li>Arrows and Transducers</li>
+          </ul>
+        </section>
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Function and Combinators</h3>
+        <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Theory:</p>
+          <div class="fragment" style="height:170px;">
+            <div class="fragment current-visible" style="position:absolute;margin-left:50px;"><img src="assets/A1.png" alt="url" title=""></div>
+            <div class="fragment current-visible" style="position:absolute;margin-left:50px;"><img src="assets/A2.png" alt="url" title=""></div>
+            <div class="fragment current-visible" style="position:absolute;margin-left:50px;"><img src="assets/A3.png" alt="url" title=""></div>
+            <div class="fragment current-visible" style="position:absolute;margin-left:50px;"><img src="assets/A4.png" alt="url" title=""></div>
+          </div>
+
+          <div class="fragment current-visible">
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Abstraction:</p>
+          <img src="assets/F1.png" alt="url" title="">
+          </div>
+
+          <div class="fragment current-visible">
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+val f: String => Int = str => str.length
+
+f("Hello")  // => 5
+f("By!")    // => 3
+          </code></pre>
+          </div>
+
+        </div></section>
+
+        <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
+
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
+          <img src="assets/F2.png" alt="url" title="">
+
+          <div class="fragment current-visible">
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+val f: String => Int = str => str.length
+val g: Int => Int    = i => i * 2
+
+val h = g compose h  //  f >>> h
+
+h("Hello")           // => 10
+h("By!")             // => 6
+          </code></pre>
+          </div>
+
+        </div></section>
+
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Data-Type: Product</h3>
+        <p style="font-size:50%;text-align:left;">the structure of a product type is determined by the fixed order of the operands in the product.</br>
+        The product of type<sub>1</sub>, ..., type<sub>n</sub> is written type<sub>1</sub> * ... * type<sub>n</sub> in ML and <b>(type<sub>1</sub>,...,type<sub>n</sub>)</b>.</p>
+
+        <section>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
+          <img src="assets/P1.png" alt="url" title="">
+        </section>
+
+        <section>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
+
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+val f: String => Int = str => str.length
+val g: Int => Int    = i => i * 2
+          </code></pre>
+        </section>
+
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Data-Type: Co-Product</h3>
+        <p style="font-size:50%;text-align:left;">the structure of a product type is determined by the fixed order of the operands in the product.</br>
+        The product of type<sub>1</sub>, ..., type<sub>n</sub> is written type<sub>1</sub> * ... * type<sub>n</sub> in ML and <b>(type<sub>1</sub>,...,type<sub>n</sub>)</b>.</p>
+
+        <section>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
+          <img src="assets/P2.png" alt="url" title="">
+        </section>
+
+        <section>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
+
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+val f: String => Int = str => str.length
+val g: Int => Int    = i => i * 2
+          </code></pre>
+        </section>
+
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Function and Combinators</h3>
+
+        <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
+
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
+          <img src="assets/F3.png" alt="url" title="">
+
+          <div class="fragment current-visible">
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+val f: String => Int    = str => str.length
+val g: String => String = str => str * 2
+
+val h = g &&& h
+
+h("Hello")           // => (5, "HelloHello")
+h("By!")             // => (6, "By!By!")
+          </code></pre>
+          </div>
+
+        </div></section>
+
+        <section><div style="height:600px;"><div style="padding:100px 0px 0px 0px;">
+
+        </div></section>
+
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Arrows with Product & CoProduct</h3>
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Arrows & Applicatives</h3>
+        <section>
+          <h4 style="text-align:left;"></h4>
+        </section>
+        <section>
+          <h4 style="text-align:left;">Arrow = Category + Applicative?</h4>
+        </section>
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Arrows & Monads</h3>
+        <section>
+          <h4 style="text-align:left;"></h4>
+        </section>
+        <section>
+          <h4 style="text-align:left;">Kleisli & CoKleisli Arrow</h4>
+        </section>
+        <section>
+          <h4 style="text-align:left;">Generalising monads to arrows</h4>
+        </section>
+        <section>
+          <h4 style="text-align:left;">What can Arrows do that Monads can't?</h4>
+        </section>
+        <section>
+          <h4 style="text-align:left;">Arrows for Errors: extending the error (Try) monad</h4>
+        </section>
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Arrow based stream transducers</h3>
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Arrows in Domain Modeling (Kleisli Arrow)</h3>
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Summary</h3>
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <div style="height:600px;"><div style="padding:200px 0px 0px 0px;">
+        <ul style="width:100%;list-style-type:none;list-style:none;align:center;text-align:center;">
+          <li data-fragment-index="0"><h2>Questions?</h2><br/></li>
+          <li class="fragment roll-in" data-fragment-index="1"><h2>Remarks?</h2></li>
+        </ul>
+        </div></div>
+      </section>
+
+
+
+    </div>
+  </div>
+
+  <script src="../../js/reveal.min.js"></script>
+  <script src="../../js/head.min.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      rollingLinks: true,
+      history: true,
+      center: false,
+      theme: Reveal.getQueryHash().theme,
+      transition: 'default',
+      dependencies: [
+          { src: '../../js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../js/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '../../js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+     });
+  </script>
+  <script type="text/javascript" src="../../js/highlight.js"></script>
+  <script type="text/javascript" src="../../js/zoom.js"></script>
+</body>
+</html>
