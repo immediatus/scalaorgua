@@ -14,6 +14,7 @@
   <div class="reveal">
     <div class="slides">
 
+<!-- ------------------------------------------------------------------------------------- -->
       <section>
         <div style="height:600px;"><div style="padding:200px 0px 0px 0px;">
         <h2>Functional programming with arrows</h2>
@@ -136,8 +137,7 @@ val g: Int => Int    = i => i * 2
 <!-- ------------------------------------------------------------------------------------- -->
       <section>
         <h3 style="text-align:left;">Data-Type: Co-Product</h3>
-        <p style="font-size:50%;text-align:left;">the structure of a product type is determined by the fixed order of the operands in the product.</br>
-        The product of type<sub>1</sub>, ..., type<sub>n</sub> is written type<sub>1</sub> * ... * type<sub>n</sub> in ML and <b>(type<sub>1</sub>,...,type<sub>n</sub>)</b>.</p>
+        <p style="font-size:50%;text-align:left;">very similar to the Either data type; the only difference is that it does not combine two base types, but two type constructors.</p>
 
         <section>
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
@@ -246,8 +246,6 @@ h("By!")             // => (6, "By!By!")
         </div></div>
       </section>
 
-
-
     </div>
   </div>
 
@@ -261,7 +259,11 @@ h("By!")             // => (6, "By!By!")
       history: true,
       center: false,
       theme: Reveal.getQueryHash().theme,
-      transition: 'default',
+
+      transition: 'linear',
+      transitionSpeed: 'fast',
+      backgroundTransition: 'slide',
+
       dependencies: [
           { src: '../../js/classList.js', condition: function() { return !document.body.classList; } },
           { src: '../../js/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
