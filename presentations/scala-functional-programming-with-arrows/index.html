@@ -52,8 +52,9 @@
         </section>
         <section>
           <ul style="list-style-type:decimal;font-size:100%;width:100%;padding-top:40px;line-height:2;">
-            <li>Function and Combinators</br><p style="font-size:40%;text-align:left;padding-left:200px;line-height: 0.2em;">* Product &amp; CoProduct Type</p>
-            </li>
+            <li>Function and Combinators</li>
+            <li>Arrows and Product</li>
+            <li>Arrows and Co-Product</li>
             <li>Arrows and Applicatives</li>
             <li>Arrows and Monads</li>
             <li>Arrows and Transducers</li>
@@ -65,9 +66,8 @@
       <section>
         <h3 style="text-align:left;">Function and Combinators</h3>
         <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
-          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Theory:</p>
-          <div class="fragment" style="height:170px;">
-            <div class="fragment current-visible" style="position:absolute;margin-left:50px;"><img src="assets/A1.png" alt="url" title=""></div>
+          <div style="height:200px;">
+            <div style="position:absolute;margin-left:50px;"><img src="assets/A1.png" alt="url" title=""></div>
             <div class="fragment current-visible" style="position:absolute;margin-left:50px;"><img src="assets/A2.png" alt="url" title=""></div>
             <div class="fragment current-visible" style="position:absolute;margin-left:50px;"><img src="assets/A3.png" alt="url" title=""></div>
             <div class="fragment current-visible" style="position:absolute;margin-left:50px;"><img src="assets/A4.png" alt="url" title=""></div>
@@ -83,8 +83,8 @@
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
 val f: String => Int = str => str.length
 
-f("Hello")  // => 5
-f("By!")    // => 3
+f("Hello") shouldEqual 5
+f("By!")   shouldEqual 3
           </code></pre>
           </div>
 
@@ -103,8 +103,8 @@ val g: Int => Int    = i => i * 2
 
 val h = g compose h  //  f >>> h
 
-h("Hello")           // => 10
-h("By!")             // => 6
+h("Hello")   shouldEqual 10
+h("Workday") shouldEqual 14
           </code></pre>
           </div>
 
@@ -114,21 +114,36 @@ h("By!")             // => 6
 
 <!-- ------------------------------------------------------------------------------------- -->
       <section>
-        <h3 style="text-align:left;">Data-Type: Product</h3>
+        <h3 style="text-align:left;">Arrows with Product</h3>
         <p style="font-size:50%;text-align:left;">the structure of a product type is determined by the fixed order of the operands in the product.</br>
         The product of type<sub>1</sub>, ..., type<sub>n</sub> is written type<sub>1</sub> * ... * type<sub>n</sub> in ML and <b>(type<sub>1</sub>,...,type<sub>n</sub>)</b>.</p>
 
         <section>
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
           <img src="assets/P1.png" alt="url" title="">
+          </br><p style="color:#602749;font-size:75%;font-family:'Lobster', sans-serif;">h = &lt;f,g&gt; = &lambda;x.(f x,g x)</p>
         </section>
 
         <section>
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
 
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
-val f: String => Int = str => str.length
-val g: Int => Int    = i => i * 2
+// Tuple2[A, B] - scala implementation of product type
+def fst[A,B]: ((A,B)) => A = prod => prod._1  // _1 - scala impl of fst
+def snd[A,B]: ((A,B)) => B = prod => prod._2  // _2 - scala impl of snd
+
+def delta[A, B, C]: (C => A) => (C => B) => (C => (A,B)) =
+  f => g => x => (f(x), g(x))
+
+
+val f: String => Int    = str => str.length
+val g: String => String = str => str.toUpperCase
+val h = delta(f)(g)
+
+forAll { (any: String) =>
+  (h andThen fst)(any) == f(any) &&
+  (h andThen snd)(any) == g(any)
+}
           </code></pre>
         </section>
 
@@ -136,31 +151,9 @@ val g: Int => Int    = i => i * 2
 
 <!-- ------------------------------------------------------------------------------------- -->
       <section>
-        <h3 style="text-align:left;">Data-Type: Co-Product</h3>
-        <p style="font-size:50%;text-align:left;">very similar to the Either data type; the only difference is that it does not combine two base types, but two type constructors.</p>
-
-        <section>
-          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
-          <img src="assets/P2.png" alt="url" title="">
-        </section>
-
-        <section>
-          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
-
-          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
-val f: String => Int = str => str.length
-val g: Int => Int    = i => i * 2
-          </code></pre>
-        </section>
-
-      </section>
-
-<!-- ------------------------------------------------------------------------------------- -->
-      <section>
-        <h3 style="text-align:left;">Function and Combinators</h3>
+        <h3 style="text-align:left;">Function and Combinators (Part 2)</h3>
 
         <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
-
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
           <img src="assets/F3.png" alt="url" title="">
 
@@ -168,26 +161,142 @@ val g: Int => Int    = i => i * 2
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
 val f: String => Int    = str => str.length
-val g: String => String = str => str * 2
+val g: String => String = str => str.toUpperCase
 
-val h = g &&& h
+val h = f &&& g
 
-h("Hello")           // => (5, "HelloHello")
-h("By!")             // => (6, "By!By!")
+h("Hello")   shouldEqual (5, "HELLO")
+h("Workday") shouldEqual (7, "WORKDAY")
           </code></pre>
           </div>
-
         </div></section>
 
-        <section><div style="height:600px;"><div style="padding:100px 0px 0px 0px;">
+        <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Arrow Type-Class:</p>
+          <p style="font-size:50%;text-align:left;">An arrow is the term used in category theory as an abstract notion of thing that behaves like a function.</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+trait Arrow[~>[_, _]] extends Category[~>] {
 
+  def arr[B, C](f: B => C): B ~> C
+
+  def first[B, C, D](f: B ~> C): (B, D) ~> (C, D)
+  def second[A, B, C](f: A ~> B): (C, A) ~> (C, B)
+
+  def &&&[B, C, C2](fbc: B ~> C, fbc2: B ~> C2): B ~> (C, C2)
+  def ***[B, C, B2, C2](fbc: B ~> C, fbc2: B2 ~> C2): (B, B2) ~> (C, C2)
+}
+          </code></pre>
+          <div class="fragment current-visible">
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">And Category Type-Class:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+trait Category[~>[_, _]] {
+
+  def id[A]: A ~> A
+  def compose[A, B, C](f: B ~> C, g: A ~> B): A ~> C  // >>>
+}
+          </code></pre>
+          </div>
         </div></section>
 
       </section>
 
 <!-- ------------------------------------------------------------------------------------- -->
       <section>
-        <h3 style="text-align:left;">Arrows with Product & CoProduct</h3>
+        <h3 style="text-align:left;">Function and Combinators (Part 2)</h3>
+
+        <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
+        <img src="assets/F4.png" alt="url" title="">
+
+        <div class="fragment current-visible">
+        <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
+        <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+val f: String => Int    = str => str.length
+val g: String => String = str => str.toUpperCase
+
+val h = f *** g
+
+h("Hello", "Workday") shouldEqual (5, "WORKDAY")
+        </code></pre>
+        </div>
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Arrows with CoProduct</h3>
+        <p style="font-size:50%;text-align:left;">very similar to the Either data type; the only difference is that it does not combine two base types, but two type constructors.</p>
+
+        <section>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
+          <img src="assets/P2.png" alt="url" title="">
+          </br><p style="color:#602749;font-size:75%;font-family:'Lobster', sans-serif;">h = &lt;f,g&gt; = either f g</p>
+        </section>
+
+        <section>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
+
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+// Either[A, B] - scala implementation of co-product type
+def left[A,B]: A => Either[A,B]  = a => Left(a)
+def right[A,B]: B => Either[A,B] = b => Right(b)
+
+def delta[A, B, C]: (A => C) => (B => C) => (Either[A, B] => C) =
+  f => g => x => x match {
+    case Left(a)  => f(a)
+    case Right(b) => g(b)
+  }
+
+val f: Int    => String = i   => i.toString
+val g: String => String = str => str * 2
+val h = delta(f)(g)
+
+forAll { (anyStr: String, anyInt: Int) =>
+  (left andThen h)(anyInt) == f(anyInt) &&
+  (right andThen h)(anyStr) == g(anyStr)
+}
+          </code></pre>
+        </section>
+
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Function and Combinators (Part 3)</h3>
+
+        <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
+          <img src="assets/F5.png" alt="url" title="">
+
+          <div class="fragment current-visible">
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+val f: String => Int    = str => str.length
+val g: String => String = str => str.toUpperCase
+
+val h = f +++ g
+
+h apply Left[String, String]("Hello")  shouldEqual L[Int, String](5)
+h apply Right[String, String]("Hello") shouldEqual R[Int, String]("HELLO")
+          </code></pre>
+          </div>
+        </div></section>
+
+        <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Arrow Type-Class:</p>
+          <p style="font-size:50%;text-align:left;">make a choice between two arrows, on the basis of a previous result</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+trait ArrowChoice[~>[_, _]] extends Arrow[~>] {
+  type E[A, B] = Either[A, B]
+
+  def left[B, C, D](a: B ~> C): E[B, D] ~> E[C, D]
+  def right[B, C, D](a: B ~> C): E[D, B] ~> E[D, C]
+
+  def +++[B, C, B2, C2](a: B ~> C, b: B2 ~> C2): E[B, B2] ~> E[C, C2]
+  def |||[B, C, D](a: B ~> D, b: C ~> D): E[B, C] ~> D
+}
+          </code></pre>
+        </div></section>
+
+
       </section>
 
 <!-- ------------------------------------------------------------------------------------- -->
@@ -261,7 +370,7 @@ h("By!")             // => (6, "By!By!")
       theme: Reveal.getQueryHash().theme,
 
       transition: 'linear',
-      transitionSpeed: 'fast',
+//      transitionSpeed: 'fast',
       backgroundTransition: 'slide',
 
       dependencies: [

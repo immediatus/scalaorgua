@@ -5,12 +5,26 @@
 
 @font-face {
   font-family: 'League Gothic';
-  src: url("../font/league_gothic-webfont.eot");
-  src: url("../font/league_gothic-webfont.eot?#iefix") format("embedded-opentype"), url("../font/league_gothic-webfont.woff") format("woff"), url("../font/league_gothic-webfont.ttf") format("truetype"), url("../font/league_gothic-webfont.svg#LeagueGothicRegular") format("svg");
+  src: local('League Gothic'), url("../font/league_gothic-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lobster'), local('Lobster-Regular'), url("../font/lobster.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+@font-face {
+  font-family: 'Maven Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Maven Pro Regular'), local('MavenProRegular'), url("../font/mavenpro.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
 
 /*********************************************
  * GLOBAL STYLES
