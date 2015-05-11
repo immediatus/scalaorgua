@@ -64,22 +64,34 @@
 
 <!-- ------------------------------------------------------------------------------------- -->
       <section>
-        <h3 style="text-align:left;">Function and Combinators</h3>
+        <h3 style="text-align:left;">Function</h3>
         <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
-          <div style="height:200px;">
+          <div style="height:150px;">
             <div style="position:absolute;margin-left:50px;"><img src="assets/A1.png" alt="url" title=""></div>
-            <div class="fragment current-visible" style="position:absolute;margin-left:50px;"><img src="assets/A2.png" alt="url" title=""></div>
-            <div class="fragment current-visible" style="position:absolute;margin-left:50px;"><img src="assets/A3.png" alt="url" title=""></div>
-            <div class="fragment current-visible" style="position:absolute;margin-left:50px;"><img src="assets/A4.png" alt="url" title=""></div>
+            <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/A2.png" alt="url" title=""></div>
+            <div class="fragment current-visible" data-fragment-index="3" style="position:absolute;margin-left:50px;"><img src="assets/A3.png" alt="url" title=""></div>
+            <div class="fragment current-visible" data-fragment-index="4" style="position:absolute;margin-left:50px;"><img src="assets/A4.png" alt="url" title=""></div>
           </div>
 
+          <style>
+            .nav li {display:inline;}
+          </style>
+          <div class="nav">
+            <ul style="font-size:75%;font-weight:bold;">
+              <li class="fragment roll-in" data-fragment-index="1">2 <mark class="green">Objects</mark> ("Hello" &amp; 5) </li>
+              <li class="fragment roll-in" data-fragment-index="2"> with <mark class="green">Types</mark> (String &amp; Int)</li>
+              <li class="fragment roll-in" data-fragment-index="3"> and <mark class="green">Relation</mark> (String => Int)</li>
+            </ul>
+          </div>
+          </br>
+
           <div class="fragment current-visible">
-          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Abstraction:</p>
+          <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;">Abstraction:</p>
           <img src="assets/F1.png" alt="url" title="">
           </div>
 
           <div class="fragment current-visible">
-          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
+          <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
 val f: String => Int = str => str.length
 
@@ -92,7 +104,7 @@ f("By!")   shouldEqual 3
 
         <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
 
-          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
+          <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
           <img src="assets/F2.png" alt="url" title="">
 
           <div class="fragment current-visible">
@@ -281,7 +293,7 @@ h apply Right[String, String]("Hello") shouldEqual R[Int, String]("HELLO")
         </div></section>
 
         <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
-          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Arrow Type-Class:</p>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">ArrowChoice Type-Class:</p>
           <p style="font-size:50%;text-align:left;">make a choice between two arrows, on the basis of a previous result</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
 trait ArrowChoice[~>[_, _]] extends Arrow[~>] {
@@ -295,6 +307,90 @@ trait ArrowChoice[~>[_, _]] extends Arrow[~>] {
 }
           </code></pre>
         </div></section>
+
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Function and Combinators (Part 3)</h3>
+
+        <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
+        <img src="assets/F6.png" alt="url" title="">
+
+        <div class="fragment current-visible">
+        <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
+        <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+val f: String => Int    = str => str.length
+val g: String => String = str => str.toUpperCase
+
+val h = f ||| g
+
+h apply Left[String, String]("Hello")  shouldEqual 5
+h apply Right[String, String]("Hello") shouldEqual "HELLO"
+        </code></pre>
+        </div>
+
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Function and Combinators (Part 4)</h3>
+
+        <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
+          <img src="assets/F7.png" alt="url" title="">
+
+          <div class="fragment current-visible">
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+def funcLoop[T](func : (T => T) => (T => T)) = arr.loop[T, T, T => T] {
+  case (a, LazyF(f)) => (Lazy(f(a)), Lazy(x => func(f)(x)))
+}
+
+val factorial = funcLoop[Int] { f => {
+  case 0 => 1
+  case x => x * f(x - 1)
+}}
+
+factorial(5) shouldEqual 120
+          </code></pre>
+          </div>
+        </div></section>
+
+        <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">ArrowLoop Type-Class:</p>
+          <p style="font-size:50%;text-align:left;">arrow class with a feedback combinator</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+trait Lazy[A] { def ev: A }
+
+trait ArrowLoop extends Arrow[~>] {
+  def loop[A, B, C](f: (A, Lazy[C]) ~> (Lazy[B], Lazy[C])): A ~> B
+}
+          </code></pre>
+        </div></section>
+
+        <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">ArrowLoop Type-Class implementation:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+trait Lazy[A] { def ev: A }
+object Lazy {
+  def apply[A](x: => A) = new Lazy[A] { def ev: A = x }
+  def unapply[A](lz: Lazy[A]): Option[A] = Option(lz.ev)
+}
+
+object LazyF {
+  def unapply[A, B](lz: Lazy[A => B]): Option[A => B] = Option(lz.ev(_:A))
+}
+
+trait ArrowLoop extends Arrow[~>] {
+  type ~>[A, B] = A => B
+
+  def loop[A, B, C](f: (A, Lazy[C]) ~> (Lazy[B], Lazy[C])): A ~> B =
+    a => new { val (b: Lazy[B], c: Lazy[C]) = f((a, Lazy(c.ev))) }.b.ev
+}
+          </code></pre>
+        </div></section>
+
 
 
       </section>

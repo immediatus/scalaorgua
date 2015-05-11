@@ -3,6 +3,7 @@ Monokai style - ported by Luigi Maselli - http://grigio.org
 */
 
 pre code {
+  font-family: "Maven Pro", sans-serif;
   display: block; padding: 0.5em;
   background: #0E080D;
   border-radius: 11px;
