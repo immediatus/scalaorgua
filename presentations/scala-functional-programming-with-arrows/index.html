@@ -436,17 +436,19 @@ trait ArrowLoop extends Arrow[~>] {
         <h3 style="text-align:left;">Kleisli &amp; Co-Kleisli Arrow</h3>
 
         <section>
-        <img src="assets/C1.png" alt="url" title="">
+
+        <div style="position:absolute;width:100%;">
+        <img style="width:initial;" src="assets/C1.png" alt="url" title="">
         <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
 val f: String => Int = str => str.length
 
 f("Hello")              shouldEqual 5
 Option("Hello").map(f)  shouldEqual Option(5)
         </code></pre>
-        </section>
+        </div>
 
-        <section>
-        <img src="assets/C2.png" alt="url" title="">
+        <div class="fragment current-visible" data-fragment-index="1" style="position:absolute;width:100%;">
+        <img style="width:initial;" src="assets/C2.png" alt="url" title="">
         <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
 val f: String => Option[Int] = str =>
   if(str.length <6) None
@@ -455,18 +457,22 @@ val f: String => Option[Int] = str =>
 f("Hello")    shouldEqual None
 f("Workday")  shouldEqual Option(7)
         </code></pre>
-        </section>
+        </div>
 
-        <section>
-        <img src="assets/C3.png" alt="url" title="">
+        <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;width:100%;">
+        <img style="width:initial;" src="assets/C3.png" alt="url" title="">
         <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
 val f: Option[String] => Int = str =>
   str.map(_.toUpperCase).getOrElse("")
 
+
 f(Option("Hello"))  shouldEqual "HELLO"
 f(None)             shouldEqual ""
         </code></pre>
+        </div>
+
         </section>
+
         <section>
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">KleisliArrow Type-Class:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
