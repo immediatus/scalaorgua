@@ -47,7 +47,7 @@
         </section>
         <section>
           <div style="height:600px;"><div style="padding:200px 0px 0px 0px;">
-          <p style="color:#602749;font-size:150%;font-family:'Lobster', sans-serif;">"to show one of technics of managing your data &amp; control side-effect"</p>
+          <p style="color:#703D5B;font-size:150%;font-family:'Lobster', sans-serif;">"to show one of technics of managing your data &amp; control side-effect"</p>
           </div></div>
         </section>
         <section>
@@ -126,14 +126,27 @@ h("Workday") shouldEqual 14
 
 <!-- ------------------------------------------------------------------------------------- -->
       <section>
+        <h3 style="text-align:left;">Combinators</h3>
+
+          <div style="height:400px;width:85%;"><div style="padding:150px 0px 0px 0px;">
+              <p style="font-size:90%;">“a function which builds program fragments from program fragments; in a sense the programmer using combinators constructs much of the desired program automatically, rather than writing every detail by hand”</p>
+          </div></div>
+          <p style="font-size:50%;text-align:right;">- John Hughes Generalising Monads to Arrows</p>
+
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
         <h3 style="text-align:left;">Arrows with Product</h3>
         <p style="font-size:50%;text-align:left;">the structure of a product type is determined by the fixed order of the operands in the product.</br>
         The product of type<sub>1</sub>, ..., type<sub>n</sub> is written type<sub>1</sub> * ... * type<sub>n</sub> in ML and <b>(type<sub>1</sub>,...,type<sub>n</sub>)</b>.</p>
 
         <section>
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
-          <img src="assets/P1.png" alt="url" title="">
-          </br><p style="color:#602749;font-size:75%;font-family:'Lobster', sans-serif;">h = &lt;f,g&gt; = &lambda;x.(f x,g x)</p>
+          <div  style="padding-left:100px;">
+            <div style="position:absolute;margin-left:50px;"><img src="assets/P12.png" alt="url" title=""></div>
+            <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/P11.png" alt="url" title=""></div>
+          </div>
         </section>
 
         <section>
@@ -239,8 +252,11 @@ h("Hello", "Workday") shouldEqual (5, "WORKDAY")
 
         <section>
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
-          <img src="assets/P2.png" alt="url" title="">
-          </br><p style="color:#602749;font-size:75%;font-family:'Lobster', sans-serif;">h = &lt;f,g&gt; = either f g</p>
+
+          <div  style="padding-left:100px;">
+            <div style="position:absolute;margin-left:50px;"><img src="assets/P22.png" alt="url" title=""></div>
+            <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/P21.png" alt="url" title=""></div>
+          </div>
         </section>
 
         <section>
@@ -342,56 +358,133 @@ h apply Right[String, String]("Hello") shouldEqual "HELLO"
 
           <div class="fragment current-visible">
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
-          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
-def funcLoop[T](func : (T => T) => (T => T)) = arr.loop[T, T, T => T] {
-  case (a, LazyF(f)) => (Lazy(f(a)), Lazy(x => func(f)(x)))
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:90%;line-height:100%;">
+val factorial: (Int => Int) => (Int => Int) =
+  tail => {
+    case 0 => 1
+    case x => x * tail(x - 1)
+  }
+
+val f: (Int, Int => Int) => (Int, Int => Int) = {
+  case (a, loop) => (
+    loop(a),           // entry point
+    factorial(f)       // loop body
+  )
 }
 
-val factorial = funcLoop[Int] { f => {
-  case 0 => 1
-  case x => x * f(x - 1)
-}}
-
-factorial(5) shouldEqual 120
+arr.loop(f)(5) shouldEqual 120
           </code></pre>
           </div>
         </div></section>
 
         <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
-          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">ArrowLoop Type-Class:</p>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">ArrowLoop Type-Class should look:</p>
           <p style="font-size:50%;text-align:left;">arrow class with a feedback combinator</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
-trait Lazy[A] { def ev: A }
-
 trait ArrowLoop extends Arrow[~>] {
-  def loop[A, B, C](f: (A, Lazy[C]) ~> (Lazy[B], Lazy[C])): A ~> B
+  def loop[A, B, C](f: (A, C) ~> (B, C)): A ~> B
 }
           </code></pre>
-        </div></section>
 
-        <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
-          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">ArrowLoop Type-Class implementation:</p>
+          <div class="fragment roll-in" data-fragment-index="1" style="font-size:50%;">
+            <mark style="text-transform:uppercase;" class="red"><b>it does not work</b></mark>
+            <p>no easy way to define lazy parameters in lambdas</p>
+          </div>
+
+          <div class="fragment roll-in" data-fragment-index="2">
+          </br>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">ArrowLoop Type-Class worked implementation:</p>
+          <p style="font-size:50%;text-align:left;">LazyTuple2 from Scalaz lib (:&amp;: - type notation)</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
-trait Lazy[A] { def ev: A }
-object Lazy {
-  def apply[A](x: => A) = new Lazy[A] { def ev: A = x }
-  def unapply[A](lz: Lazy[A]): Option[A] = Option(lz.ev)
-}
-
-object LazyF {
-  def unapply[A, B](lz: Lazy[A => B]): Option[A => B] = Option(lz.ev(_:A))
-}
-
 trait ArrowLoop extends Arrow[~>] {
-  type ~>[A, B] = A => B
+  import scalaz._
+  import scalaz.Scalaz._
 
-  def loop[A, B, C](f: (A, Lazy[C]) ~> (Lazy[B], Lazy[C])): A ~> B =
-    a => new { val (b: Lazy[B], c: Lazy[C]) = f((a, Lazy(c.ev))) }.b.ev
+  def loop[A, B, C](f: (A :&: C) ~> (B :&: C)): A ~> C =
+    b => new { val ac: (A :&: C) = f(lazyTuple(a, ac._2)) }.ac._1
 }
           </code></pre>
+          </div>
         </div></section>
 
+      </section>
 
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Arrows</h3>
+
+          <div style="height:600px;"><div style="padding:150px 0px 0px 0px;">
+              <p style="font-size:100%;">Arrow is generalization of function, what provide more function combinators:</br>Like first/second/split/combine, ...</p>
+          </div></div>
+
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Arrows</h3>
+
+        <div style="position:absolute;margin-left:50px;"><img src="assets/FP1.png" alt="url" title=""></div>
+        <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/FP2.png" alt="url" title=""></div>
+        <div class="fragment current-visible" data-fragment-index="3" style="position:absolute;margin-left:50px;"><img src="assets/FP4.png" alt="url" title=""></div>
+        <div class="fragment current-visible" data-fragment-index="4" style="position:absolute;margin-left:50px;"><img src="assets/FP5.png" alt="url" title=""></div>
+
+      </section>
+
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Kleisli &amp; Co-Kleisli Arrow</h3>
+
+        <section>
+        <img src="assets/C1.png" alt="url" title="">
+        <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+val f: String => Int = str => str.length
+
+f("Hello")              shouldEqual 5
+Option("Hello").map(f)  shouldEqual Option(5)
+        </code></pre>
+        </section>
+
+        <section>
+        <img src="assets/C2.png" alt="url" title="">
+        <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+val f: String => Option[Int] = str =>
+  if(str.length <6) None
+  else Option(str.length)
+
+f("Hello")    shouldEqual None
+f("Workday")  shouldEqual Option(7)
+        </code></pre>
+        </section>
+
+        <section>
+        <img src="assets/C3.png" alt="url" title="">
+        <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+val f: Option[String] => Int = str =>
+  str.map(_.toUpperCase).getOrElse("")
+
+f(Option("Hello"))  shouldEqual "HELLO"
+f(None)             shouldEqual ""
+        </code></pre>
+        </section>
+        <section>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">KleisliArrow Type-Class:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+type Kleisli[M[+_],A,B] = A => M[A]
+
+trait KleisliCategory[M[+ _]]
+  extends Category[({type λ[α, β] = Kleisli[M, α, β]})#λ] {
+// ...
+}
+
+trait KleisliArrow[M[+_]]
+  extends Arrow[({type λ[α, β] = Kleisli[M, α, β]})#λ]
+  with KleisliCategory[M] {
+
+// ...
+}
+          </code></pre>
+        </section>
 
       </section>
 
@@ -400,10 +493,17 @@ trait ArrowLoop extends Arrow[~>] {
         <h3 style="text-align:left;">Arrows & Applicatives</h3>
         <section>
           <h4 style="text-align:left;"></h4>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+trait Applicative[M[_]] extends Functor[M] {
+  def <*>[A,B](m: M[A], f: M[A => B]): M[B]
+}
+          </code></pre>
         </section>
+
         <section>
           <h4 style="text-align:left;">Arrow = Category + Applicative?</h4>
         </section>
+
       </section>
 
 <!-- ------------------------------------------------------------------------------------- -->
