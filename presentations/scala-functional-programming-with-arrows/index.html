@@ -419,17 +419,6 @@ trait ArrowLoop extends Arrow[~>] {
 
       </section>
 
-<!-- ------------------------------------------------------------------------------------- -->
-      <section>
-        <h3 style="text-align:left;">Arrows</h3>
-
-        <div style="position:absolute;margin-left:50px;"><img src="assets/FP1.png" alt="url" title=""></div>
-        <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/FP2.png" alt="url" title=""></div>
-        <div class="fragment current-visible" data-fragment-index="3" style="position:absolute;margin-left:50px;"><img src="assets/FP4.png" alt="url" title=""></div>
-        <div class="fragment current-visible" data-fragment-index="4" style="position:absolute;margin-left:50px;"><img src="assets/FP5.png" alt="url" title=""></div>
-
-      </section>
-
 
 <!-- ------------------------------------------------------------------------------------- -->
       <section>
@@ -478,7 +467,7 @@ f(None)             shouldEqual ""
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
 type Kleisli[M[+_],A,B] = A => M[A]
 
-trait KleisliCategory[M[+ _]]
+trait KleisliCategory[M[+_]]
   extends Category[({type λ[α, β] = Kleisli[M, α, β]})#λ] {
 // ...
 }
@@ -490,6 +479,82 @@ trait KleisliArrow[M[+_]]
 // ...
 }
           </code></pre>
+
+          <div class="fragment current-visible" data-fragment-index="1">
+            </br>
+            <p style="font-size:100%;">But what is <b><mark class="green">M[_]</mark></b>?
+          </p></div>
+
+        </section>
+
+        <section>
+          <ul style="font-size:66%;width:100%;line-height:1.2;">
+            <li style="margin: 0 0 20px 0;">
+              All functions have effects, the things the function does. The simplest effect is just accepting parameters and returning a single value as a result.
+            </li>
+            <li class="fragment current-visible" data-fragment-index="1">
+            Everything else we might conceive a function doing is a side-effect. By <mark class="green"><b>wrapping a value in a container</b></mark>, we can emulate all the various side-effects that are possible.
+            </li>
+          </ul>
+
+          <div class="fragment current-visible" data-fragment-index="2">
+            </br><p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;">Examples:</p>
+
+            <table cellspacing="0" cellpadding="0" style="width:100%;border:0px solid #F6921D;">
+              <tr class="fragment current-visible" data-fragment-index="2">
+                <td width="30%" style="text-align:left;">
+                  <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+A => List[B]
+                  </code></pre>
+                </td>
+                <td width="70%" style="text-align:left;font-size:88%;">
+have many results
+                </td>
+              </tr>
+              <tr class="fragment current-visible" data-fragment-index="3">
+                <td width="30%" style="text-align:left;">
+                  <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+A => Option[B]
+                  </code></pre>
+                </td>
+                <td width="70%" style="text-align:left;font-size:88%;">
+sometimes have no result
+                </td>
+              </tr>
+              <tr class="fragment current-visible" data-fragment-index="4">
+                <td width="30%" style="text-align:left;">
+                  <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+A => Future[B]
+                  </code></pre>
+                </td>
+                <td width="70%" style="text-align:left;font-size:88%;">
+postponed result or may be no result
+                </td>
+              </tr>
+              <tr class="fragment current-visible" data-fragment-index="5">
+                <td width="30%" style="text-align:left;">
+                  <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+A => (S, B)
+                  </code></pre>
+                </td>
+                <td width="70%" style="text-align:left;font-size:88%;">
+write to log
+                </td>
+              </tr>
+              <tr class="fragment current-visible" data-fragment-index="6">
+                <td width="30%" style="text-align:left;">
+                  <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+A => (Unit => E, B)
+                  </code></pre>
+                </td>
+                <td width="70%" style="text-align:left;font-size:88%;">
+read from environment
+                </td>
+              </tr>
+            </table>
+
+          </div>
+
         </section>
 
       </section>
@@ -501,11 +566,11 @@ trait KleisliArrow[M[+_]]
           <table  cellspacing="0" cellpadding="0" style="width:100%;border:0px solid #F6921D;">
             <tr>
               <td width="50%" style="text-align:center;">Arrow</td>
-              <td width="50%" style="text-align:center;">Monad</td>
+              <td width="50%" style="text-align:center;">Applicative</td>
             </tr>
             <tr>
               <td width="50%" >
-              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:100%;">
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
 trait Arrow[~>[_, _]] extends Category[~>] {
   // [Category]
   def id[A]: A ~> A
@@ -518,7 +583,7 @@ trait Arrow[~>[_, _]] extends Category[~>] {
               </code></pre>
               </td>
               <td width="50%" >
-              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:100%;">
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
 trait Applicative[M[_]] extends Functor[M] {
   // Applicative -> [Pointed] -> Functor
   def point[A](a: => A): F[A]
@@ -533,21 +598,24 @@ trait Applicative[M[_]] extends Functor[M] {
             </tr>
             <tr class="fragment current-visible" data-fragment-index="1">
               <td>
-              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:68%;line-height:100%;">
-arr id                      == id
-arr(f >>> g)                == arr(f) >>> arr(g)
-fst(arr(f))                 == arr(fst(f))
-fst(f >>> g)                == fst(f) >>> fst(g)
-fst(f) >>> arr(fst)         == arr(fst) >>> f
-fst(f) >>> arr (id *** g)   == arr(id *** g) >>> fst(f)
-fst(first(f)) >>> arr assoc == arr(assoc) >>> fst(f)
-// assoc[A,B,C]((A,B),C) = (A,(B,C))
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:68%;line-height:120%;">
+// lift
+arr id                     == id
+arr(f >>> g)               == arr(f) >>> arr(g)
+
+// first
+fst(arr(f))                == arr(fst(f))
+fst(f >>> g)               == fst(f) >>> fst(g)
+fst(f) >>> arr(fst)        == arr(fst) >>> f
+fst(f) >>> arr (id *** g)  == arr(id *** g) >>> fst(f)
+fst(first(f)) >>> arr assc == arr(assc) >>> fst(f)
+// assc[A,B,C]((A,B),C) = (A,(B,C))
 
 // + Category laws
               </code></pre>
               </td>
               <td>
-              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:100%;">
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
 // Identity: fa: F[A]
 fa <*> point(id)      == fa
 
@@ -569,21 +637,16 @@ fa.map(f)             == pure(f) <*> fa
               </td>
             </tr>
             <tr class="fragment current-visible" data-fragment-index="1" style="font-size:50%;">
-              <td width="50%" style="text-align:center;">7 + Category</td>
-              <td width="50%" style="text-align:center;">4 + Functor</td>
+              <td width="50%" style="text-align:center;">7 + Category Laws</td>
+              <td width="50%" style="text-align:center;">4 + Functor Laws</td>
             </tr>
           </table>
         </section>
-
-
-        <section>
-          <h4 style="text-align:left;"></h4>
-        </section>
-
+<!--
         <section>
           <h4 style="text-align:left;">Arrow = Category + Applicative?</h4>
         </section>
-
+-->
       </section>
 
 <!-- ------------------------------------------------------------------------------------- -->
@@ -597,7 +660,7 @@ fa.map(f)             == pure(f) <*> fa
             </tr>
             <tr>
               <td width="50%" >
-              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:100%;">
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
 trait Arrow[~>[_, _]] extends Category[~>] {
   // [Category]
   def id[A]: A ~> A
@@ -610,7 +673,7 @@ trait Arrow[~>[_, _]] extends Category[~>] {
               </code></pre>
               </td>
               <td width="50%" >
-              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:100%;">
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
 trait Monad[M[_]] extends Applicative[M] {
   // Monad -> Applicative -> [Pointed] -> Functor
   def point[A](a: => A): F[A]
@@ -626,21 +689,21 @@ trait Monad[M[_]] extends Applicative[M] {
             </tr>
             <tr class="fragment current-visible" data-fragment-index="1">
               <td>
-              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:68%;line-height:100%;">
-arr id                      == id
-arr(f >>> g)                == arr(f) >>> arr(g)
-fst(arr(f))                 == arr(fst(f))
-fst(f >>> g)                == fst(f) >>> fst(g)
-fst(f) >>> arr(fst)         == arr(fst) >>> f
-fst(f) >>> arr (id *** g)   == arr(id *** g) >>> fst(f)
-fst(first(f)) >>> arr assoc == arr(assoc) >>> fst(f)
-// assoc[A,B,C]((A,B),C) = (A,(B,C))
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:68%;line-height:120%;">
+arr id                     == id
+arr(f >>> g)               == arr(f) >>> arr(g)
+fst(arr(f))                == arr(fst(f))
+fst(f >>> g)               == fst(f) >>> fst(g)
+fst(f) >>> arr(fst)        == arr(fst) >>> f
+fst(f) >>> arr (id *** g)  == arr(id *** g) >>> fst(f)
+fst(first(f)) >>> arr assc == arr(assc) >>> fst(f)
+// assc[A,B,C]((A,B),C) = (A,(B,C))
 
 // + Category laws
               </code></pre>
               </td>
               <td>
-              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:100%;">
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
 // Right identity: (ma: M[A] f: A => M[B])
 ma.flatMap(x => point(x)) == ma
 // Left identity: (a: A f: A => M[B])
@@ -668,29 +731,194 @@ ma.flatMap(f).flatMap(g)  ==
         </section>
 
         <section>
-          <h4 style="text-align:left;">Generalising monads to arrows</h4>
+          <h4 style="text-align:left;">Usual ways to Data manipulation for any side-effect container:</h4>
 
-          Well known side-effects:
-          A => List[B]
-          A => Option[B]
-          A => Try[B]
-          A => State[B, S] // (B, S)
+          <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;">Functor &amp; Monad (essence):</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+Functor :  A => B       =>   C[A] => C[B]
+Monad   :  A => C[B]    =>   C[A] => C[B]
+          </code></pre>
 
-          About data manipulation for any side-effect keeper:
+          <div class="fragment current-visible" data-fragment-index="1">
+          <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+val lst = Liat(1,2,3,4)
 
-          Functor :  A => B       =>   C[A] => C[B]
-          Monad   :  A => C[B]    =>   C[A] => C[B]
+val f: Int => Int     = x => x + 1
+val g: Int => String  = x => x.toString
 
-          Kleisli :  A => C[B]
+lst
+  .map(f) //          List(2, 3, 4, 5)
+  .map(g) shouldEqual List("2", "3", "4", "5")
+          </code></pre>
+
+          <div class="fragment current-visible" data-fragment-index="2">
+          <p style="font-size:50%;text-align:center;">
+          </br>Function <mark class="red">map(...)</mark> break laziness of function sequence computation
+          </p>
+          </div>
+          <div class="fragment current-visible" data-fragment-index="3">
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+val h = f andThen g // andThen whateverYouWontFunc
+
+lst.map(h) shouldEqual List("2", "3", "4")
+          </code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h4 style="text-align:left;">Usual ways to Data manipulation for any side-effect container:</h4>
+          <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+case class User(id: Int, name: String, psswd: String)
+
+def getUserById: Int => User = ...
+def updateDbUser: User => Int  = ...
+def setPassword: String => User => Option(User) =
+  psswd => user =>
+    if(psswd == user.psswd) None
+    else Option(User.copy(psswd = psswd))
+
+val updatePassword = setPassword("qwerty")
+
+def runOnDB(id: Int, update: User => Option[User]): Option[Int] = {
+  getUserById(id)             // Some(User(42, "John", "asdfgh"))
+    .flatMap(update)          // Some(User(42, "John", "somePassword"))
+    .flatMap(updateDbUser)    // Some(42)
+}
+
+runOnDB(42, updatePassword)       shouldEqual Some(42)
+          </code></pre>
+        </section>
+
+        <section>
+          <h4 style="text-align:left;">Issues:</h4>
+          <ul style="list-style-type:decimal;font-size:75%;width:100%;font-size:66%;line-height:1.5;">
+            <li>Laziness of computation with side-effect</li>
+            <li style="margin: 0 0 3px 0;">Composition of function with side-effect</li>
+          </ul>
+
+          <div class="fragment current-visible" data-fragment-index="1">
+          <p style="font-size:50%;text-align:left;font-family:'Lobster', sans-serif;"></br>Function run lazinization:</p>
+
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+def runOnDB(update: User => Option[User]): Int => Option[Int] = id => ...
+          </code></pre>
+
+          </div>
+          <div class="fragment current-visible" data-fragment-index="2">
+          <p style="font-size:50%;text-align:left;font-family:'Lobster', sans-serif;">Update function compozition:</p>
+
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+val setName: String => User => Option[User] =
+  name => user =>
+    if(neme.isNullOrEmpty) None
+    else Some(user.copy(name = name))
+
+val updateName = setName("")
+
+// compilation error
+runOnDB(42, updateName andThen updatePassword)  shouldEqual None
+          </code></pre>
+
+        </div>
+          <div class="fragment current-visible" data-fragment-index="3">
+          <p style="font-size:50%;text-align:left;font-family:'Lobster', sans-serif;">Correct compozition of function with side-effect</p>
+
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+runOnDB(42, user => updateName(user).flatMap(updatePassword))
+          </code></pre>
+
+        </div>
 
         </section>
 
         <section>
-          <h4 style="text-align:left;">What can Arrows do that Monads can't?</h4>
+          <h4 style="text-align:left;">Composition of function with side-effect:</h4>
+
+          </br>
+
+          <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;">Function composition with &gt;=&gt; combinator:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+val updatePassword = kleisli(setPassword("qwerty"))
+val updateName = kleisli(setName("Yuriy"))
+
+runOnDB(42, updatePassword >=> updateName) shouldEqual Some(42)
+          </code></pre>
+
+          </br>
+
+          <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;">Function composition with &gt;==&gt; combinator:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+val runOnDB(update: User => Option[User]): Int => Option[Int] =
+  kleisli(getUserById) >==> update  >==> updateDbUser
+          </code></pre>
+
         </section>
+
         <section>
-          <h4 style="text-align:left;">Arrows for Errors: extending the error (Try) monad</h4>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">KleisliArrow Type-Class (based on Monad):</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:140%;">
+case class Kleisli[M[+ _], -A, +B](run: A => M[B]) {
+  def >=>[C](k: Kleisli[M, B, C])(implicit b: Monad[M]): Kleisli[M, A, C] =
+    Kleisli((a: A) => b.flatMap(run(a), k.run(_: B)))
+}
+
+trait KleisliCategory[M[+_]]
+  extends Category[({type λ[-α, +β] = Kleisli[M, α, β]})#λ] {
+  implicit def Monad: Monad[M]
+
+  def id[A]: Kleisli[M, A, A] = Kleisli(a => Monad.point(a))
+
+  def compose[A, B, C](bc: Kleisli[M, B, C], ab: Kleisli[M, A, B]): Kleisli[M, A, C] =
+    ab >=> bc
+}
+
+trait KleisliArrow[M[+_]]
+  extends Arrow[({type λ[-α, +β] = Kleisli[M, α, β]})#λ]
+  with KleisliCategory[M] {
+
+  def arr[A, B](f: A => B): Kleisli[M, A, B] = Kleisli(a => Monad.point(f(a)))
+
+  def first[A, B, C](f: Kleisli[M, A, B]): Kleisli[M, (A, C), (B, C)] =
+    Kleisli[M, (A, C), (B, C)] { case (a, c) => Monad.map(f.run(a), (b: B) => (b, c)) }
+}
+          </code></pre>
         </section>
+
+        <section>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">And back to the Arrow</p>
+          <p style="font-size:50%;text-align:left;">Motivation, is to find a generic interface for arrow wich cannot be based on monad.</p><br/>
+
+          <div class="fragment current-visible" data-fragment-index="1">
+          <p style="font-size:100%;text-align:left;font-size:66%;font-family:'Lobster', sans-serif;">ArrowMonad Type-Class:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:72%;line-height:140%;">
+trait ArrowApply[~>[_, _]] extends Arrow[~>] {
+  def app[B, C]: (B ~> C, B) ~> C
+}
+
+trait KleisliArrowApply[M[+_]]
+  extends ArrowApply[({type λ[α, β] = Kleisli[M, α, β]})#λ] {
+  private type ~>[-A, +B] = Kleisli[M, A, B]
+
+  def app[B, C]: (B ~> C, B) ~> C = Kleisli { case (f, x) => (f.run)(x) }
+}
+
+case class ArrowMonad[~>[-_, +_], +A](run : Unit ~> a) extends Arrow[~>]
+
+implicit def monadOfArrowMonad[~>[-_,+_]]
+  (implicit: i: ArrowApply[~>]): Monad[({type λ[+α] = ArrowMonad[~>, α]})#λ] = new Monad[...] {
+  private type m[+A] = ArrowMonad[~>, A]
+
+  def point[A](a: => A) = ArrowMonad { arr { _ => x } }
+  def flatMap[A, B](m: m[a])(f: a => m[B]): m[B] = ArrowMonad {
+    m.run >>> arr((x: A) => (f(x).run, ())) >>> i.app
+  }
+}
+          </code></pre>
+          </div>
+        </section>
+
       </section>
 
 <!-- ------------------------------------------------------------------------------------- -->
@@ -700,12 +928,39 @@ ma.flatMap(f).flatMap(g)  ==
 
 <!-- ------------------------------------------------------------------------------------- -->
       <section>
-        <h3 style="text-align:left;">Arrows in Domain Modeling (Kleisli Arrow)</h3>
+        <h3 style="text-align:left;">Arrows Summary</h3>
+
+        <div style="position:absolute;margin-left:50px;"><img src="assets/FP1.png" alt="url" title=""></div>
+        <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/FP2.png" alt="url" title=""></div>
+        <div class="fragment current-visible" data-fragment-index="3" style="position:absolute;margin-left:50px;"><img src="assets/FP4.png" alt="url" title=""></div>
+        <div class="fragment current-visible" data-fragment-index="4" style="position:absolute;margin-left:50px;"><img src="assets/FP5.png" alt="url" title=""></div>
+
       </section>
 
 <!-- ------------------------------------------------------------------------------------- -->
       <section>
-        <h3 style="text-align:left;">Summary</h3>
+        <h3 style="text-align:left;">Used materials and References:</h3>
+        <ul style="list-style-type:none;font-size:50%;width:100%;line-height:1.8;">
+          <li>1. John Hughes. November 10, 1998, <b>Generalising Monads to Arrows.</b></li>
+          <li>2. Chris Heunen and Bart Jacobs, <b>Arrows, like Monads, are Monoids.</b></li>
+          <li>3. Ted Cooper (theod@pdx.edu), CS510 – Spring 2014, <b>Arrow Basics</b>.</li>
+          <li>4. John Hughes, S-41296 Sweden, <b>Programming with Arrows.</b></li>
+          <li>5. Robert Atkey, LFCS, 2008, <b>What is a Categorical Model of Arrows?</b></li>
+          <li>6. Kazuyuki Asada, Kyoto 606-8502, Japan, <b>Arrows are Strong Monads.</b></li>
+          <li>7. K. Asada and I. Hasuo, (CMCS 2010)., 2010, <b>Categorifying computations into components via arrows as profunctors.</b></li>
+          <li>8. Thorsten Altenkirch, James Chapman, and Tarmo Uustalu, <b>Monads Need Not Be Endofunctors.</b></li>
+          <li>8. Sam Lindley, Philip Wadler and Jeremy Yallop, 2008, <b>Idioms are oblivious, arrows are meticulous, monads are promiscuous</b></li>
+        </ul>
+        <h4 style="text-align:left;"></br>Blogs & Blogposts:</h4>
+        <ul style="list-style-type:none;font-size:50%;width:100%;line-height:1.8;">
+          <li>1. Domain Modeling in a Functional World, Debasish Ghosh</li>
+          <li>2. Ruminations of a Programmer, Debasish Ghosh</li>
+          <li>3. Arrow's place in the Applicative/Monad hierarchy (Cactus) Dr. Gerg ˝o Érdi</li>
+          <li>4. Nothing Personal Just ⊥, Patai Gergely</li>
+          <li>5. Programming Cafe, Bartosz Milewski's</li>
+          <li>6. λ Tony's blog λ, Tony Morris</li>
+        </ul>
+
       </section>
 
 <!-- ------------------------------------------------------------------------------------- -->

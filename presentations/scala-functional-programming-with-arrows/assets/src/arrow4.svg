@@ -1,0 +1,4335 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="arrow4.svg">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient4430">
+      <stop
+         id="stop4432"
+         offset="0"
+         style="stop-color:#3f415f;stop-opacity:0.46037737" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="0.5"
+         id="stop4434" />
+      <stop
+         id="stop4436"
+         offset="1"
+         style="stop-color:#3f415f;stop-opacity:0" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4362">
+      <stop
+         style="stop-color:#3f415f;stop-opacity:0.46037737"
+         offset="0"
+         id="stop4364" />
+      <stop
+         id="stop4370"
+         offset="0.5"
+         style="stop-color:#000000;stop-opacity:0" />
+      <stop
+         style="stop-color:#3f415f;stop-opacity:0.41132075"
+         offset="1"
+         id="stop4366" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3862"
+       id="linearGradient3918"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       x1="147.53712"
+       y1="169.30023"
+       x2="147.63446"
+       y2="143.49083" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3862-4"
+       id="linearGradient3918-6"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       x1="147.53712"
+       y1="169.30023"
+       x2="147.63446"
+       y2="143.49083" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-4">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-0" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-6" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3939"
+       xlink:href="#linearGradient3862-4"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3862-5"
+       id="linearGradient3918-7"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       x1="147.53712"
+       y1="169.30023"
+       x2="147.63446"
+       y2="143.49083" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3989"
+       xlink:href="#linearGradient3862-5"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3862-3"
+       id="linearGradient3918-2"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       x1="147.53712"
+       y1="169.30023"
+       x2="147.63446"
+       y2="143.49083" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-3">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-1" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-1" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4035-6"
+       xlink:href="#linearGradient3862-3-6"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-3-6">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-1-2" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-1-1" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3989-1"
+       xlink:href="#linearGradient3862-5-6"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-6">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-5" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-6" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3989-8"
+       xlink:href="#linearGradient3862-5-1"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-1">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-6" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-60" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3231"
+       xlink:href="#linearGradient3862-5-1"
+       inkscape:collect="always" />
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3989-0"
+       xlink:href="#linearGradient3862-5-13"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-13">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-9" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-4" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3231-2"
+       xlink:href="#linearGradient3862-5-13"
+       inkscape:collect="always" />
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4035-4"
+       xlink:href="#linearGradient3862-3-4"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-3-4">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-1-3" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-1-3" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3062-0"
+       xlink:href="#linearGradient3862-5-6-6"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-6-6">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-5-3" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-6-4" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3231-5"
+       xlink:href="#linearGradient3862-5-1-3"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-1-3">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-6-7" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-60-2" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3148"
+       xlink:href="#linearGradient3862-5-1-3"
+       inkscape:collect="always" />
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3062-1"
+       xlink:href="#linearGradient3862-5-6-65"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-6-65">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-5-2" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-6-7" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3862-55"
+       id="linearGradient3918-4"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       x1="147.53712"
+       y1="169.30023"
+       x2="147.63446"
+       y2="143.49083" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-55">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-01" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-9" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3240"
+       xlink:href="#linearGradient3862-55"
+       inkscape:collect="always" />
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3194-1"
+       xlink:href="#linearGradient3862-5-6-65-2"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-6-65-2">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-5-2-8" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-6-7-6" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3102-8"
+       xlink:href="#linearGradient3862-5-6-6-1"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-6-6-1">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-5-3-5" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-6-4-4" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3939-6"
+       xlink:href="#linearGradient3862-4-6"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-4-6">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-0-8" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-6-0" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3862-8"
+       id="linearGradient3918-8"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       x1="147.53712"
+       y1="169.30023"
+       x2="147.63446"
+       y2="143.49083" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-8">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-07" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-5" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3240-0"
+       xlink:href="#linearGradient3862-55-7"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-55-7">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-01-5" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-9-40" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3148-7"
+       xlink:href="#linearGradient3862-5-1-3-17"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-1-3-17">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-6-7-8" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-60-2-9" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3390-2"
+       xlink:href="#linearGradient3862-3-4-2"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-3-4-2">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-1-3-2" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-1-3-9" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3231-2-8"
+       xlink:href="#linearGradient3862-5-13-2"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-13-2">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-9-25" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-4-2" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3231-54"
+       xlink:href="#linearGradient3862-5-1-7"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-1-7">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-6-5" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-60-3" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4081-4"
+       xlink:href="#linearGradient3862-3-6-9"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-3-6-9">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-1-2-1" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-1-1-5" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4035-8"
+       xlink:href="#linearGradient3862-3-9"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-3-9">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-1-6" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-1-4" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3989-3"
+       xlink:href="#linearGradient3862-5-8"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-8">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-8" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-602" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3939-7"
+       xlink:href="#linearGradient3862-4-0"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-4-0">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-0-4" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-6-9" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3862-41"
+       id="linearGradient3918-78"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       x1="147.53712"
+       y1="169.30023"
+       x2="147.63446"
+       y2="143.49083" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-41">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-5" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-26" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4317-0"
+       xlink:href="#linearGradient3862-5-6-6-1-9"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-6-6-1-9">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-5-3-5-1" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-6-4-4-0" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3240-3"
+       xlink:href="#linearGradient3862-55-4"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-55-4">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-01-4" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-9-3" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3194-0"
+       xlink:href="#linearGradient3862-5-6-65-30"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-6-65-30">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-5-2-5" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-6-7-1" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3148-5"
+       xlink:href="#linearGradient3862-5-1-3-4"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-1-3-4">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-6-7-9" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-60-2-4" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3102-5"
+       xlink:href="#linearGradient3862-5-6-6-8"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-6-6-8">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-5-3-6" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-6-4-42" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3390-0"
+       xlink:href="#linearGradient3862-3-4-6"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-3-4-6">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-1-3-40" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-1-3-0" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3231-2-7"
+       xlink:href="#linearGradient3862-5-13-21"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-13-21">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-9-7" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-4-3" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3231-3"
+       xlink:href="#linearGradient3862-5-1-2"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-1-2">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-6-57" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-60-8" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3062-2"
+       xlink:href="#linearGradient3862-5-6-21"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-6-21">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-5-5" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-6-58" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4081-8"
+       xlink:href="#linearGradient3862-3-6-2"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-3-6-2">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-1-2-4" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-1-1-7" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4035-60"
+       xlink:href="#linearGradient3862-3-65"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-3-65">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-1-60" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-1-5" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3989-55"
+       xlink:href="#linearGradient3862-5-85"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-85">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-4" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-06" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3939-3"
+       xlink:href="#linearGradient3862-4-3"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-4-3">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-0-1" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-6-5" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3862-6"
+       id="linearGradient3918-88"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       x1="147.53712"
+       y1="169.30023"
+       x2="147.63446"
+       y2="143.49083" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-6">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-03" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-7" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3240-9"
+       xlink:href="#linearGradient3862-55-2"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-55-2">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-01-90" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-9-8" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3194-5"
+       xlink:href="#linearGradient3862-5-6-65-29"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-6-65-29">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-5-2-50" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-6-7-8" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3148-2"
+       xlink:href="#linearGradient3862-5-1-3-9"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-1-3-9">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-6-7-6" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-60-2-99" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3102-38"
+       xlink:href="#linearGradient3862-5-6-6-5"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-6-6-5">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-5-3-10" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-6-4-9" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3390-9"
+       xlink:href="#linearGradient3862-3-4-0"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-3-4-0">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-1-3-6" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-1-3-16" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3231-2-2"
+       xlink:href="#linearGradient3862-5-13-6"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-13-6">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-9-23" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-4-7" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3231-6"
+       xlink:href="#linearGradient3862-5-1-27"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-1-27">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-6-6" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-60-7" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3062-17"
+       xlink:href="#linearGradient3862-5-6-4"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-6-4">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-5-25" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-6-9" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4081-3"
+       xlink:href="#linearGradient3862-3-6-28"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-3-6-28">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-1-2-3" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-1-1-57" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4035-88"
+       xlink:href="#linearGradient3862-3-7"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-3-7">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-1-7" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-1-7" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3989-7"
+       xlink:href="#linearGradient3862-5-5"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-5">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-06" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-9" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3939-9"
+       xlink:href="#linearGradient3862-4-8"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-4-8">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-0-2" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-6-6" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3862-42"
+       id="linearGradient3918-64"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       x1="147.53712"
+       y1="169.30023"
+       x2="147.63446"
+       y2="143.49083" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-42">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-3" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-70" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4317-4"
+       xlink:href="#linearGradient3862-5-6-6-1-4"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-6-6-1-4">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-5-3-5-2" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-6-4-4-78" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4217-7"
+       xlink:href="#linearGradient3862-5-6-65-2-2"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-6-65-2-2">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-5-2-8-1" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-6-7-6-1" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3240-5"
+       xlink:href="#linearGradient3862-55-47"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-55-47">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-01-7" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-9-86" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3194-78"
+       xlink:href="#linearGradient3862-5-6-65-52"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-6-65-52">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-5-2-83" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-6-7-4" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3148-87"
+       xlink:href="#linearGradient3862-5-1-3-93"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-1-3-93">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-6-7-5" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-60-2-46" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3102-9"
+       xlink:href="#linearGradient3862-5-6-6-80"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-6-6-80">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-5-3-3" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-6-4-19" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3390-4"
+       xlink:href="#linearGradient3862-3-4-8"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-3-4-8">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-1-3-1" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-1-3-5" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3231-2-9"
+       xlink:href="#linearGradient3862-5-13-8"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-13-8">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-9-0" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-4-9" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3231-68"
+       xlink:href="#linearGradient3862-5-1-75"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-1-75">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-6-8" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-60-29" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3062-7"
+       xlink:href="#linearGradient3862-5-6-63"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-6-63">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-5-53" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-6-59" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4081-9"
+       xlink:href="#linearGradient3862-3-6-95"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-3-6-95">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-1-2-8" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-1-1-77" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4035-3"
+       xlink:href="#linearGradient3862-3-8"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-3-8">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-1-67" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-1-8" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3989-9"
+       xlink:href="#linearGradient3862-5-3"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-5-3">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-4-08" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-2-3" />
+    </linearGradient>
+    <linearGradient
+       y2="143.49083"
+       x2="147.63446"
+       y1="169.30023"
+       x1="147.53712"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3939-94"
+       xlink:href="#linearGradient3862-4-1"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-4-1">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-0-6" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-6-1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3862-1"
+       id="linearGradient3918-21"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(6.0104076,-62.225397)"
+       x1="147.53712"
+       y1="169.30023"
+       x2="147.63446"
+       y2="143.49083" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3862-1">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.0754717"
+         offset="0"
+         id="stop3864-9" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1"
+         id="stop3866-74" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#130912"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.50321275"
+     inkscape:cx="353.14632"
+     inkscape:cy="663.57113"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1056"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g3912"
+       transform="translate(308.15078,-460.76547)"
+       inkscape:export-filename="/home/yury/Картинки/FP2.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="130.64474"
+         y="81.833"
+         id="text4559-7-86-1-2-0"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86"
+           x="130.64474"
+           y="81.833">Arrow</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3918);fill-opacity:1;stroke:none" />
+    </g>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="150"
+       inkscape:export-xdpi="150"
+       inkscape:export-filename="/home/yury/Картинки/FP2.png"
+       inkscape:connector-curvature="0"
+       id="path4553-8-8-1-6-8-6"
+       d="m 460.90694,-398.74693 -0.21268,-40.61504"
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0" />
+    <g
+       id="g3912-8"
+       transform="translate(308.15078,-545.89955)"
+       inkscape:export-filename="/home/yury/Картинки/FP2.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-6"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="116.64475"
+         y="80.414558"
+         id="text4559-7-86-1-2-0-9"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-9"
+           x="116.64475"
+           y="80.414558">Category</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-9"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3939);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7"
+       transform="translate(387.61255,-326.53043)"
+       inkscape:export-filename="/home/yury/Картинки/FP2.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="100.64475"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3"
+           x="100.64475"
+           y="79.123779">ArrowChoice</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3989);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-44"
+       transform="translate(534.1495,-326.53043)"
+       inkscape:export-filename="/home/yury/Картинки/FP2.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-6"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="110.64475"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-1"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-71"
+           x="110.64475"
+           y="79.123779">ArrowLoop</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-8"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3231);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-1"
+       transform="translate(70.691815,-326.53043)"
+       inkscape:export-filename="/home/yury/Картинки/FP2.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-8"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="106.64475"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-3"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-4"
+           x="106.64475"
+           y="79.123779">ArrowApply</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-0"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3231-2);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-44-6"
+       transform="translate(-83.794086,-326.53043)"
+       inkscape:export-filename="/home/yury/Картинки/FP2.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-6-9"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="110.64475"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-1-2"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-71-0"
+           x="110.64475"
+           y="79.123779">ArrowPlus</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-8-5"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3148);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-88"
+       transform="translate(232.20361,-326.53043)"
+       inkscape:export-filename="/home/yury/Картинки/FP2.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-66"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="96.644737"
+         y="81.833"
+         id="text4559-7-86-1-2-0-6"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-39"
+           x="96.644737"
+           y="81.833">KleisliArrow</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-5"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3240);fill-opacity:1;stroke:none" />
+    </g>
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m 466.58529,-354.19471 c 136.76707,17.50535 201.70978,52.75344 222.03655,89.14059"
+       id="path4099"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/FP2.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m 465.70768,-353.94396 c 61.68378,14.04184 61.93452,37.73745 67.45096,89.39134"
+       id="path4099-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/FP2.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m 466.96141,-354.1947 c -108.82424,49.14643 -71.86714,73.09499 -79.89105,89.64429"
+       id="path4099-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/FP2.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m 465.95842,-353.31709 c -139.91687,37.11057 -230.18582,55.66586 -241.21869,88.76447"
+       id="path4099-8-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/FP2.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m 466.0838,-354.06933 c -143.42733,20.56126 -378.753465,48.14345 -398.311736,87.76149"
+       id="path4099-8-0-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/FP2.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <rect
+       style="fill:none;stroke:none;stroke-width:0.97624158999999999;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.95248318999999992, 3.90496636999999991;stroke-dashoffset:0"
+       id="rect4438"
+       width="793.8988"
+       height="532.19318"
+       x="-16.891464"
+       y="-490.33798"
+       ry="14.628059"
+       inkscape:export-filename="/home/yury/Картинки/FP2.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <g
+       id="g3912-76"
+       transform="translate(-614.42123,-467.91316)"
+       inkscape:export-filename="/home/yury/Картинки/FP1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-23"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="130.64474"
+         y="81.833"
+         id="text4559-7-86-1-2-0-2"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-8"
+           x="130.64474"
+           y="81.833">Arrow</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-2"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3918-8);fill-opacity:1;stroke:none" />
+    </g>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="150"
+       inkscape:export-xdpi="150"
+       inkscape:export-filename="/home/yury/Картинки/FP1.png"
+       inkscape:connector-curvature="0"
+       id="path4553-8-8-1-6-8-6-1"
+       d="m -461.66507,-405.89462 -0.21268,-40.61503"
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0" />
+    <g
+       id="g3912-8-1"
+       transform="translate(-614.42123,-553.04723)"
+       inkscape:export-filename="/home/yury/Картинки/FP1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-6-4"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="116.64475"
+         y="80.414558"
+         id="text4559-7-86-1-2-0-9-4"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-9-4"
+           x="116.64475"
+           y="80.414558">Category</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-9-0"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3939-6);fill-opacity:1;stroke:none" />
+    </g>
+    <rect
+       style="fill:none;stroke:none;stroke-width:0.97624158999999999;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.95248318999999992, 3.90496636999999991;stroke-dashoffset:0"
+       id="rect4438-4"
+       width="793.8988"
+       height="532.19318"
+       x="-939.46356"
+       y="-497.48566"
+       ry="14.628059"
+       inkscape:export-filename="/home/yury/Картинки/FP1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <g
+       id="g3912-1"
+       transform="translate(1187.9973,-454.00254)"
+       inkscape:export-filename="/home/yury/Картинки/FP3.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-3"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="130.64474"
+         y="81.833"
+         id="text4559-7-86-1-2-0-5"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-2"
+           x="130.64474"
+           y="81.833">Arrow</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-42"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3918-78);fill-opacity:1;stroke:none" />
+    </g>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="150"
+       inkscape:export-xdpi="150"
+       inkscape:export-filename="/home/yury/Картинки/FP3.png"
+       inkscape:connector-curvature="0"
+       id="path4553-8-8-1-6-8-6-2"
+       d="m 1340.7535,-391.984 -0.2127,-40.61504"
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0" />
+    <g
+       id="g3912-8-5"
+       transform="translate(1187.9973,-539.13661)"
+       inkscape:export-filename="/home/yury/Картинки/FP3.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-6-9"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="116.64475"
+         y="80.414558"
+         id="text4559-7-86-1-2-0-9-7"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-9-8"
+           x="116.64475"
+           y="80.414558">Category</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-9-9"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3939-7);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-7"
+       transform="translate(1267.459,-319.76751)"
+       inkscape:export-filename="/home/yury/Картинки/FP3.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-61"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="100.64475"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-93"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-15"
+           x="100.64475"
+           y="79.123779">ArrowChoice</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-4"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3989-3);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-78-06"
+       transform="translate(950.53837,-454.00254)"
+       inkscape:export-filename="/home/yury/Картинки/FP3.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-4-9"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="96.644753"
+         y="81.833"
+         id="text4559-7-86-1-2-0-80-23"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-4-38"
+           x="96.644753"
+           y="81.833">Appliacative</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-4-5"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient4035-8);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-78-8-9"
+       transform="translate(950.53837,-539.13661)"
+       inkscape:export-filename="/home/yury/Картинки/FP3.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-4-1-06"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="120.64475"
+         y="81.833"
+         id="text4559-7-86-1-2-0-80-1-0"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-4-4-5"
+           x="120.64475"
+           y="81.833">Functor</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-4-0-15"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient4081-4);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-44-3"
+       transform="translate(1413.996,-319.76751)"
+       inkscape:export-filename="/home/yury/Картинки/FP3.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-6-3"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="110.64475"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-1-3"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-71-4"
+           x="110.64475"
+           y="79.123779">ArrowLoop</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-8-4"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3231-54);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-1-6"
+       transform="translate(950.53837,-319.76751)"
+       inkscape:export-filename="/home/yury/Картинки/FP3.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-8-5"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="106.64475"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-3-0"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-4-1"
+           x="106.64475"
+           y="79.123779">ArrowApply</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-0-6"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3231-2-8);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-78-1-2"
+       transform="translate(796.05247,-404.8721)"
+       inkscape:export-filename="/home/yury/Картинки/FP3.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-4-3-0"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="100.64475"
+         y="81.833"
+         id="text4559-7-86-1-2-0-80-2-15"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-4-3-0"
+           x="100.64475"
+           y="81.833">Alternative</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-4-3-96"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3390-2);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-44-6-0"
+       transform="translate(796.05247,-319.76751)"
+       inkscape:export-filename="/home/yury/Картинки/FP3.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-6-9-1"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="110.64475"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-1-2-18"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-71-0-67"
+           x="110.64475"
+           y="79.123779">ArrowPlus</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-8-5-59"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3148-7);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-88-1"
+       transform="translate(1112.0502,-319.76751)"
+       inkscape:export-filename="/home/yury/Картинки/FP3.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-66-9"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="96.644737"
+         y="81.833"
+         id="text4559-7-86-1-2-0-6-99"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-39-7"
+           x="96.644737"
+           y="81.833">KleisliArrow</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-5-3"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3240-0);fill-opacity:1;stroke:none" />
+    </g>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="150"
+       inkscape:export-xdpi="150"
+       inkscape:export-filename="/home/yury/Картинки/FP3.png"
+       inkscape:connector-curvature="0"
+       id="path4553-8-8-1-6-8-6-5-1"
+       d="m 1103.6896,-391.44087 -0.2126,-40.61505"
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m 1346.4318,-347.43179 c 136.7671,17.50535 201.7098,52.75344 222.0366,89.14059"
+       id="path4099-10"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/FP3.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m 1345.5542,-347.18104 c 61.6838,14.04184 61.9345,37.73745 67.451,89.39134"
+       id="path4099-2-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/FP3.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m 1346.808,-347.43178 c -108.8243,49.14643 -71.8672,73.09499 -79.8911,89.64429"
+       id="path4099-8-06"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/FP3.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m 1345.805,-346.55417 c -139.9169,37.11057 -230.1858,55.66586 -241.2187,88.76447"
+       id="path4099-8-0-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/FP3.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m 1345.9304,-347.30641 c -143.4274,20.56126 -378.75351,48.14345 -398.31178,87.76149"
+       id="path4099-8-0-3-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/FP3.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m 1041.1417,-375.36644 c -33.9946,-7.66418 -85.06946,10.74989 -93.63166,31.52817"
+       id="path4099-8-0-4-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/FP3.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <rect
+       style="fill:none;stroke:none;stroke-width:0.97624158999999999;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.95248318999999992, 3.90496636999999991;stroke-dashoffset:0"
+       id="rect4438-1"
+       width="793.8988"
+       height="532.19318"
+       x="862.95508"
+       y="-483.57504"
+       ry="14.628059"
+       inkscape:export-filename="/home/yury/Картинки/FP3.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <g
+       id="g3912-5"
+       transform="translate(-600.51062,164.02632)"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-7"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="130.64474"
+         y="81.833"
+         id="text4559-7-86-1-2-0-4"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-34"
+           x="130.64474"
+           y="81.833">Arrow</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-0"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3918-88);fill-opacity:1;stroke:none" />
+    </g>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="150"
+       inkscape:export-xdpi="150"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:connector-curvature="0"
+       id="path4553-8-8-1-6-8-6-3"
+       d="m -447.75446,226.04486 -0.21268,-40.61504"
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0" />
+    <g
+       id="g3912-8-9"
+       transform="translate(-600.51062,78.892247)"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-6-5"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="116.64475"
+         y="80.414558"
+         id="text4559-7-86-1-2-0-9-0"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-9-9"
+           x="116.64475"
+           y="80.414558">Category</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-9-04"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3939-3);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-98"
+       transform="translate(-521.04885,298.26135)"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-7"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="100.64475"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-22"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-5"
+           x="100.64475"
+           y="79.123779">ArrowChoice</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-30"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3989-55);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-78-15"
+       transform="translate(-837.96959,164.02632)"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-4-5"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="96.644753"
+         y="81.833"
+         id="text4559-7-86-1-2-0-80-0"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-4-33"
+           x="96.644753"
+           y="81.833">Appliacative</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-4-70"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient4035-60);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-78-8-6"
+       transform="translate(-837.96959,78.892247)"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-4-1-1"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="120.64475"
+         y="81.833"
+         id="text4559-7-86-1-2-0-80-1-5"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-4-4-55"
+           x="120.64475"
+           y="81.833">Functor</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-4-0-8"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient4081-8);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-4-9"
+       transform="translate(-677.71642,382.77644)"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-2-6"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="130.64474"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-9-4"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-7-03"
+           x="130.64474"
+           y="79.123779">Monad</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-1-40"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3062-2);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-44-69"
+       transform="translate(-374.5119,298.26135)"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-6-94"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="110.64475"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-1-8"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-71-46"
+           x="110.64475"
+           y="79.123779">ArrowLoop</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-8-3"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3231-3);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-1-9"
+       transform="translate(-837.96959,298.26135)"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-8-94"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="106.64475"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-3-4"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-4-6"
+           x="106.64475"
+           y="79.123779">ArrowApply</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-0-69"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3231-2-7);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-78-1-0"
+       transform="translate(-992.45552,213.15676)"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-4-3-8"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="100.64475"
+         y="81.833"
+         id="text4559-7-86-1-2-0-80-2-5"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-4-3-7"
+           x="100.64475"
+           y="81.833">Alternative</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-4-3-3"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3390-0);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-4-6-38"
+       transform="translate(-374.5119,465.89887)"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-2-7-4"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="118.64474"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-9-6-1"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-7-6-2"
+           x="118.64474"
+           y="79.123779">MonadFix</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-1-6-4"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3102-5);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-44-6-4"
+       transform="translate(-992.45552,298.26135)"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-6-9-8"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="110.64475"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-1-2-6"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-71-0-0"
+           x="110.64475"
+           y="79.123779">ArrowPlus</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-8-5-7"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3148-5);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-4-5-8"
+       transform="translate(-992.45552,465.89887)"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-2-0-78"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="112.64474"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-9-3-2"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-7-0-5"
+           x="112.64474"
+           y="79.123779">MonadPlus</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-1-63-11"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3194-0);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-88-6"
+       transform="translate(-676.31124,298.26135)"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-66-87"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="96.644737"
+         y="81.833"
+         id="text4559-7-86-1-2-0-6-3"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-39-4"
+           x="96.644737"
+           y="81.833">KleisliArrow</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-5-7"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3240-3);fill-opacity:1;stroke:none" />
+    </g>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="150"
+       inkscape:export-xdpi="150"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:connector-curvature="0"
+       id="path4553-8-8-1-6-8-6-5-5"
+       d="M -684.81832,226.58799 -685.031,185.97294"
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m -442.07611,270.59707 c 136.76707,17.50535 201.70978,52.75344 222.03655,89.14059"
+       id="path4099-89"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m -442.95372,270.84782 c 61.68378,14.04184 61.93452,37.73745 67.45096,89.39134"
+       id="path4099-2-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m -441.69999,270.59708 c -108.82424,49.14643 -71.86714,73.09499 -79.89105,89.64429"
+       id="path4099-8-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m -442.70298,271.47469 c -139.91687,37.11057 -230.18582,55.66586 -241.21869,88.76447"
+       id="path4099-8-0-60"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m -442.5776,270.72245 c -143.42733,20.56126 -378.75347,48.14345 -398.31174,87.76149"
+       id="path4099-8-0-3-9"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m -747.36623,242.66242 c -33.99466,-7.66418 -85.06949,10.74989 -93.63169,31.52817"
+       id="path4099-8-0-4-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m -589.46157,467.10852 c -116.55275,4.18053 -185.64447,23.13299 -253.38872,60.76007"
+       id="path4099-8-7-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m -456.16285,466.26752 c 112.26462,3.48293 217.2227,26.24522 238.19617,62.44208"
+       id="path4099-1-9"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <rect
+       style="fill:none;stroke:none;stroke-width:0.97624158999999999;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.95248318999999992, 3.90496636999999991;stroke-dashoffset:0"
+       id="rect4438-8"
+       width="793.8988"
+       height="532.19318"
+       x="-925.55292"
+       y="134.45381"
+       ry="14.628059"
+       inkscape:export-filename="/home/yury/Картинки/FP4.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <rect
+       style="fill:#26101d;fill-opacity:1;stroke:#ffffff;stroke-width:0.49837974;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:0.40377359;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect4035-9"
+       width="145.10802"
+       height="230.49638"
+       x="608.38892"
+       y="349.7699"
+       ry="11.226462"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <g
+       id="g3912-17"
+       transform="translate(299.70506,164.02632)"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-8"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="130.64474"
+         y="81.833"
+         id="text4559-7-86-1-2-0-66"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-86"
+           x="130.64474"
+           y="81.833">Arrow</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-57"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3918-64);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-8-2"
+       transform="translate(299.70506,78.892247)"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-6-6"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="116.64475"
+         y="80.414558"
+         id="text4559-7-86-1-2-0-9-1"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-9-1"
+           x="116.64475"
+           y="80.414558">Category</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-9-5"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3939-9);fill-opacity:1;stroke:none" />
+    </g>
+    <rect
+       style="fill:#26101d;fill-opacity:1;stroke:#ffffff;stroke-width:0.53562123;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:0.40377359;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect4035-78-8-9-7"
+       width="145.10802"
+       height="230.45024"
+       x="457.81989"
+       y="349.7699"
+       ry="11.224215"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <g
+       id="g3912-7-15"
+       transform="translate(375.19237,298.26135)"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-1"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="100.64475"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-7"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-17"
+           x="100.64475"
+           y="79.123779">ArrowChoice</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-14"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3989-7);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-78-5"
+       transform="translate(62.246088,164.02632)"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-4-35"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="96.644753"
+         y="81.833"
+         id="text4559-7-86-1-2-0-80-6"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-4-1"
+           x="96.644753"
+           y="81.833">Appliacative</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-4-4"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient4035-88);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-78-8-1"
+       transform="translate(62.246088,78.892247)"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-4-1-2"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="120.64475"
+         y="81.833"
+         id="text4559-7-86-1-2-0-80-1-3"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-4-4-1"
+           x="120.64475"
+           y="81.833">Functor</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-4-0-19"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient4081-3);fill-opacity:1;stroke:none" />
+    </g>
+    <rect
+       style="fill:#26101d;fill-opacity:1;stroke:#ffffff;stroke-width:0.53562123;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:0.40377359;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect4035-78-8-9"
+       width="145.10802"
+       height="230.45027"
+       x="306.84583"
+       y="349.7699"
+       ry="11.224217"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <rect
+       style="fill:#26101d;fill-opacity:0.50943400000000005;stroke:#ffffff;stroke-width:1;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:4,8;stroke-dashoffset:0"
+       id="rect3869"
+       width="294.45367"
+       height="47.682842"
+       x="150.56656"
+       y="358.81863"
+       ry="8.6491919"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <rect
+       style="fill:#26101d;fill-opacity:0.33962265;stroke:none"
+       id="rect4462-9-3"
+       width="133.84383"
+       height="64.287201"
+       x="310.37015"
+       y="482.7355"
+       ry="0"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <g
+       id="g3912-7-4-97"
+       transform="translate(223.75789,382.77644)"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-2-4"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="130.64474"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-9-63"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-7-9"
+           x="130.64474"
+           y="79.123779">Monad</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-1-0"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3062-17);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-44-12"
+       transform="translate(525.70378,298.26135)"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-6-38"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="110.64475"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-1-38"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-71-1"
+           x="110.64475"
+           y="79.123779">ArrowLoop</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-8-2"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3231-6);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-1-91"
+       transform="translate(62.246088,298.26135)"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-8-4"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="106.64475"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-3-5"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-4-8"
+           x="106.64475"
+           y="79.123779">ArrowApply</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-0-9"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3231-2-2);fill-opacity:1;stroke:none" />
+    </g>
+    <rect
+       style="fill:#26101d;fill-opacity:1;stroke:#ffffff;stroke-width:0.50000000000000000;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:0.40377358000000002;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect4035-7-1"
+       width="145.10802"
+       height="315.13254"
+       x="-9.8190193"
+       y="265.13376"
+       ry="15.348718"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <g
+       id="g3912-78-1-6"
+       transform="translate(-92.239812,213.15676)"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-4-3-2"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="100.64475"
+         y="81.833"
+         id="text4559-7-86-1-2-0-80-2-7"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-4-3-8"
+           x="100.64475"
+           y="81.833">Alternative</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-4-3-7"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3390-9);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-4-6-0"
+       transform="translate(525.70378,465.89887)"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-2-7-1"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="118.64474"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-9-6-8"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-7-6-1"
+           x="118.64474"
+           y="79.123779">MonadFix</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-1-6-1"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3102-38);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-44-6-7"
+       transform="translate(-92.239812,298.26135)"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-6-9-59"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="110.64475"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-1-2-2"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-71-0-7"
+           x="110.64475"
+           y="79.123779">ArrowPlus</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-8-5-0"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3148-2);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-4-5-5"
+       transform="translate(-92.239812,465.89887)"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-2-0-9"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="112.64474"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-9-3-3"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-7-0-3"
+           x="112.64474"
+           y="79.123779">MonadPlus</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-1-63-3"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3194-5);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-88-4"
+       transform="translate(223.75789,298.26135)"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-66-7"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="96.644737"
+         y="81.833"
+         id="text4559-7-86-1-2-0-6-7"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-39-38"
+           x="96.644737"
+           y="81.833">KleisliArrow</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-5-1"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3240-9);fill-opacity:1;stroke:none" />
+    </g>
+    <rect
+       style="fill:none;stroke:none;stroke-width:0.97624158999999999;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.95248318999999992, 3.90496636999999991;stroke-dashoffset:0"
+       id="rect4438-2"
+       width="793.8988"
+       height="532.19318"
+       x="-25.337208"
+       y="134.45381"
+       ry="14.628059"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <rect
+       style="fill:#602749;fill-opacity:0.12075471;stroke:#ffffff;stroke-width:1.25;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:0.43018871;stroke-dasharray:1.25, 5;stroke-dashoffset:0"
+       id="rect4035-6"
+       width="145.10802"
+       height="231.99753"
+       x="1516.5535"
+       y="352.24326"
+       ry="11.299577"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <rect
+       style="fill:#602749;fill-opacity:0.12075471;stroke:#ffffff;stroke-width:1.25;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:0.43018871;stroke-dasharray:1.25, 5;stroke-dashoffset:0"
+       id="rect4035-8-0"
+       width="298.04501"
+       height="157.83569"
+       x="1208.8306"
+       y="351.125"
+       ry="13.499848"
+       rx="12.137684"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <rect
+       style="fill:#602749;fill-opacity:0.12075471;stroke:#ffffff;stroke-width:1.25;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.25, 5;stroke-dashoffset:0"
+       id="rect4035-78-97"
+       width="145.10802"
+       height="200.81755"
+       x="1053.9244"
+       y="221.05766"
+       ry="9.7809372"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <rect
+       style="fill:#602749;fill-opacity:0.12075471;stroke:#ffffff;stroke-width:1.25;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:0.43018871;stroke-dasharray:1.25, 5;stroke-dashoffset:0"
+       id="rect4035-7-7-1"
+       width="144.31786"
+       height="305.14703"
+       x="1215.0336"
+       y="356.54346"
+       ry="14.862368"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <g
+       id="g3912-0"
+       transform="translate(1207.8696,168.00078)"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-49"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="130.64474"
+         y="81.833"
+         id="text4559-7-86-1-2-0-83"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-38"
+           x="130.64474"
+           y="81.833">Arrow</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-1"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3918-21);fill-opacity:1;stroke:none" />
+    </g>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="150"
+       inkscape:export-xdpi="150"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:connector-curvature="0"
+       id="path4553-8-8-1-6-8-6-27"
+       d="m 1360.6258,230.01932 -0.2127,-40.61504"
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0" />
+    <g
+       id="g3912-8-15"
+       transform="translate(1207.8696,82.866709)"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-6-91"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="116.64475"
+         y="80.414558"
+         id="text4559-7-86-1-2-0-9-8"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-9-0"
+           x="116.64475"
+           y="80.414558">Category</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-9-7"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3939-94);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-2"
+       transform="translate(1279.3825,302.23581)"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-68"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="100.64475"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-4"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-79"
+           x="100.64475"
+           y="79.123779">ArrowChoice</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-5"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3989-9);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-78-6"
+       transform="translate(970.41068,168.00078)"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-4-6"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="96.644753"
+         y="81.833"
+         id="text4559-7-86-1-2-0-80-39"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-4-7"
+           x="96.644753"
+           y="81.833">Appliacative</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-4-30"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient4035-3);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-78-8-0"
+       transform="translate(970.41068,82.866709)"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-4-1-7"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="120.64475"
+         y="81.833"
+         id="text4559-7-86-1-2-0-80-1-2"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-4-4-0"
+           x="120.64475"
+           y="81.833">Functor</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-4-0-3"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient4081-9);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-4-7"
+       transform="translate(1278.6638,388.7509)"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-2-84"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="130.64474"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-9-9"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-7-7"
+           x="130.64474"
+           y="79.123779">Monad</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-1-5"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3062-7);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-44-5"
+       transform="translate(1433.8684,302.23581)"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-6-6"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="110.64475"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-1-85"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-71-6"
+           x="110.64475"
+           y="79.123779">ArrowLoop</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-8-57"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3231-68);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-1-5"
+       transform="translate(970.41068,302.23581)"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-8-43"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="106.64475"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-3-45"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-4-83"
+           x="106.64475"
+           y="79.123779">ArrowApply</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-0-3"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3231-2-9);fill-opacity:1;stroke:none" />
+    </g>
+    <rect
+       style="fill:#602749;fill-opacity:0.12075471;stroke:#ffffff;stroke-width:1.25;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:0.43018871;stroke-dasharray:1.25, 5;stroke-dashoffset:0"
+       id="rect4035-7-4"
+       width="145.10802"
+       height="315.13254"
+       x="898.34558"
+       y="269.10822"
+       ry="15.348718"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <g
+       id="g3912-78-1-23"
+       transform="translate(815.92478,217.13122)"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-4-3-7"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="100.64475"
+         y="81.833"
+         id="text4559-7-86-1-2-0-80-2-2"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-4-3-3"
+           x="100.64475"
+           y="81.833">Alternative</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-4-3-6"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3390-4);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-4-6-6"
+       transform="translate(1433.8684,469.87333)"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-2-7-3"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="118.64474"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-9-6-9"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-7-6-3"
+           x="118.64474"
+           y="79.123779">MonadFix</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-1-6-34"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3102-9);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-44-6-3"
+       transform="translate(815.92478,302.23581)"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-6-9-3"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="110.64475"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-1-2-10"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-71-0-9"
+           x="110.64475"
+           y="79.123779">ArrowPlus</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-8-5-05"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3148-87);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-7-4-5-85"
+       transform="translate(815.92478,469.87333)"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-2-0-55"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="112.64474"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-9-3-1"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-7-0-81"
+           x="112.64474"
+           y="79.123779">MonadPlus</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-1-63-9"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3194-78);fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3912-88-94"
+       transform="translate(1131.9225,302.23581)"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-66-2"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="96.644737"
+         y="81.833"
+         id="text4559-7-86-1-2-0-6-38"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-39-72"
+           x="96.644737"
+           y="81.833">KleisliArrow</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-5-30"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient3240-5);fill-opacity:1;stroke:none" />
+    </g>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="150"
+       inkscape:export-xdpi="150"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:connector-curvature="0"
+       id="path4553-8-8-1-6-8-6-5-8"
+       d="m 1123.5619,230.56245 -0.2126,-40.61505"
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m 1366.3041,274.57153 c 136.7671,17.50535 201.7098,52.75344 222.0366,89.14059"
+       id="path4099-9"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m 1365.4265,274.82228 c 61.6838,14.04184 61.9346,37.73745 67.451,89.39134"
+       id="path4099-2-58"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m 1366.6803,274.57154 c -108.8243,49.14643 -71.8672,73.09499 -79.8911,89.64429"
+       id="path4099-8-39"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m 1365.6773,275.44915 c -139.9169,37.11057 -230.1858,55.66586 -241.2187,88.76447"
+       id="path4099-8-0-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="M 1365.8027,274.69691 C 1222.3753,295.25817 987.0492,322.84036 967.49093,362.4584"
+       id="path4099-8-0-3-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m 1061.014,246.63688 c -33.9946,-7.66418 -85.06945,10.74989 -93.63165,31.52817"
+       id="path4099-8-0-4-238"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <g
+       id="g3912-7-4-5-4-3"
+       transform="translate(1278.6638,469.87333)"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-2-0-7-5"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="142.64474"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-9-3-9-5"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-7-0-8-33"
+           x="142.64474"
+           y="79.123779">...</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-1-63-2-0"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient4217-7);fill-opacity:1;stroke:none" />
+    </g>
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m 1369.2734,471.08298 c -126.389,-8.46613 -335.9992,23.13299 -403.74342,60.76007"
+       id="path4099-8-7-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m 1498.3566,471.64716 c 51.8417,10.50886 71.0835,24.84004 92.057,61.0369"
+       id="path4099-1-4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.34339624;stroke-dasharray:6, 6;stroke-dashoffset:0"
+       d="m 1432.9276,494.97111 c -5.5432,25.25829 10.2935,13.29671 5.7826,36.16934"
+       id="path4099-8-5-1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <g
+       id="g3912-7-4-6-8-250"
+       transform="translate(1131.885,543.22495)"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <rect
+         ry="7.25"
+         y="62.611122"
+         x="90.74894"
+         height="43.502121"
+         width="128.50212"
+         id="rect3838-2-2-7-2-80"
+         style="fill:none;stroke:#ffffff;stroke-width:0.99788028;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+         x="120.64474"
+         y="79.123779"
+         id="text4559-7-86-1-2-0-8-9-6-0-5"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/home/yury/Картинки/F3.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300"><tspan
+           sodipodi:role="line"
+           id="tspan4561-8-2-1-5-86-3-7-6-9-97"
+           x="120.64474"
+           y="79.123779">MonadT</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect3838-0-8-1-6-7-7"
+         d="m 90.760408,81.587103 0,17.5625 c 0,4.016497 3.2335,7.249997 7.25,7.249997 l 114.000002,0 c 4.0165,0 7.25,-3.2335 7.25,-7.249997 l 0,-2.8125 c -20.32322,2.76542 -69.79533,6.061377 -128.500002,-14.75 z"
+         style="fill:url(#linearGradient4317-4);fill-opacity:1;stroke:none" />
+    </g>
+    <rect
+       style="fill:none;stroke:#ffffff;stroke-width:0.97624159;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.95248319, 3.90496637;stroke-dashoffset:0"
+       id="rect4438-28"
+       width="793.8988"
+       height="532.19318"
+       x="882.82745"
+       y="138.42827"
+       ry="14.628059"
+       inkscape:export-filename="/home/yury/Картинки/Full1.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4452"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Symbol;-inkscape-font-specification:Symbol"><flowRegion
+         id="flowRegion4454"><rect
+           id="rect4456"
+           width="112.76606"
+           height="99.416809"
+           x="636.8999"
+           y="468.508" /></flowRegion><flowPara
+         id="flowPara4458">Feedbackallow cycles in the computation grpaphss</flowPara><flowPara
+         id="flowPara4460" /></flowRoot>    <flowRoot
+       xml:space="preserve"
+       style="font-size:11px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#f6921d;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       id="flowRoot4464"
+       transform="translate(0,28)"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150"><flowRegion
+         id="flowRegion4466" /><flowPara
+         id="flowPara4470"><flowSpan
+           style="font-weight:bold;-inkscape-font-specification:Hermit Bold"
+           id="flowSpan4511"><flowSpan
+             style="-inkscape-font-specification:Hermit Semi-Light"
+             id="flowSpan4513"><flowSpan
+               style="font-size:13px"
+               id="flowSpan4515" /></flowSpan></flowSpan></flowPara><flowPara
+         id="flowPara4472">allow cycles in the computation grpaph</flowPara></flowRoot>    <rect
+       style="fill:#26101d;fill-opacity:0.33962265;stroke:none"
+       id="rect4462-9"
+       width="133.84383"
+       height="93.796074"
+       x="-4.3911986"
+       y="417.39441"
+       ry="0"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <flowRoot
+       xml:space="preserve"
+       style="font-size:11px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#f6921d;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       id="flowRoot4464-7"
+       transform="translate(-549.07588,-317.60621)"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150"><flowRegion
+         id="flowRegion4466-5"><use
+           x="0"
+           y="0"
+           xlink:href="#rect4462-9"
+           id="use4468-5"
+           width="744.09448"
+           height="1052.3622"
+           transform="translate(549.07588,331.60621)" /></flowRegion><flowPara
+         id="flowPara4472-2"
+         style="font-size:13px;-inkscape-font-specification:Hermit Semi-Light" /><flowPara
+         id="flowPara4509">allowing effects to be structuraly combined</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       style="font-size:11px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#f6921d;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       id="flowRoot4464-7-6"
+       transform="translate(-544.68468,-704.08249)"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150"><flowRegion
+         id="flowRegion4466-5-9"><use
+           x="0"
+           y="0"
+           xlink:href="#rect4462-9-3"
+           id="use4468-5-7"
+           width="744.09448"
+           height="1052.3622"
+           transform="translate(544.68468,735.00062)" /></flowRegion><flowPara
+         id="flowPara4509-3">arbitrary dynamic DAG of effecful computation</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       style="font-size:11px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#f6921d;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       id="flowRoot4464-7-6-4"
+       transform="translate(-244.76759,-770.7575)"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150"><flowRegion
+         id="flowRegion4466-5-9-5"><use
+           x="0"
+           y="0"
+           xlink:href="#rect4462-9-3"
+           id="use4468-5-7-3"
+           width="744.09448"
+           height="1052.3622"
+           transform="translate(544.68468,735.00062)" /></flowRegion><flowPara
+         id="flowPara4509-3-4">Feedback</flowPara><flowPara
+         id="flowPara4451">allow cycles in the computation grpaph</flowPara></flowRoot>    <rect
+       style="fill:none;fill-opacity:0.50943400000000005;stroke:none;stroke-width:0.97760439000000021;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:3.91041748000000000, 7.82083497999999988;stroke-dashoffset:0"
+       id="rect4489"
+       width="131.60904"
+       height="67.448875"
+       x="463.71094"
+       y="446.72766"
+       ry="0"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <flowRoot
+       xml:space="preserve"
+       style="font-size:11px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#f6921d;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       id="flowRoot4491"
+       transform="translate(0.70259236,8.4311073)"
+       inkscape:export-filename="/home/yury/Картинки/FP5.png"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150"><flowRegion
+         id="flowRegion4493"><use
+           x="0"
+           y="0"
+           xlink:href="#rect4489"
+           id="use4495"
+           width="744.09448"
+           height="1052.3622" /></flowRegion><flowPara
+         id="flowPara4497">fixed decision paths between efects based on run-time data</flowPara><flowPara
+         id="flowPara4499" /></flowRoot>  </g>
+</svg>
