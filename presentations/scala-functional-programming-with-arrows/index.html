@@ -498,12 +498,86 @@ trait KleisliArrow[M[+_]]
       <section>
         <h3 style="text-align:left;">Arrows & Applicatives</h3>
         <section>
-          <h4 style="text-align:left;"></h4>
-          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+          <table  cellspacing="0" cellpadding="0" style="width:100%;border:0px solid #F6921D;">
+            <tr>
+              <td width="50%" style="text-align:center;">Arrow</td>
+              <td width="50%" style="text-align:center;">Monad</td>
+            </tr>
+            <tr>
+              <td width="50%" >
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:100%;">
+trait Arrow[~>[_, _]] extends Category[~>] {
+  // [Category]
+  def id[A]: A ~> A
+  def compose[A, B, C](f: B ~> C, g: A ~> B): A ~> C
+
+  // [Arrow] Minimal complete definition
+  def arr[B, C](f: B => C): B ~> C
+  def first[B, C, D](f: B ~> C): (B, D) ~> (C, D)
+}
+              </code></pre>
+              </td>
+              <td width="50%" >
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:100%;">
 trait Applicative[M[_]] extends Functor[M] {
+  // Applicative -> [Pointed] -> Functor
+  def point[A](a: => A): F[A]
+
   def <*>[A,B](m: M[A], f: M[A => B]): M[B]
 }
-          </code></pre>
+              </code></pre>
+              </td>
+            </tr>
+            <tr class="fragment current-visible" data-fragment-index="1">
+              <td colspan="2" style="text-align:center;">Laws:</td>
+            </tr>
+            <tr class="fragment current-visible" data-fragment-index="1">
+              <td>
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:68%;line-height:100%;">
+arr id                      == id
+arr(f >>> g)                == arr(f) >>> arr(g)
+fst(arr(f))                 == arr(fst(f))
+fst(f >>> g)                == fst(f) >>> fst(g)
+fst(f) >>> arr(fst)         == arr(fst) >>> f
+fst(f) >>> arr (id *** g)   == arr(id *** g) >>> fst(f)
+fst(first(f)) >>> arr assoc == arr(assoc) >>> fst(f)
+// assoc[A,B,C]((A,B),C) = (A,(B,C))
+
+// + Category laws
+              </code></pre>
+              </td>
+              <td>
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:100%;">
+// Identity: fa: F[A]
+fa <*> point(id)      == fa
+
+// Composition:
+u <*> v <*> w         == u <*> (v <*> w)
+
+// Homomorphism: (a: A, f: A => B)
+pount(f) <*> point(a) == point(f(x))
+
+// Interchange: (a: A, fa: F[A => B])
+point(a) <*> fa       == fa <*> point(f => f(a))
+
+// As a consequence of these laws,
+// the Functor instance for f will satisfy
+fa.map(f)             == pure(f) <*> fa
+
+// + Functor laws
+              </code></pre>
+              </td>
+            </tr>
+            <tr class="fragment current-visible" data-fragment-index="1" style="font-size:50%;">
+              <td width="50%" style="text-align:center;">7 + Category</td>
+              <td width="50%" style="text-align:center;">4 + Functor</td>
+            </tr>
+          </table>
+        </section>
+
+
+        <section>
+          <h4 style="text-align:left;"></h4>
         </section>
 
         <section>
@@ -514,16 +588,103 @@ trait Applicative[M[_]] extends Functor[M] {
 
 <!-- ------------------------------------------------------------------------------------- -->
       <section>
-        <h3 style="text-align:left;">Arrows & Monads</h3>
+        <h3 style="text-align:left;">Arrows &amp; Monads</h3>
         <section>
-          <h4 style="text-align:left;"></h4>
+          <table  cellspacing="0" cellpadding="0" style="width:100%;border:0px solid #F6921D;">
+            <tr>
+              <td width="50%" style="text-align:center;">Arrow</td>
+              <td width="50%" style="text-align:center;">Monad</td>
+            </tr>
+            <tr>
+              <td width="50%" >
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:100%;">
+trait Arrow[~>[_, _]] extends Category[~>] {
+  // [Category]
+  def id[A]: A ~> A
+  def compose[A, B, C](f: B ~> C, g: A ~> B): A ~> C
+
+  // [Arrow] Minimal complete definition
+  def arr[B, C](f: B => C): B ~> C
+  def first[B, C, D](f: B ~> C): (B, D) ~> (C, D)
+}
+              </code></pre>
+              </td>
+              <td width="50%" >
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:100%;">
+trait Monad[M[_]] extends Applicative[M] {
+  // Monad -> Applicative -> [Pointed] -> Functor
+  def point[A](a: => A): F[A]
+
+  // [Monad]
+  def flatMap[A, B](ma: M[A], f: A => M[B]): M[B]
+}
+              </code></pre>
+              </td>
+            </tr>
+            <tr class="fragment current-visible" data-fragment-index="1">
+              <td colspan="2" style="text-align:center;">Laws:</td>
+            </tr>
+            <tr class="fragment current-visible" data-fragment-index="1">
+              <td>
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:68%;line-height:100%;">
+arr id                      == id
+arr(f >>> g)                == arr(f) >>> arr(g)
+fst(arr(f))                 == arr(fst(f))
+fst(f >>> g)                == fst(f) >>> fst(g)
+fst(f) >>> arr(fst)         == arr(fst) >>> f
+fst(f) >>> arr (id *** g)   == arr(id *** g) >>> fst(f)
+fst(first(f)) >>> arr assoc == arr(assoc) >>> fst(f)
+// assoc[A,B,C]((A,B),C) = (A,(B,C))
+
+// + Category laws
+              </code></pre>
+              </td>
+              <td>
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:100%;">
+// Right identity: (ma: M[A] f: A => M[B])
+ma.flatMap(x => point(x)) == ma
+// Left identity: (a: A f: A => M[B])
+point(a).flatMap(f)       == f(a)
+// Associativity:
+// (ma: M[A] f: A => M[B], g: B => M[C])
+ma.flatMap(f).flatMap(g)  ==
+              ma.flatMap(a => f(a).flatMap(g))
+
+// + Applicative laws
+// + Functor laws
+              </code></pre>
+              </td>
+            </tr>
+            <tr class="fragment current-visible" data-fragment-index="1" style="font-size:50%;">
+              <td width="50%" style="text-align:center;">7 + Category</td>
+              <td width="50%" style="text-align:center;">3 + Applicative + Functor</td>
+            </tr>
+          </table>
+
+          <div class="fragment current-visible" data-fragment-index="2">
+          <p style="font-size:66%;">
+          <mark class="red">Arrows disadvantage:</mark></br><strike>initial effort of defining an arrow that satisfies the arrow laws.</strike>
+          </p></div>
         </section>
-        <section>
-          <h4 style="text-align:left;">Kleisli & CoKleisli Arrow</h4>
-        </section>
+
         <section>
           <h4 style="text-align:left;">Generalising monads to arrows</h4>
+
+          Well known side-effects:
+          A => List[B]
+          A => Option[B]
+          A => Try[B]
+          A => State[B, S] // (B, S)
+
+          About data manipulation for any side-effect keeper:
+
+          Functor :  A => B       =>   C[A] => C[B]
+          Monad   :  A => C[B]    =>   C[A] => C[B]
+
+          Kleisli :  A => C[B]
+
         </section>
+
         <section>
           <h4 style="text-align:left;">What can Arrows do that Monads can't?</h4>
         </section>
