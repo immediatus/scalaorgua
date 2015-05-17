@@ -50,16 +50,6 @@
           <p style="color:#703D5B;font-size:150%;font-family:'Lobster', sans-serif;">"to show one of technics of managing your data &amp; control side-effect"</p>
           </div></div>
         </section>
-        <section>
-          <ul style="list-style-type:decimal;font-size:100%;width:100%;padding-top:40px;line-height:2;">
-            <li>Function and Combinators</li>
-            <li>Arrows and Product</li>
-            <li>Arrows and Co-Product</li>
-            <li>Arrows and Applicatives</li>
-            <li>Arrows and Monads</li>
-            <li>Arrows and Transducers</li>
-          </ul>
-        </section>
       </section>
 
 <!-- ------------------------------------------------------------------------------------- -->
@@ -107,7 +97,6 @@ f("By!")   shouldEqual 3
           <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
           <img src="assets/F2.png" alt="url" title="">
 
-          <div class="fragment current-visible">
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
 val f: String => Int = str => str.length
@@ -120,7 +109,7 @@ h("Workday") shouldEqual 14
           </code></pre>
           </div>
 
-        </div></section>
+        </section>
 
       </section>
 
@@ -144,8 +133,9 @@ h("Workday") shouldEqual 14
         <section>
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
           <div  style="padding-left:100px;">
-            <div style="position:absolute;margin-left:50px;"><img src="assets/P12.png" alt="url" title=""></div>
-            <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/P11.png" alt="url" title=""></div>
+            <div style="position:absolute;margin-left:50px;">
+              <img src="assets/P11.png" alt="url" title="">
+            </div>
           </div>
         </section>
 
@@ -178,11 +168,10 @@ forAll { (any: String) =>
       <section>
         <h3 style="text-align:left;">Function and Combinators (Part 2)</h3>
 
-        <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
-          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
+        <section><div style="height:600px;">
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">View:</p>
           <img src="assets/F3.png" alt="url" title="">
 
-          <div class="fragment current-visible">
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
 val f: String => Int    = str => str.length
@@ -193,14 +182,28 @@ val h = f &&& g
 h("Hello")   shouldEqual (5, "HELLO")
 h("Workday") shouldEqual (7, "WORKDAY")
           </code></pre>
-          </div>
-        </div></section>
+        </section>
+
+        <section>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">View:</p>
+          <img src="assets/F4.png" alt="url" title="">
+
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+val f: String => Int    = str => str.length
+val g: String => String = str => str.toUpperCase
+
+val h = f *** g
+
+h("Hello", "Workday") shouldEqual (5, "WORKDAY")
+          </code></pre>
+        </section>
 
         <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Arrow Type-Class:</p>
           <p style="font-size:50%;text-align:left;">An arrow is the term used in category theory as an abstract notion of thing that behaves like a function.</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
-trait Arrow[~>[_, _]] extends Category[~>] {
+trait Arrow[~>[-_, +_]] extends Category[~>] {
 
   def arr[B, C](f: B => C): B ~> C
 
@@ -211,38 +214,16 @@ trait Arrow[~>[_, _]] extends Category[~>] {
   def ***[B, C, B2, C2](fbc: B ~> C, fbc2: B2 ~> C2): (B, B2) ~> (C, C2)
 }
           </code></pre>
-          <div class="fragment current-visible">
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">And Category Type-Class:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
-trait Category[~>[_, _]] {
+trait Category[~>[-_, +_]] {
 
   def id[A]: A ~> A
-  def compose[A, B, C](f: B ~> C, g: A ~> B): A ~> C  // >>>
+  def compose[A, B, C](f: B ~> C, g: A ~> B): A ~> C
 }
           </code></pre>
-          </div>
         </div></section>
 
-      </section>
-
-<!-- ------------------------------------------------------------------------------------- -->
-      <section>
-        <h3 style="text-align:left;">Function and Combinators (Part 2)</h3>
-
-        <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
-        <img src="assets/F4.png" alt="url" title="">
-
-        <div class="fragment current-visible">
-        <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
-        <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
-val f: String => Int    = str => str.length
-val g: String => String = str => str.toUpperCase
-
-val h = f *** g
-
-h("Hello", "Workday") shouldEqual (5, "WORKDAY")
-        </code></pre>
-        </div>
       </section>
 
 <!-- ------------------------------------------------------------------------------------- -->
@@ -254,8 +235,7 @@ h("Hello", "Workday") shouldEqual (5, "WORKDAY")
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
 
           <div  style="padding-left:100px;">
-            <div style="position:absolute;margin-left:50px;"><img src="assets/P22.png" alt="url" title=""></div>
-            <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/P21.png" alt="url" title=""></div>
+            <div style="position:absolute;margin-left:50px;"><img src="assets/P21.png" alt="url" title=""></div>
           </div>
         </section>
 
@@ -290,11 +270,10 @@ forAll { (anyStr: String, anyInt: Int) =>
       <section>
         <h3 style="text-align:left;">Function and Combinators (Part 3)</h3>
 
-        <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
-          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
+        <section><div style="height:600px;">
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">View:</p>
           <img src="assets/F5.png" alt="url" title="">
 
-          <div class="fragment current-visible">
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
 val f: String => Int    = str => str.length
@@ -305,14 +284,29 @@ val h = f +++ g
 h apply Left[String, String]("Hello")  shouldEqual L[Int, String](5)
 h apply Right[String, String]("Hello") shouldEqual R[Int, String]("HELLO")
           </code></pre>
-          </div>
-        </div></section>
+        </section>
+
+        <section>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">View:</p>
+          <img src="assets/F6.png" alt="url" title="">
+
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+val f: String => Int    = str => str.length
+val g: String => String = str => str.toUpperCase
+
+val h = f ||| g
+
+h apply Left[String, String]("Hello")  shouldEqual 5
+h apply Right[String, String]("Hello") shouldEqual "HELLO"
+          </code></pre>
+        </section>
 
         <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">ArrowChoice Type-Class:</p>
           <p style="font-size:50%;text-align:left;">make a choice between two arrows, on the basis of a previous result</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
-trait ArrowChoice[~>[_, _]] extends Arrow[~>] {
+trait ArrowChoice[~>[-_, +_]] extends Arrow[~>] {
   type E[A, B] = Either[A, B]
 
   def left[B, C, D](a: B ~> C): E[B, D] ~> E[C, D]
@@ -328,60 +322,34 @@ trait ArrowChoice[~>[_, _]] extends Arrow[~>] {
 
 <!-- ------------------------------------------------------------------------------------- -->
       <section>
-        <h3 style="text-align:left;">Function and Combinators (Part 3)</h3>
-
-        <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
-        <img src="assets/F6.png" alt="url" title="">
-
-        <div class="fragment current-visible">
-        <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
-        <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
-val f: String => Int    = str => str.length
-val g: String => String = str => str.toUpperCase
-
-val h = f ||| g
-
-h apply Left[String, String]("Hello")  shouldEqual 5
-h apply Right[String, String]("Hello") shouldEqual "HELLO"
-        </code></pre>
-        </div>
-
-      </section>
-
-<!-- ------------------------------------------------------------------------------------- -->
-      <section>
         <h3 style="text-align:left;">Function and Combinators (Part 4)</h3>
 
-        <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
+        <section><div style="height:600px;">
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
           <img src="assets/F7.png" alt="url" title="">
 
-          <div class="fragment current-visible">
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:90%;line-height:100%;">
-val factorial: (Int => Int) => (Int => Int) =
-  tail => {
-    case 0 => 1
-    case x => x * tail(x - 1)
-  }
+val factorial: (Int, Int => Int) => (Int, Int => Int) = {
+  case (initialValue, loopEntry) => (
+    loopEntry(initialValue),    // entry point
 
-val f: (Int, Int => Int) => (Int, Int => Int) = {
-  case (a, loop) => (
-    loop(a),           // entry point
-    factorial(f)       // loop body
+    tail => {                   // loop body
+      case 0 => 1
+      case x => x * tail(x - 1)
+    }
   )
 }
 
 arr.loop(f)(5) shouldEqual 120
           </code></pre>
-          </div>
-        </div></section>
+        </section>
 
         <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">ArrowLoop Type-Class should look:</p>
           <p style="font-size:50%;text-align:left;">arrow class with a feedback combinator</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
-trait ArrowLoop extends Arrow[~>] {
+trait ArrowLoop[~>[-_, +_]] extends Arrow[~>] {
   def loop[A, B, C](f: (A, C) ~> (B, C)): A ~> B
 }
           </code></pre>
@@ -396,7 +364,7 @@ trait ArrowLoop extends Arrow[~>] {
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">ArrowLoop Type-Class worked implementation:</p>
           <p style="font-size:50%;text-align:left;">LazyTuple2 from Scalaz lib (:&amp;: - type notation)</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
-trait ArrowLoop extends Arrow[~>] {
+trait ArrowLoop[~>[-_, +_]] extends Arrow[~>] {
   import scalaz._
   import scalaz.Scalaz._
 
@@ -465,15 +433,15 @@ f(None)             shouldEqual ""
         <section>
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">KleisliArrow Type-Class:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
-type Kleisli[M[+_],A,B] = A => M[A]
+type Kleisli[M[+_], -A, +B] = A => M[A]
 
 trait KleisliCategory[M[+_]]
-  extends Category[({type λ[α, β] = Kleisli[M, α, β]})#λ] {
+  extends Category[({type λ[-α, +β] = Kleisli[M, α, β]})#λ] {
 // ...
 }
 
 trait KleisliArrow[M[+_]]
-  extends Arrow[({type λ[α, β] = Kleisli[M, α, β]})#λ]
+  extends Arrow[({type λ[-α, +β] = Kleisli[M, α, β]})#λ]
   with KleisliCategory[M] {
 
 // ...
@@ -571,7 +539,7 @@ read from environment
             <tr>
               <td width="50%" >
               <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
-trait Arrow[~>[_, _]] extends Category[~>] {
+trait Arrow[~>[-_, +_]] extends Category[~>] {
   // [Category]
   def id[A]: A ~> A
   def compose[A, B, C](f: B ~> C, g: A ~> B): A ~> C
@@ -584,19 +552,19 @@ trait Arrow[~>[_, _]] extends Category[~>] {
               </td>
               <td width="50%" >
               <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
-trait Applicative[M[_]] extends Functor[M] {
+trait Applicative[M[+_]] extends Functor[M] {
   // Applicative -> [Pointed] -> Functor
-  def point[A](a: => A): F[A]
+  def point[A](a: => A): M[A]
 
   def <*>[A,B](m: M[A], f: M[A => B]): M[B]
 }
               </code></pre>
               </td>
             </tr>
-            <tr class="fragment current-visible" data-fragment-index="1">
+            <tr>
               <td colspan="2" style="text-align:center;">Laws:</td>
             </tr>
-            <tr class="fragment current-visible" data-fragment-index="1">
+            <tr>
               <td>
               <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:68%;line-height:120%;">
 // lift
@@ -636,9 +604,9 @@ fa.map(f)             == pure(f) <*> fa
               </code></pre>
               </td>
             </tr>
-            <tr class="fragment current-visible" data-fragment-index="1" style="font-size:50%;">
-              <td width="50%" style="text-align:center;">7 + Category Laws</td>
-              <td width="50%" style="text-align:center;">4 + Functor Laws</td>
+            <tr style="font-size:50%;">
+              <td width="50%" style="text-align:center;">7 + 3 Category Laws</td>
+              <td width="50%" style="text-align:center;">4 + 2 Functor Laws</td>
             </tr>
           </table>
         </section>
@@ -661,7 +629,7 @@ fa.map(f)             == pure(f) <*> fa
             <tr>
               <td width="50%" >
               <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
-trait Arrow[~>[_, _]] extends Category[~>] {
+trait Arrow[~>[-_, +_]] extends Category[~>] {
   // [Category]
   def id[A]: A ~> A
   def compose[A, B, C](f: B ~> C, g: A ~> B): A ~> C
@@ -674,7 +642,7 @@ trait Arrow[~>[_, _]] extends Category[~>] {
               </td>
               <td width="50%" >
               <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
-trait Monad[M[_]] extends Applicative[M] {
+trait Monad[M[+_]] extends Applicative[M] {
   // Monad -> Applicative -> [Pointed] -> Functor
   def point[A](a: => A): F[A]
 
@@ -684,10 +652,10 @@ trait Monad[M[_]] extends Applicative[M] {
               </code></pre>
               </td>
             </tr>
-            <tr class="fragment current-visible" data-fragment-index="1">
+            <tr>
               <td colspan="2" style="text-align:center;">Laws:</td>
             </tr>
-            <tr class="fragment current-visible" data-fragment-index="1">
+            <tr>
               <td>
               <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:68%;line-height:120%;">
 arr id                     == id
@@ -718,16 +686,12 @@ ma.flatMap(f).flatMap(g)  ==
               </code></pre>
               </td>
             </tr>
-            <tr class="fragment current-visible" data-fragment-index="1" style="font-size:50%;">
-              <td width="50%" style="text-align:center;">7 + Category</td>
-              <td width="50%" style="text-align:center;">3 + Applicative + Functor</td>
+            <tr style="font-size:50%;">
+              <td width="50%" style="text-align:center;">7 + 3 Category</td>
+              <td width="50%" style="text-align:center;">3 + 4 Applicative +  2 Functor</td>
             </tr>
           </table>
 
-          <div class="fragment current-visible" data-fragment-index="2">
-          <p style="font-size:66%;">
-          <mark class="red">Arrows disadvantage:</mark></br><strike>initial effort of defining an arrow that satisfies the arrow laws.</strike>
-          </p></div>
         </section>
 
         <section>
@@ -892,29 +856,24 @@ trait KleisliArrow[M[+_]]
 
           <div class="fragment current-visible" data-fragment-index="1">
           <p style="font-size:100%;text-align:left;font-size:66%;font-family:'Lobster', sans-serif;">ArrowMonad Type-Class:</p>
-          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:72%;line-height:140%;">
-trait ArrowApply[~>[_, _]] extends Arrow[~>] {
-  def app[B, C]: (B ~> C, B) ~> C
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:85%;line-height:140%;">
+trait ArrowApply[~>[-_, +_]] extends Arrow[~>] {
+  def app[A, B]: (A ~> B, A) ~> B
 }
 
-trait KleisliArrowApply[M[+_]]
-  extends ArrowApply[({type λ[α, β] = Kleisli[M, α, β]})#λ] {
-  private type ~>[-A, +B] = Kleisli[M, A, B]
+case class ArrowMonad[~>[-_, +_], +A](run: Unit ~> A)
 
-  def app[B, C]: (B ~> C, B) ~> C = Kleisli { case (f, x) => (f.run)(x) }
-}
+implicit def _asMonad[~>[-_, +_]](implicit i: ArrowApply[~>]):
+  Monad[({type λ[+α] = ArrowMonad[~>, α]})#λ] =
+  new Monad[({type λ[+α] = ArrowMonad[~>, α]})#λ] {
 
-case class ArrowMonad[~>[-_, +_], +A](run : Unit ~> a) extends Arrow[~>]
+    type M[+A] = ArrowMonad[~>, A]
 
-implicit def monadOfArrowMonad[~>[-_,+_]]
-  (implicit: i: ArrowApply[~>]): Monad[({type λ[+α] = ArrowMonad[~>, α]})#λ] = new Monad[...] {
-  private type m[+A] = ArrowMonad[~>, A]
+    def point[A](x: => A): M[A] = ArrowMonad { i.arr(_ => x) }
 
-  def point[A](a: => A) = ArrowMonad { arr { _ => x } }
-  def flatMap[A, B](m: m[a])(f: a => m[B]): m[B] = ArrowMonad {
-    m.run >>> arr((x: A) => (f(x).run, ())) >>> i.app
+    def flatMap[A, B](m: M[A], f: A => M[B]): M[B] =
+      ArrowMonad[~>, B] { m.run >>> i.arr((x: A) => (f(x).run, ())) >>> i.app[Unit, B] }
   }
-}
           </code></pre>
           </div>
         </section>
