@@ -143,6 +143,11 @@ section p {
 .reveal .controls div.navigate-down.enabled:hover {
   border-top-color: #FFFEDF; }
 
+.reveal pre {
+  margin: 0px;
+  width: 100%;
+}
+
 /*********************************************
  * PROGRESS BAR
  *********************************************/

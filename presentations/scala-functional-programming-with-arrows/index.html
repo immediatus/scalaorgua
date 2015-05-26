@@ -555,9 +555,11 @@ trait Arrow[~>[-_, +_]] extends Category[~>] {
               <td width="50%" >
               <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
 trait Applicative[M[+_]] extends Functor[M] {
-  // Applicative -> [Pointed] -> Functor
+  // [Pointed] -> [Functor]
   def point[A](a: => A): M[A]
+  def map[A, B](m: M[A], f: A => B): M[B]
 
+  // [Applicative]
   def <*>[A,B](m: M[A], f: M[A => B]): M[B]
 }
               </code></pre>
@@ -607,8 +609,9 @@ fa.map(f)             == pure(f) <*> fa
               </td>
             </tr>
             <tr style="font-size:50%;">
-              <td width="50%" style="text-align:center;">7 + 3 Category Laws</td>
-              <td width="50%" style="text-align:center;">4 + 2 Functor Laws</td>
+
+              <td width="50%" style="text-align:center;"><mark class="green">&nbsp;4&nbsp;</mark> Functions <b>AND</b> <mark class="green">&nbsp;7 + 3&nbsp;</mark> Category Laws</td>
+              <td width="50%" style="text-align:center;"><mark class="green">&nbsp;3&nbsp;</mark> <b>AND</b> <mark class="green">&nbsp;4 + 2&nbsp;</mark>  Functor Laws</td>
             </tr>
           </table>
         </section>
@@ -692,8 +695,8 @@ ma.flatMap(f).flatMap(g)  ==
               </td>
             </tr>
             <tr style="font-size:50%;">
-              <td width="50%" style="text-align:center;">7 + 3 Category</td>
-              <td width="50%" style="text-align:center;">3 + 4 Applicative +  2 Functor</td>
+              <td width="50%" style="text-align:center;"><mark class="green">&nbsp;4&nbsp;</mark> Functions <b>AND</b> <mark class="green">&nbsp;7 + 3&nbsp;</mark> Category Laws</td>
+              <td width="50%" style="text-align:center;"><mark class="green">&nbsp;4&nbsp;</mark> <b>AND</b> <mark class="green">&nbsp;3 + 4&nbsp;</mark> Applicative <mark class="green">&nbsp;+ 2&nbsp;</mark>  Functor Laws</td>
             </tr>
           </table>
 
@@ -736,6 +739,7 @@ def updateName: String => User => Option[User] = ...
 def updatePassword: String => User => Option[User] = ...
           </code></pre>
 
+          </br>
           <p style="font-size:100%;text-align:left;font-size:66%;font-family:'Lobster', sans-serif;">Monad usege:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:85%;line-height:140%;">
 def update(id: Int, update: User => Option[User]) =
@@ -744,6 +748,7 @@ def update(id: Int, update: User => Option[User]) =
 update(10, (user: User) => updateName(name).flatMap(updatePassword(password)))
           </code></pre>
 
+          </br>
           <p style="font-size:100%;text-align:left;font-size:66%;font-family:'Lobster', sans-serif;">Kleisli usege:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:85%;line-height:140%;">
 def update(id: Int, update: User => Option[User]) =
@@ -756,7 +761,7 @@ update(10, Kleisli { updateName(name) } >==> updatePassword(password))
 
         <section>
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">KleisliArrow Type-Class (based on Monad):</p>
-          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:140%;">
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:90%;line-height:140%;">
 case class Kleisli[M[+ _], -A, +B](run: A => M[B])
 
 trait KleisliCategory[M[+_]]
@@ -782,12 +787,12 @@ trait KleisliArrow[M[+_]]
         </section>
 
         <section>
-          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">And back to the Arrow</p>
-          <p style="font-size:50%;text-align:left;">Motivation, is to find a generic interface for arrow wich cannot be based on monad.</p><br/>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;margin: 0px;">And back to the Arrow</p>
+          <p style="font-size:50%;text-align:left;">Motivation, is to find a generic interface for arrow wich cannot be based on monad.</p><br>
 
           <div class="fragment current-visible" data-fragment-index="1">
-          <p style="font-size:100%;text-align:left;font-size:66%;font-family:'Lobster', sans-serif;">ArrowMonad Type-Class:</p>
-          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:85%;line-height:140%;">
+          <p style="font-size:100%;text-align:left;font-size:66%;font-family:'Lobster', sans-serif;margin: 0px;">ArrowMonad Type-Class:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:85%;line-height:130%;">
 trait ArrowApply[~>[-_, +_]] extends Arrow[~>] {
   def app[A, B]: (A ~> B, A) ~> B
 }
@@ -801,10 +806,14 @@ implicit def _asMonad[~>[-_, +_]](implicit i: ArrowApply[~>]):
     type M[+A] = ArrowMonad[~>, A]
 
     def point[A](x: => A): M[A] = ArrowMonad { i.arr(_ => x) }
-
     def flatMap[A, B](m: M[A], f: A => M[B]): M[B] =
       ArrowMonad[~>, B] { m.run >>> i.arr((x: A) => (f(x).run, ())) >>> i.app[Unit, B] }
   }
+
+trait KleisliArrowApply[M[+ _]] extends ArrowApply[({type λ[-α, +β] = Kleisli[M, α, β]})#λ] {
+  private type ~>[-A, +B] = Kleisli[M, A, B]
+  def app[A, B]: (A ~> B, A) ~> B = Kleisli { case (f, a) => (f.run)(a) }
+}
           </code></pre>
           </div>
         </section>
@@ -826,23 +835,47 @@ implicit def _asMonad[~>[-_, +_]](implicit i: ArrowApply[~>]):
         <h3 style="text-align:left;">Kleisli Summary</h3>
 
         <section><div style="height:600px;">
-          <h4 style="text-align:left;">Kliesli relations</h4>
+          <h4 style="text-align:left;">Kliesli Arrow type-constructor</h4>
 
-        Kleisli[_[_], _, _]   kind:   (* -> *) -> * -> * -> *
-        is Kleisli arrow
+          <table cellspacing="5" cellpadding="5" style="width:100%;border:0px solid #F6921D;padding: 50px 0px 0px 0px;">
 
-        F[_] has Monad instance;
-        Kleisli[F, _, _]   kind:   * -> * -> *
-        is Arrow
+            <tr style="font-size:65%;text-align:left;">
+              <td width="20%"><b>Type-Class</b></td>
+              <td width="20%"><b>Kind</b></td>
+              <td width="35%"><b>Condition</b></td>
+              <td width="20%"><b>Meaningful type</b></td>
+            </tr>
 
-        F[A] has Functor OR Applicative instance for A;
-        Kleisli[F, A, _]   kind:   * -> *
-        is Function OR Applicative instance for A;
+            <tr style="font-size:65%;text-align:left;">
+              <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">Kleisli[_[_], _, _]</code></pre></td>
+              <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">(*->*)->*->*->*</code></pre></td>
+              <td style="background: #0E080D;"></td>
+              <td style="background: #0E080D;">"Kleisli Arrow"</td>
+            </tr>
 
 
-        F[B] - Semigroup OR Monoid for B:
-        Kleisli[F, A, B]  kind :   *
-        is a semigroup OR monoid for any A.
+            <tr style="font-size:65%;text-align:left;border: 1px solid;">
+              <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">Kleisli[M, _, _]</code></pre></td>
+              <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">* -> * -> *</code></pre></td>
+              <td style="background: #0E080D;">M[_] has Monad instance</td>
+              <td style="background: #0E080D;">Arrow</td>
+            </tr>
+
+            <tr style="font-size:65%;text-align:left;">
+              <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">Kleisli[F, A, _]</code></pre></td>
+              <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">* -> *</code></pre></td>
+              <td style="background: #0E080D;">F[_] has Functor instance for A</td>
+              <td style="background: #0E080D;">Functor</td>
+            </tr>
+
+            <tr style="font-size:65%;text-align:left;">
+              <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">Kleisli[F, A, B]</code></pre></td>
+              <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">*</code></pre></td>
+              <td style="background: #0E080D;">have Monoid instance for F[B]</td>
+              <td style="background: #0E080D;">Monoid for any A</td>
+            </tr>
+
+          </table>
 
         </section>
 
