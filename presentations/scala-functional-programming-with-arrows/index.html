@@ -37,7 +37,7 @@
               It's all about data
               <p style="font-size:33%;text-align:left;margin-top:10px;">functional programming is all about putting data first.
               The firts is defining what kinds of data we have in a problem domain, and what kinds of transformations we want on them.
-              Then we building up the data structures and the code to do the transformations.</>
+              Then we building up the data structures and the code to do the transformations.</p>
             </li>
             <li class="fragment roll-in" style="padding-top:50px;" data-fragment-index="1">
               Managing of side-effect
@@ -571,20 +571,26 @@ trait Applicative[M[+_]] extends Functor[M] {
             <tr>
               <td>
               <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:68%;line-height:120%;">
-// lift
+// Identity:
 arr id                     == id
-arr(f >>> g)               == arr(f) >>> arr(g)
 
-// first
-fst(arr(f))                == arr(fst(f))
+// Distribute over Composition:
+arr(f >>> g)               == arr(f) >>> arr(g)
 fst(f >>> g)               == fst(f) >>> fst(g)
+
+// Order must be irrelevant when piping & lifting:
+fst(arr(f))                == arr(fst(f))
+
+// Piping function simplification must be equivalen:
 fst(f) >>> arr(fst)        == arr(fst) >>> f
+
+// Piped function must be commutative:
 fst(f) >>> arr (id *** g)  == arr(id *** g) >>> fst(f)
+
+// Stacked bypasses can be flattened
 fst(first(f)) >>> arr assc == arr(assc) >>> fst(f)
 // assc[A,B,C]((A,B),C) = (A,(B,C))
-
-// + Category laws
-              </code></pre>
+             </code></pre>
               </td>
               <td>
               <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
@@ -610,8 +616,8 @@ fa.map(f)             == pure(f) <*> fa
             </tr>
             <tr style="font-size:50%;">
 
-              <td width="50%" style="text-align:center;"><mark class="green">&nbsp;4&nbsp;</mark> Functions <b>AND</b> <mark class="green">&nbsp;7 + 3&nbsp;</mark> Category Laws</td>
-              <td width="50%" style="text-align:center;"><mark class="green">&nbsp;3&nbsp;</mark> <b>AND</b> <mark class="green">&nbsp;4 + 2&nbsp;</mark>  Functor Laws</td>
+              <td width="50%" style="text-align:center;"><mark class="green">&nbsp;4&nbsp;</mark> Functions <b>AND</b> <mark class="green">&nbsp;6 + 3&nbsp;</mark> Category Laws</td>
+              <td width="50%" style="text-align:center;"><mark class="green">&nbsp;3&nbsp;</mark> Functions <b>AND</b> <mark class="green">&nbsp;4 + 2&nbsp;</mark>  Functor Laws</td>
             </tr>
           </table>
         </section>
@@ -663,19 +669,25 @@ trait Monad[M[+_]] extends Applicative[M] {
             <tr>
               <td>
               <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:68%;line-height:120%;">
-// lift
+// Identity:
 arr id                     == id
-arr(f >>> g)               == arr(f) >>> arr(g)
 
-// first
-fst(arr(f))                == arr(fst(f))
+// Distribute over Composition:
+arr(f >>> g)               == arr(f) >>> arr(g)
 fst(f >>> g)               == fst(f) >>> fst(g)
+
+// Order must be irrelevant when piping & lifting:
+fst(arr(f))                == arr(fst(f))
+
+// Piping function simplification must be equivalen:
 fst(f) >>> arr(fst)        == arr(fst) >>> f
+
+// Piped function must be commutative:
 fst(f) >>> arr (id *** g)  == arr(id *** g) >>> fst(f)
+
+// Stacked bypasses can be flattened
 fst(first(f)) >>> arr assc == arr(assc) >>> fst(f)
 // assc[A,B,C]((A,B),C) = (A,(B,C))
-
-// + Category laws
               </code></pre>
               </td>
               <td>
@@ -695,8 +707,8 @@ ma.flatMap(f).flatMap(g)  ==
               </td>
             </tr>
             <tr style="font-size:50%;">
-              <td width="50%" style="text-align:center;"><mark class="green">&nbsp;4&nbsp;</mark> Functions <b>AND</b> <mark class="green">&nbsp;7 + 3&nbsp;</mark> Category Laws</td>
-              <td width="50%" style="text-align:center;"><mark class="green">&nbsp;4&nbsp;</mark> <b>AND</b> <mark class="green">&nbsp;3 + 4&nbsp;</mark> Applicative <mark class="green">&nbsp;+ 2&nbsp;</mark>  Functor Laws</td>
+              <td width="50%" style="text-align:center;"><mark class="green">&nbsp;4&nbsp;</mark> Functions <b>AND</b> <mark class="green">&nbsp;6 + 3&nbsp;</mark> Category Laws</td>
+              <td width="50%" style="text-align:center;"><mark class="green">&nbsp;4&nbsp;</mark> Functions <b>AND</b> <mark class="green">&nbsp;3 + 4&nbsp;</mark> Applicative <mark class="green">&nbsp;+ 2&nbsp;</mark>  Functor Laws</td>
             </tr>
           </table>
 
@@ -832,61 +844,47 @@ trait KleisliArrowApply[M[+ _]] extends ArrowApply[({type λ[-α, +β] = Kleisli
 
 <!-- ------------------------------------------------------------------------------------- -->
       <section>
-        <h3 style="text-align:left;">Kleisli Summary</h3>
+        <h3 style="text-align:left;">Kliesli Arrow type-constructor</h3>
 
-        <section><div style="height:600px;">
-          <h4 style="text-align:left;">Kliesli Arrow type-constructor</h4>
+        <table cellspacing="5" cellpadding="5" style="width:100%;border:0px solid #F6921D;padding: 50px 0px 0px 0px;">
 
-          <table cellspacing="5" cellpadding="5" style="width:100%;border:0px solid #F6921D;padding: 50px 0px 0px 0px;">
+          <tr style="font-size:65%;text-align:left;">
+            <td width="20%"><b>Type-Class</b></td>
+            <td width="20%"><b>Kind</b></td>
+            <td width="35%"><b>Condition</b></td>
+            <td width="20%"><b>Similar type</b></td>
+          </tr>
 
-            <tr style="font-size:65%;text-align:left;">
-              <td width="20%"><b>Type-Class</b></td>
-              <td width="20%"><b>Kind</b></td>
-              <td width="35%"><b>Condition</b></td>
-              <td width="20%"><b>Meaningful type</b></td>
-            </tr>
-
-            <tr style="font-size:65%;text-align:left;">
-              <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">Kleisli[_[_], _, _]</code></pre></td>
-              <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">(*->*)->*->*->*</code></pre></td>
-              <td style="background: #0E080D;"></td>
-              <td style="background: #0E080D;">"Kleisli Arrow"</td>
-            </tr>
+          <tr style="font-size:65%;text-align:left;">
+            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">Kleisli[_[_], _, _]</code></pre></td>
+            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">(*->*)->*->*->*</code></pre></td>
+            <td style="background: #0E080D;"></td>
+            <td style="background: #0E080D;">(Kleisli Arrow)</td>
+          </tr>
 
 
-            <tr style="font-size:65%;text-align:left;border: 1px solid;">
-              <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">Kleisli[M, _, _]</code></pre></td>
-              <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">* -> * -> *</code></pre></td>
-              <td style="background: #0E080D;">M[_] has Monad instance</td>
-              <td style="background: #0E080D;">Arrow</td>
-            </tr>
+          <tr style="font-size:65%;text-align:left;border: 1px solid;">
+            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">Kleisli[M, _, _]</code></pre></td>
+            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">* -> * -> *</code></pre></td>
+            <td style="background: #0E080D;">M[_] has Monad instance</td>
+            <td style="background: #0E080D;">Arrow</td>
+          </tr>
 
-            <tr style="font-size:65%;text-align:left;">
-              <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">Kleisli[F, A, _]</code></pre></td>
-              <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">* -> *</code></pre></td>
-              <td style="background: #0E080D;">F[_] has Functor instance for A</td>
-              <td style="background: #0E080D;">Functor</td>
-            </tr>
+          <tr style="font-size:65%;text-align:left;">
+            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">Kleisli[F, A, _]</code></pre></td>
+            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">* -> *</code></pre></td>
+            <td style="background: #0E080D;">F[_] has Functor instance for A</td>
+            <td style="background: #0E080D;">Functor</td>
+          </tr>
 
-            <tr style="font-size:65%;text-align:left;">
-              <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">Kleisli[F, A, B]</code></pre></td>
-              <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">*</code></pre></td>
-              <td style="background: #0E080D;">have Monoid instance for F[B]</td>
-              <td style="background: #0E080D;">Monoid for any A</td>
-            </tr>
+          <tr style="font-size:65%;text-align:left;">
+            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">Kleisli[F, A, B]</code></pre></td>
+            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">*</code></pre></td>
+            <td style="background: #0E080D;">have Monoid instance for F[B]</td>
+            <td style="background: #0E080D;">Monoid for any A</td>
+          </tr>
 
-          </table>
-
-        </section>
-
-        <section><div style="height:600px;">
-          <h4 style="text-align:left;">Kliesli category to Monad</h4>
-        </section>
-
-        <section><div style="height:600px;">
-          <h4 style="text-align:left;">Monad to Kliesli category</h4>
-        </section>
-
+        </table>
 
       </section>
 
@@ -900,6 +898,43 @@ trait KleisliArrowApply[M[+ _]] extends ArrowApply[({type λ[-α, +β] = Kleisli
         <div class="fragment current-visible" data-fragment-index="4" style="position:absolute;margin-left:50px;"><img src="assets/FP5.png" alt="url" title=""></div>
 
       </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">End user benefits:</h3>
+
+        <section>
+
+          <div class="fragment current-visible" data-fragment-index="2" style="height:300px;"><div style="padding:50px 0px 0px 0px;">
+            <h1>Railway Oriented Programming</h1>
+            <p style="font-size:50%;text-align:right;margin-top:10px;">- Scott Wlaschin (F# for fun and profit)</p>
+          </div></div>
+
+
+        </section>
+
+        <section>
+
+        <p style="font-size:100%;text-align:left;font-size:90%;font-family:'Lobster', sans-serif;margin: 0px;">Railway tracks:</p>
+        <div style="height:300px;">
+        <div style="position:absolute;"><img src="assets/R1.png" alt="url" title=""></div>
+        <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;"><img src="assets/R2.png" alt="url" title=""></div>
+        <div class="fragment current-visible" data-fragment-index="3" style="position:absolute;"><img src="assets/R3.png" alt="url" title=""></div>
+        <div class="fragment current-visible" data-fragment-index="4" style="position:absolute;"><img src="assets/R4.png" alt="url" title=""></div>
+        </div>
+
+        <p style="font-size:100%;text-align:left;font-size:90%;font-family:'Lobster', sans-serif;margin: 0px;">Arrow as Framework for:</p></br>
+        <ul style="list-style-type:decimal;font-size:60%;width:100%;line-height:1.5;">
+          <li class="fragment current-visible" data-fragment-index="2">Error handling</li>
+          <li class="fragment current-visible" data-fragment-index="3">Single Track Function</li>
+          <li class="fragment current-visible" data-fragment-index="4">Dead-end Function</li>
+          <li class="fragment current-visible" data-fragment-index="5">Supervisory Function (handle "both track")</li>
+        </ul>
+
+        </section>
+
+      </section>
+
 
 <!-- ------------------------------------------------------------------------------------- -->
       <section>
@@ -918,8 +953,8 @@ trait KleisliArrowApply[M[+ _]] extends ArrowApply[({type λ[-α, +β] = Kleisli
         <h4 style="text-align:left;"></br>Blogs & Blogposts:</h4>
         <ul style="list-style-type:decimal;font-size:50%;width:100%;line-height:1.8;">
           <li>Ruminations of a Programmer, Debasish Ghosh</li>
-          <li>Domain Modeling in a Functional World, Debasish Ghosh</li>
-          <li>metaplasmus, Travis Brown</li>
+          <li>F# for fun and profit, Scott Wlaschin</li>
+          <li>Metaplasmus, Travis Brown</li>
           <li>Arrow's place in the Applicative/Monad hierarchy (Cactus) Dr. Gerg ˝o Érdi</li>
           <li>Nothing Personal Just ⊥, Patai Gergely</li>
           <li>Programming Cafe, Bartosz Milewski's</li>
