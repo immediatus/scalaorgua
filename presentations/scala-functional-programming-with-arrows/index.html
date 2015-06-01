@@ -956,7 +956,7 @@ val run =
   getUserById >>>
   updateName(name).right >>>
   ((sendEmail &&& id[User]) >>> { case (a, b) => b } ).right >>>
-  updateDbUser // Either[Err, Either[Err, Int]]
+  updateDbUser.right // Either[Err, Either[Err, Int]]
           </code></pre>
           </div>
 
