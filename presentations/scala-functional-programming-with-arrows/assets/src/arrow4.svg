@@ -1634,7 +1634,7 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.50321275"
+     inkscape:zoom="0.7116503"
      inkscape:cx="353.14632"
      inkscape:cy="663.57113"
      inkscape:document-units="px"
@@ -1655,7 +1655,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -4303,7 +4303,7 @@
            width="744.09448"
            height="1052.3622"
            transform="translate(544.68468,735.00062)" /></flowRegion><flowPara
-         id="flowPara4509-3-4">Feedback</flowPara><flowPara
+         id="flowPara4509-3-4" /><flowPara
          id="flowPara4451">allow cycles in the computation grpaph</flowPara></flowRoot>    <rect
        style="fill:none;fill-opacity:0.50943400000000005;stroke:none;stroke-width:0.97760439000000021;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:3.91041748000000000, 7.82083497999999988;stroke-dashoffset:0"
        id="rect4489"
@@ -4330,6 +4330,6 @@
            id="use4495"
            width="744.09448"
            height="1052.3622" /></flowRegion><flowPara
-         id="flowPara4497">fixed decision paths between efects based on run-time data</flowPara><flowPara
+         id="flowPara4497">fixed decision paths between effects based on run-time data</flowPara><flowPara
          id="flowPara4499" /></flowRoot>  </g>
 </svg>

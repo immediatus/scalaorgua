@@ -19,14 +19,14 @@
      id="defs4" />
   <sodipodi:namedview
      id="base"
-     pagecolor="#ffffff"
+     pagecolor="#130912"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0.0"
+     inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.22"
-     inkscape:cx="123.87166"
-     inkscape:cy="304.57877"
+     inkscape:zoom="0.805"
+     inkscape:cx="609.52973"
+     inkscape:cy="273.45475"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -51,13 +51,6 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <rect
-       style="fill:#130912;fill-opacity:1"
-       id="rect3038"
-       width="297.58054"
-       height="804.58392"
-       x="4.7266898"
-       y="111.95454" />
     <rect
        style="fill:#130912;fill-opacity:1;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect4549"
@@ -238,7 +231,7 @@
        width="30.933594"
        height="20.955015"
        x="93.755463"
-       y="273.50391"
+       y="272.26172"
        ry="3.4925025"
        rx="3.658812"
        inkscape:export-filename="/home/yury/Картинки/F3.png"
@@ -248,7 +241,7 @@
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
        x="103.48457"
-       y="291.21588"
+       y="289.97369"
        id="text4559-7-86"
        sodipodi:linespacing="125%"
        inkscape:export-filename="/home/yury/Картинки/F3.png"
@@ -257,14 +250,14 @@
          sodipodi:role="line"
          id="tspan4561-8-2"
          x="103.48457"
-         y="291.21588">f</tspan></text>
+         y="289.97369">f</tspan></text>
     <rect
        style="fill:#130912;fill-opacity:1;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect4549-0-5-4"
        width="30.933594"
        height="20.955015"
        x="130.91818"
-       y="293.79666"
+       y="294.41776"
        ry="3.4925025"
        rx="3.658812"
        inkscape:export-filename="/home/yury/Картинки/F3.png"
@@ -291,7 +284,7 @@
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
        x="140.64728"
-       y="307.03824"
+       y="307.65933"
        id="text4559-7-0-5"
        sodipodi:linespacing="125%"
        inkscape:export-filename="/home/yury/Картинки/F3.png"
@@ -300,7 +293,7 @@
          sodipodi:role="line"
          id="tspan4561-8-1-6"
          x="140.64728"
-         y="307.03824">g</tspan></text>
+         y="307.65933">g</tspan></text>
     <path
        inkscape:connector-curvature="0"
        style="fill:none;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
@@ -348,7 +341,7 @@
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <path
-       style="fill:none;stroke:#ffffff;stroke-width:1.50000000000000000;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:none;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        d="m 84.43585,304.43459 -4.703947,-10.58388 4.233553,-10.11348"
        id="path3881"
        inkscape:connector-curvature="0"
@@ -372,7 +365,7 @@
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <path
-       style="fill:none;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:none;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        d="M 171.46524,304.13509 182.44168,293.49127 170.6337,283.5127"
        id="path3921"
        inkscape:connector-curvature="0"
@@ -381,7 +374,7 @@
        inkscape:export-ydpi="300" />
     <path
        sodipodi:type="arc"
-       style="fill:#130912;stroke:#ffffff;stroke-width:1.19797221000000009;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;fill-opacity:1"
+       style="fill:#130912;fill-opacity:1;stroke:#ffffff;stroke-width:1.19797218;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="path3919"
        sodipodi:cx="183.57153"
        sodipodi:cy="292.79233"
@@ -494,7 +487,7 @@
        width="30.933594"
        height="20.955015"
        x="130.82184"
-       y="374.31802"
+       y="375.24966"
        ry="3.4925025"
        rx="3.658812"
        inkscape:export-filename="/home/yury/Картинки/F4.png"
@@ -513,7 +506,7 @@
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
        x="140.55093"
-       y="387.5596"
+       y="388.49124"
        id="text4559-7-0-5-0"
        sodipodi:linespacing="125%"
        inkscape:export-filename="/home/yury/Картинки/F4.png"
@@ -522,7 +515,7 @@
          sodipodi:role="line"
          id="tspan4561-8-1-6-7"
          x="140.55093"
-         y="387.5596">g</tspan></text>
+         y="388.49124">g</tspan></text>
     <path
        inkscape:connector-curvature="0"
        style="fill:none;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
@@ -542,7 +535,7 @@
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 66.348402,384.59632 63.565578,0.16631"
+       d="m 66.348402,385.528 63.565578,0.16631"
        id="path4551-2-4-9-3-7"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/yury/Картинки/F4.png"
@@ -559,7 +552,7 @@
        inkscape:export-ydpi="300" />
     <path
        style="fill:none;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 162.44195,384.80392 44.73979,-0.16631"
+       d="m 162.44195,385.7356 44.73979,-0.16631"
        id="path4551-2-4-9-7-8"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/yury/Картинки/F4.png"
@@ -622,7 +615,7 @@
          x="163.74844"
          y="278.72131">&amp;&amp;&amp;</tspan></text>
     <rect
-       style="fill:none;stroke:none;stroke-width:1.50000000000000000;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:4.50000000000000000, 4.50000000000000000;stroke-dashoffset:0"
+       style="fill:none;stroke:none"
        id="rect4717"
        width="247.92657"
        height="63.463932"
@@ -632,7 +625,7 @@
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <rect
-       style="fill:none;stroke:none;stroke-width:1.50000000000000000;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:4.50000000000000000, 4.50000000000000000;stroke-dashoffset:0"
+       style="fill:none;stroke:none"
        id="rect4717-8"
        width="247.92657"
        height="63.463932"
@@ -673,7 +666,7 @@
        width="30.933594"
        height="20.955015"
        x="145.70023"
-       y="459.25537"
+       y="460.32373"
        ry="3.4925025"
        rx="3.658812"
        inkscape:export-filename="/home/yury/Картинки/F5.png"
@@ -681,7 +674,7 @@
        inkscape:export-ydpi="300" />
     <path
        style="fill:none;stroke:#ffffff;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 218.8843,465.93526 4.90613,3.57566 -4.90613,3.57566"
+       d="m 218.8843,467.00358 4.90613,3.57566 -4.90613,3.57566"
        id="path4557-2-6-8-5-4"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc"
@@ -692,7 +685,7 @@
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
        x="155.42932"
-       y="472.49695"
+       y="473.56531"
        id="text4559-7-0-5-0-0"
        sodipodi:linespacing="125%"
        inkscape:export-filename="/home/yury/Картинки/F5.png"
@@ -701,7 +694,7 @@
          sodipodi:role="line"
          id="tspan4561-8-1-6-7-4"
          x="155.42932"
-         y="472.49695">g</tspan></text>
+         y="473.56531">g</tspan></text>
     <path
        inkscape:connector-curvature="0"
        style="fill:none;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
@@ -721,7 +714,7 @@
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 81.226799,469.53362 63.565571,0.16631"
+       d="m 81.226799,470.60194 63.565571,0.16631"
        id="path4551-2-4-9-3-7-3"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/yury/Картинки/F5.png"
@@ -738,7 +731,7 @@
        inkscape:export-ydpi="300" />
     <path
        style="fill:none;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 178.09742,469.74122 44.95948,-0.16631"
+       d="m 178.09742,470.80954 44.95948,-0.16631"
        id="path4551-2-4-9-7-8-7"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/yury/Картинки/F5.png"
@@ -798,7 +791,7 @@
        inkscape:export-ydpi="300" />
     <path
        style="fill:none;stroke:#ffffff;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 203.96942,380.98077 4.90613,3.57566 -4.90613,3.57566"
+       d="m 203.96942,381.91245 4.90613,3.57566 -4.90613,3.57566"
        id="path4557-2-6-8-5-3"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc"
@@ -1039,7 +1032,7 @@
          sodipodi:role="line"
          id="tspan4561-8-2-9-1-3-7"
          x="213.39522"
-         y="534.70691">C</tspan></text>
+         y="534.70691">C or D</tspan></text>
     <rect
        style="fill:none;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect4549-0-9-9-8"
@@ -1351,46 +1344,20 @@
          x="137.07224"
          y="684.297">B</tspan></text>
     <rect
-       style="fill:#130912;fill-opacity:1;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="rect4549-0-9-0-9-12-2"
-       width="30.933594"
-       height="20.955015"
-       x="91.14286"
-       y="775.84998"
-       ry="3.4925025"
-       rx="3.658812"
-       inkscape:export-filename="/home/yury/Картинки/F9.png"
-       inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300" />
-    <text
-       xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
-       x="101.49308"
-       y="793.56195"
-       id="text4559-7-86-0-8-5-0"
-       sodipodi:linespacing="125%"
-       inkscape:export-filename="/home/yury/Картинки/F9.png"
-       inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300"><tspan
-         sodipodi:role="line"
-         id="tspan4561-8-2-3-9-4-9"
-         x="101.49308"
-         y="793.56195">f</tspan></text>
-    <rect
-       style="fill:#130912;fill-opacity:1;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="opacity:0.86000001;fill:#130912;fill-opacity:1;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect4549-0-5-4-4-8-7-7"
        width="38.697563"
        height="41.141357"
-       x="160.54163"
-       y="775.95642"
+       x="132.54163"
+       y="773.95642"
        ry="3.4925025"
        rx="3.658812"
        inkscape:export-filename="/home/yury/Картинки/F9.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <path
-       style="fill:none;stroke:#ffffff;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 231.17908,792.99647 4.90613,3.57566 -4.90613,3.57566"
+       style="opacity:0.86000001;fill:none;stroke:#ffffff;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 231.17908,790.99647 4.90613,3.57566 -4.90613,3.57566"
        id="path4557-2-6-8-5-4-7-2"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc"
@@ -1399,9 +1366,9 @@
        inkscape:export-ydpi="300" />
     <text
        xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
-       x="174.03467"
-       y="799.38434"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;opacity:0.86000001;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       x="146.03467"
+       y="801.38434"
        id="text4559-7-0-5-0-0-5-7"
        sodipodi:linespacing="125%"
        inkscape:export-filename="/home/yury/Картинки/F9.png"
@@ -1409,20 +1376,11 @@
        inkscape:export-ydpi="300"><tspan
          sodipodi:role="line"
          id="tspan4561-8-1-6-7-4-8-2"
-         x="174.03467"
-         y="799.38434">g</tspan></text>
+         x="146.03467"
+         y="801.38434">f</tspan></text>
     <path
-       style="fill:none;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 72.285729,786.16633 18.310167,-0.16631"
-       id="path4551-2-4-9-1-2-4-6"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/yury/Картинки/F9.png"
-       inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:none;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 72.670554,806.42091 86.746826,0.16631"
+       style="opacity:0.86000001;fill:none;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 72.670554,794.42091 59.757816,0.16631"
        id="path4551-2-4-9-3-7-3-4-8"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/yury/Картинки/F9.png"
@@ -1430,8 +1388,8 @@
        inkscape:export-ydpi="300"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 199.84245,796.49187 35.36016,0.14425"
+       style="opacity:0.86000001;fill:none;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 172.27575,794.49187 62.92686,0.14425"
        id="path4551-2-4-9-7-8-7-8-4"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/yury/Картинки/F9.png"
@@ -1440,9 +1398,9 @@
        sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
-       x="61.761742"
-       y="780.92389"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;opacity:0.86000001;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       x="71.761742"
+       y="788.92389"
        id="text4559-7-86-1-9-7-2-8"
        sodipodi:linespacing="125%"
        inkscape:export-filename="/home/yury/Картинки/F9.png"
@@ -1450,46 +1408,23 @@
        inkscape:export-ydpi="300"><tspan
          sodipodi:role="line"
          id="tspan4561-8-2-9-4-1-7-9"
-         x="61.761742"
-         y="780.92389">()</tspan></text>
+         x="71.761742"
+         y="788.92389">()</tspan></text>
     <rect
-       style="fill:none;stroke:none"
+       style="opacity:0.86000001;fill:none;stroke:none"
        id="rect4717-8-5-8-5"
        width="272.0824"
        height="63.463932"
        x="18.306629"
-       y="764.10852"
+       y="762.10852"
        inkscape:export-filename="/home/yury/Картинки/F9.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
-    <path
-       style="fill:none;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 122.86377,784.9173 37.66883,-0.16631"
-       id="path4551-2-4-9-1-2-4-7-6"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/yury/Картинки/F9.png"
-       inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300"
-       sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
-       x="65.044167"
-       y="802.71936"
-       id="text4559-7-86-1-9-7-2-2-2"
-       sodipodi:linespacing="125%"
-       inkscape:export-filename="/home/yury/Картинки/F9.png"
-       inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300"><tspan
-         sodipodi:role="line"
-         id="tspan4561-8-2-9-4-1-7-1-9"
-         x="65.044167"
-         y="802.71936">A</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
-       x="203.53189"
-       y="789.71307"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;opacity:0.86000001;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       x="217.53189"
+       y="790.92389"
        id="text4559-7-86-1-6-1-7-4"
        sodipodi:linespacing="125%"
        inkscape:export-filename="/home/yury/Картинки/F9.png"
@@ -1497,21 +1432,245 @@
        inkscape:export-ydpi="300"><tspan
          sodipodi:role="line"
          id="tspan4561-8-2-9-5-6-68-1"
-         x="203.53189"
-         y="789.71307">M[B]</tspan></text>
+         x="217.53189"
+         y="790.92389">B</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
-       x="124.14056"
-       y="780.88086"
-       id="text4559-7-86-1-6-1-7-6-3"
+       style="font-size:9px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       x="131.09708"
+       y="212.34666"
+       id="text4559-7-86-1-4-02-0"
        sodipodi:linespacing="125%"
-       inkscape:export-filename="/home/yury/Картинки/F9.png"
+       inkscape:export-filename="/home/yury/Картинки/F2.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"><tspan
          sodipodi:role="line"
-         id="tspan4561-8-2-9-5-6-68-7-8"
-         x="124.14056"
-         y="780.88086">M[B]</tspan></text>
+         id="tspan4561-8-2-9-1-1-8"
+         x="131.09708"
+         y="212.34666">B</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       x="127.9709"
+       y="280.6463"
+       id="text4559-7-86-1-4-02-0-1"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yury/Картинки/F3.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4561-8-2-9-1-1-8-8"
+         x="127.9709"
+         y="280.6463">B</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       x="126.90257"
+       y="361.39169"
+       id="text4559-7-86-1-4-02-0-1-4"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yury/Картинки/F4.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4561-8-2-9-1-1-8-8-8"
+         x="126.90257"
+         y="361.39169">C</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       x="122.69143"
+       y="383.68753"
+       id="text4559-7-86-1-4-02-0-1-7"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yury/Картинки/F4.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4561-8-2-9-1-1-8-8-88"
+         x="122.69143"
+         y="383.68753">B</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       x="85.113792"
+       y="361.39169"
+       id="text4559-7-86-1-4-02-0-1-4-7"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yury/Картинки/F4.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4561-8-2-9-1-1-8-8-8-4"
+         x="85.113792"
+         y="361.39169">A</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       x="85.424324"
+       y="280.6463"
+       id="text4559-7-86-1-4-02-0-1-4-7-5"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yury/Картинки/F3.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4561-8-2-9-1-1-8-8-8-4-7"
+         x="85.424324"
+         y="280.6463">A</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       x="164.15103"
+       y="301.4538"
+       id="text4559-7-86-1-4-02-0-1-0"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yury/Картинки/F3.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4561-8-2-9-1-1-8-8-9"
+         x="164.15103"
+         y="301.4538">C</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       x="122.22557"
+       y="301.4538"
+       id="text4559-7-86-1-4-02-0-1-4-7-5-5"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yury/Картинки/F3.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4561-8-2-9-1-1-8-8-8-4-7-2"
+         x="122.22557"
+         y="301.4538">A</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       x="164.96266"
+       y="383.68753"
+       id="text4559-7-86-1-4-02-0-1-7-3"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yury/Картинки/F4.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4561-8-2-9-1-1-8-8-88-8"
+         x="164.96266"
+         y="383.68753">D</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       x="141.94499"
+       y="446.45261"
+       id="text4559-7-86-1-4-02-0-1-4-6"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yury/Картинки/F5.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4561-8-2-9-1-1-8-8-8-7"
+         x="141.94499"
+         y="446.45261">C</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       x="137.73386"
+       y="468.88516"
+       id="text4559-7-86-1-4-02-0-1-7-9"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yury/Картинки/F5.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4561-8-2-9-1-1-8-8-88-2"
+         x="137.73386"
+         y="468.88516">B</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       x="100.15621"
+       y="446.45261"
+       id="text4559-7-86-1-4-02-0-1-4-7-1"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yury/Картинки/F5.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4561-8-2-9-1-1-8-8-8-4-73"
+         x="100.15621"
+         y="446.45261">A</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       x="180.00508"
+       y="468.88516"
+       id="text4559-7-86-1-4-02-0-1-7-3-4"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yury/Картинки/F5.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4561-8-2-9-1-1-8-8-88-8-4"
+         x="180.00508"
+         y="468.88516">D</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       x="139.0247"
+       y="527.02917"
+       id="text4559-7-86-1-4-02-0-1-4-6-1"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yury/Картинки/F6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4561-8-2-9-1-1-8-8-8-7-0"
+         x="139.0247"
+         y="527.02917">C</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       x="97.235931"
+       y="527.02917"
+       id="text4559-7-86-1-4-02-0-1-4-7-1-2"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yury/Картинки/F6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4561-8-2-9-1-1-8-8-8-4-73-1"
+         x="97.235931"
+         y="527.02917">A</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       x="134.47299"
+       y="547.66266"
+       id="text4559-7-86-1-4-02-0-1-7-9-8"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yury/Картинки/F6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4561-8-2-9-1-1-8-8-88-2-3"
+         x="134.47299"
+         y="547.66266">B</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9px;font-style:normal;font-variant:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Hermit;-inkscape-font-specification:Hermit Semi-Light"
+       x="175.81253"
+       y="547.66266"
+       id="text4559-7-86-1-4-02-0-1-7-3-4-1"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/yury/Картинки/F6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4561-8-2-9-1-1-8-8-88-8-4-5"
+         x="175.81253"
+         y="547.66266">D</tspan></text>
   </g>
 </svg>
