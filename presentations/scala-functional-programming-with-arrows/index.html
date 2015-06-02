@@ -33,13 +33,13 @@
         <section>
           <p style="font-size:50%;text-align:left;">The most imaportant ideas in modern functional programming are:</p>
           <ul style="list-style-type:decimal;font-size:150%;width:100%;padding-bottom:100px;">
-            <li class="fragment roll-in" style="padding-top:50px;" data-fragment-index="0">
+            <li style="padding-top:50px;" data-fragment-index="0">
               It's all about data
               <p style="font-size:33%;text-align:left;margin-top:10px;">functional programming is all about putting data first.
               The first is defining what kinds of data we have in a problem domain, and what kinds of transformations we want on them.
               Then we building up the data structures and the code to do the transformations.</p>
             </li>
-            <li class="fragment roll-in" style="padding-top:50px;" data-fragment-index="1">
+            <li style="padding-top:50px;" data-fragment-index="1">
               Managing of side-effect
               <p style="font-size:33%;text-align:left;margin-top:10px;">functional programming is not about pure functions any more. Eventually, programs will produce side-effects and side-effect management is a puzzle with many parts.</p>
             </li>
@@ -102,7 +102,7 @@ f("By!")   shouldEqual 3
 val f: String => Int = str => str.length
 val g: Int => Int    = i => i * 2
 
-val h = g compose h  //  f >>> h
+val h = g compose f  //  f >>> h
 
 h("Hello")   shouldEqual 10
 h("Workday") shouldEqual 14
@@ -436,17 +436,42 @@ f(None)             shouldEqual ""
         </section>
 
         <section>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">KleisliCategory Type-Class:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:90%;line-height:140%;">
+type Kleisli[M[+_], -A, +B] = A => M[A]
+
+trait KleisliCategory[M[+_]]
+  extends Category[({type λ[-α, +β] = Kleisli[M, α, β]})#λ] {
+  // ...
+}
+          </code></pre>
+
+          </br>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">KleisliCategory Type-Class (with Kind Projector plugin):</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:90%;line-height:140%;">
+trait KleisliCategory[M[+_]]
+  extends Category[Kleisli[M, -?, +?]] {
+  // ...
+}
+          </code></pre>
+
+          <div style="font-size:60%;text-align:right;width:100%;max-width:100%;margin-top:100px;">
+          <a href="https://github.com/non/kind-projector" class="roll"><span data-title="Erik Osheim, Kind Projector on GitHub">Erik Osheim, Kind Projector on GitHub</span></a>
+          </div>
+        </section>
+
+        <section>
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">KleisliArrow Type-Class:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
 type Kleisli[M[+_], -A, +B] = A => M[A]
 
 trait KleisliCategory[M[+_]]
-  extends Category[({type λ[-α, +β] = Kleisli[M, α, β]})#λ] {
+  extends Category[Kleisli[M, -?, +?]] {
 // ...
 }
 
 trait KleisliArrow[M[+_]]
-  extends Arrow[({type λ[-α, +β] = Kleisli[M, α, β]})#λ]
+  extends Arrow[Kleisli[M, -?, +?]]
   with KleisliCategory[M] {
 
 // ...
@@ -455,7 +480,7 @@ trait KleisliArrow[M[+_]]
 
           <div>
             </br>
-            <p style="font-size:100%;">But what is <b><mark class="green">M[_]</mark></b>?
+            <p style="font-size:100%;">But what is <b><mark class="green">M[_]</mark> (only Option)</b>?
           </p></div>
 
         </section>
@@ -525,190 +550,7 @@ read from environment
                 </td>
               </tr>
             </table>
-
           </div>
-
-        </section>
-
-      </section>
-
-<!-- ------------------------------------------------------------------------------------- -->
-      <section>
-        <h3 style="text-align:left;">Arrows, Applicatives, Monads</h3>
-
-        <section>
-          <table  cellspacing="0" cellpadding="0" style="width:100%;border:0px solid #F6921D;">
-            <tr>
-              <td width="50%" style="text-align:center;">Arrow</td>
-              <td width="50%" style="text-align:center;">Applicative</td>
-            </tr>
-            <tr>
-              <td width="50%" >
-              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
-trait Arrow[~>[-_, +_]] extends Category[~>] {
-  // [Category]
-  def id[A]: A ~> A
-  def compose[A, B, C](f: B ~> C, g: A ~> B): A ~> C
-
-  // [Arrow] Minimal complete definition
-  def arr[B, C](f: B => C): B ~> C
-  def first[B, C, D](f: B ~> C): (B, D) ~> (C, D)
-}
-              </code></pre>
-              </td>
-              <td width="50%" >
-              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
-trait Applicative[M[+_]] extends Functor[M] {
-  // [Pointed] -> [Functor]
-  def point[A](a: => A): M[A]
-  def map[A, B](m: M[A], f: A => B): M[B]
-
-  // [Applicative]
-  def <*>[A,B](m: M[A], f: M[A => B]): M[B]
-}
-              </code></pre>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2" style="text-align:center;">Laws:</td>
-            </tr>
-            <tr>
-              <td>
-              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:68%;line-height:120%;">
-// Identity:
-arr id                     == id
-
-// Distribute over Composition:
-arr(f >>> g)               == arr(f) >>> arr(g)
-fst(f >>> g)               == fst(f) >>> fst(g)
-
-// Order must be irrelevant when piping & lifting:
-fst(arr(f))                == arr(fst(f))
-
-// Piping function simplification must be equivalen:
-fst(f) >>> arr(fst)        == arr(fst) >>> f
-
-// Piped function must be commutative:
-fst(f) >>> arr (id *** g)  == arr(id *** g) >>> fst(f)
-
-// Stacked bypasses can be flattened
-fst(first(f)) >>> arr assc == arr(assc) >>> fst(f)
-// assc[A,B,C]((A,B),C) = (A,(B,C))
-             </code></pre>
-              </td>
-              <td>
-              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
-// Identity: fa: F[A]
-fa <*> point(id)      == fa
-
-// Composition:
-u <*> v <*> w         == u <*> (v <*> w)
-
-// Homomorphism: (a: A, f: A => B)
-pount(f) <*> point(a) == point(f(x))
-
-// Interchange: (a: A, fa: F[A => B])
-point(a) <*> fa       == fa <*> point(f => f(a))
-
-// As a consequence of these laws,
-// the Functor instance for f will satisfy
-fa.map(f)             == pure(f) <*> fa
-
-// + Functor laws
-              </code></pre>
-              </td>
-            </tr>
-            <tr style="font-size:50%;">
-
-              <td width="50%" style="text-align:center;"><mark class="green">&nbsp;4&nbsp;</mark> Functions <b>AND</b> <mark class="green">&nbsp;6 + 3&nbsp;</mark> Category Laws</td>
-              <td width="50%" style="text-align:center;"><mark class="green">&nbsp;3&nbsp;</mark> Functions <b>AND</b> <mark class="green">&nbsp;4 + 2&nbsp;</mark>  Functor Laws</td>
-            </tr>
-          </table>
-        </section>
-
-        <section>
-          <table  cellspacing="0" cellpadding="0" style="width:100%;border:0px solid #F6921D;">
-            <tr>
-              <td width="50%" style="text-align:center;">Arrow</td>
-              <td width="50%" style="text-align:center;">Monad</td>
-            </tr>
-            <tr>
-              <td width="50%" >
-              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
-trait Arrow[~>[-_, +_]] extends Category[~>] {
-  // [Category]
-  def id[A]: A ~> A
-  def compose[A, B, C](f: B ~> C, g: A ~> B): A ~> C
-
-  // [Arrow] Minimal complete definition
-  def arr[B, C](f: B => C): B ~> C
-  def first[B, C, D](f: B ~> C): (B, D) ~> (C, D)
-}
-              </code></pre>
-              </td>
-              <td width="50%" >
-              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
-trait Monad[M[+_]] extends Applicative[M] {
-  // Monad -> Applicative -> [Pointed] -> Functor
-  def point[A](a: => A): F[A]
-
-  // [Monad]
-  def flatMap[A, B](ma: M[A], f: A => M[B]): M[B]
-}
-              </code></pre>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2" style="text-align:center;">Laws:</td>
-            </tr>
-            <tr>
-              <td>
-              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:68%;line-height:120%;">
-// Identity:
-arr id                     == id
-
-// Distribute over Composition:
-arr(f >>> g)               == arr(f) >>> arr(g)
-fst(f >>> g)               == fst(f) >>> fst(g)
-
-// Order must be irrelevant when piping & lifting:
-fst(arr(f))                == arr(fst(f))
-
-// Piping function simplification must be equivalen:
-fst(f) >>> arr(fst)        == arr(fst) >>> f
-
-// Piped function must be commutative:
-fst(f) >>> arr (id *** g)  == arr(id *** g) >>> fst(f)
-
-// Stacked bypasses can be flattened
-fst(first(f)) >>> arr assc == arr(assc) >>> fst(f)
-// assc[A,B,C]((A,B),C) = (A,(B,C))
-              </code></pre>
-              </td>
-              <td>
-              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
-// Right identity: (ma: M[A] f: A => M[B])
-ma.flatMap(x => point(x)) == ma
-// Left identity: (a: A f: A => M[B])
-point(a).flatMap(f)       == f(a)
-// Associativity:
-// (ma: M[A] f: A => M[B], g: B => M[C])
-ma.flatMap(f).flatMap(g)  ==
-              ma.flatMap(a => f(a).flatMap(g))
-
-// + Applicative laws
-// + Functor laws
-              </code></pre>
-              </td>
-            </tr>
-            <tr style="font-size:50%;">
-              <td width="50%" style="text-align:center;"><mark class="green">&nbsp;4&nbsp;</mark> Functions <b>AND</b> <mark class="green">&nbsp;6 + 3&nbsp;</mark> Category Laws</td>
-              <td width="50%" style="text-align:center;"><mark class="green">&nbsp;4&nbsp;</mark> Functions <b>AND</b> <mark class="green">&nbsp;3 + 4&nbsp;</mark> Applicative <mark class="green">&nbsp;+ 2&nbsp;</mark>  Functor Laws</td>
-            </tr>
-          </table>
-
-        </section>
-        <section>
         </section>
 
       </section>
@@ -740,7 +582,6 @@ Kleisli :  (A  => C[B]) >=> (B  => C[D])    =>   A  => C[D]
           </ul>
 
         </section>
-
 
         <section>
           <p style="font-size:100%;text-align:left;font-size:66%;font-family:'Lobster', sans-serif;">For:</p>
@@ -779,8 +620,7 @@ update(10, Kleisli { updateName(name) } >==> updatePassword(password))
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:90%;line-height:140%;">
 case class Kleisli[M[+ _], -A, +B](run: A => M[B])
 
-trait KleisliCategory[M[+_]]
-  extends Category[({type λ[-α, +β] = Kleisli[M, α, β]})#λ] {
+trait KleisliCategory[M[+_]] extends Category[(Kleisli[M, -?, +?]] {
   implicit def Monad: Monad[M]
 
   def id[A]: Kleisli[M, A, A] = Kleisli(a => Monad.point(a))
@@ -789,9 +629,7 @@ trait KleisliCategory[M[+_]]
     bc.flatMap(run(ac), k.run(_: B)))
 }
 
-trait KleisliArrow[M[+_]]
-  extends Arrow[({type λ[-α, +β] = Kleisli[M, α, β]})#λ]
-  with KleisliCategory[M] {
+trait KleisliArrow[M[+_]] extends Arrow[Kleisli[M, -?, +?]] with KleisliCategory[M] {
 
   def arr[A, B](f: A => B): Kleisli[M, A, B] = Kleisli(a => Monad.point(f(a)))
 
@@ -815,8 +653,7 @@ trait ArrowApply[~>[-_, +_]] extends Arrow[~>] {
 case class ArrowMonad[~>[-_, +_], +A](run: Unit ~> A)
 
 implicit def _asMonad[~>[-_, +_]](implicit i: ArrowApply[~>]):
-  Monad[({type λ[+α] = ArrowMonad[~>, α]})#λ] =
-  new Monad[({type λ[+α] = ArrowMonad[~>, α]})#λ] {
+  Monad[ArrowMonad[~>, +?]] = new Monad[ArrowMonad[~>, +?]] {
 
     type M[+A] = ArrowMonad[~>, A]
 
@@ -825,7 +662,7 @@ implicit def _asMonad[~>[-_, +_]](implicit i: ArrowApply[~>]):
       ArrowMonad[~>, B] { m.run >>> i.arr((x: A) => (f(x).run, ())) >>> i.app[Unit, B] }
   }
 
-trait KleisliArrowApply[M[+ _]] extends ArrowApply[({type λ[-α, +β] = Kleisli[M, α, β]})#λ] {
+trait KleisliArrowApply[M[+ _]] extends ArrowApply[Kleisli[M, -?, +?]] {
   private type ~>[-A, +B] = Kleisli[M, A, B]
   def app[A, B]: (A ~> B, A) ~> B = Kleisli { case (f, a) => (f.run)(a) }
 }
@@ -833,13 +670,15 @@ trait KleisliArrowApply[M[+ _]] extends ArrowApply[({type λ[-α, +β] = Kleisli
           </div>
         </section>
 
-        <section><div style="height:600px;">
+        <section>
+          <div style="height:600px;">
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">High order Arrow Definition (ArrowApply):</p>
           <img src="assets/F8.png" alt="url" title="">
           </br>
           <div>
             <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">MonadArrow:</p>
             <img src="assets/F9.png" alt="url" title="">
+          </div>
           </div>
         </section>
 
@@ -893,12 +732,220 @@ trait KleisliArrowApply[M[+ _]] extends ArrowApply[({type λ[-α, +β] = Kleisli
 
 <!-- ------------------------------------------------------------------------------------- -->
       <section>
-        <h3 style="text-align:left;">Arrows Summary</h3>
+        <h3 style="text-align:left;">Arrows, Applicatives, Monads</h3>
 
-        <div style="position:absolute;margin-left:50px;"><img src="assets/FP1.png" alt="url" title=""></div>
-        <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/FP2.png" alt="url" title=""></div>
-        <div class="fragment current-visible" data-fragment-index="3" style="position:absolute;margin-left:50px;"><img src="assets/FP4.png" alt="url" title=""></div>
-        <div class="fragment current-visible" data-fragment-index="4" style="position:absolute;margin-left:50px;"><img src="assets/FP5.png" alt="url" title=""></div>
+        <section>
+          <table  cellspacing="0" cellpadding="0" style="width:100%;border:0px solid #F6921D;">
+            <tr>
+              <td width="50%" style="text-align:center;">Arrow</td>
+              <td width="50%" style="text-align:center;">Applicative</td>
+            </tr>
+            <tr>
+              <td width="50%" >
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
+trait Arrow[~>[-_, +_]] extends Category[~>] {
+  // [Arrow] -> [Category]
+  def id[A]: A ~> A
+  def compose[A, B, C](f: B ~> C, g: A ~> B): A ~> C
+
+  // [Arrow] Minimal complete definition
+  def arr[B, C](f: B => C): B ~> C
+  def first[B, C, D](f: B ~> C): (B, D) ~> (C, D)
+}
+              </code></pre>
+              </td>
+              <td width="50%" >
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
+trait Applicative[M[+_]] extends Functor[M] {
+  // [Functor]
+  def map[A, B](m: M[A], f: A => B): M[B]
+
+  // [Applicative]
+  def point[A](a: => A): M[A]
+  def ap[A,B](m: M[A], f: M[A => B]): M[B]
+}
+              </code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" style="text-align:center;">Laws:</td>
+            </tr>
+            <tr>
+              <td>
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:68%;line-height:120%;">
+// Identity:
+arr id                     == id
+
+// Distribute over Composition:
+arr(f >>> g)               == arr(f) >>> arr(g)
+fst(f >>> g)               == fst(f) >>> fst(g)
+
+// Order must be irrelevant when piping & lifting:
+fst(arr(f))                == arr(fst(f))
+
+// Piping function simplification must be equivalen:
+fst(f) >>> arr(fst)        == arr(fst) >>> f
+
+// Piped function must be commutative:
+fst(f) >>> arr (id *** g)  == arr(id *** g) >>> fst(f)
+
+// Stacked bypasses can be flattened
+fst(first(f)) >>> arr assc == arr(assc) >>> fst(f)
+// assc[A,B,C]((A,B),C) = (A,(B,C))
+             </code></pre>
+              </td>
+              <td>
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
+// Identity: fa: F[A]
+fa <*> point(id)      == fa
+
+// Composition:
+u <*> v <*> w         == u <*> (v <*> w)
+
+// Homomorphism: (a: A, f: A => B)
+pount(f) <*> point(a) == point(f(x))
+
+// Interchange: (a: A, fa: F[A => B])
+point(a) <*> fa       == fa <*> point(f => f(a))
+
+// As a consequence of these laws,
+// the Functor instance for f will satisfy
+fa.map(f)             == pure(f) <*> fa
+              </code></pre>
+              </td>
+            </tr>
+            <tr style="font-size:50%;">
+              <td width="50%" style="text-align:center;"><mark class="green">&nbsp;4&nbsp;</mark> Functions <b>AND</b> <mark class="green">&nbsp;6&nbsp;</mark> Laws</td>
+              <td width="50%" style="text-align:center;"><mark class="green">&nbsp;3&nbsp;</mark> Functions <b>AND</b> <mark class="green">&nbsp;4&nbsp;</mark> Laws</td>
+            </tr>
+          </table>
+        </section>
+
+        <section>
+          <table  cellspacing="0" cellpadding="0" style="width:100%;border:0px solid #F6921D;">
+            <tr>
+              <td width="50%" style="text-align:center;">Arrow</td>
+              <td width="50%" style="text-align:center;">Monad</td>
+            </tr>
+            <tr>
+              <td width="50%" >
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
+trait Arrow[~>[-_, +_]] extends Category[~>] {
+  // [Arrow] -> [Category]
+  def id[A]: A ~> A
+  def compose[A, B, C](f: B ~> C, g: A ~> B): A ~> C
+
+  // [Arrow] Minimal complete definition
+  def arr[B, C](f: B => C): B ~> C
+  def first[B, C, D](f: B ~> C): (B, D) ~> (C, D)
+}
+              </code></pre>
+              </td>
+              <td width="50%" >
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
+trait Monad[M[+_]] extends Applicative[M] {
+  // [Monad] -> [Applicative]
+  def point[A](a: => A): F[A]
+
+  // [Monad]
+  def flatMap[A, B](ma: M[A], f: A => M[B]): M[B]
+}
+              </code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" style="text-align:center;">Laws:</td>
+            </tr>
+            <tr>
+              <td>
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:68%;line-height:120%;">
+// Identity:
+arr id                     == id
+
+// Distribute over Composition:
+arr(f >>> g)               == arr(f) >>> arr(g)
+fst(f >>> g)               == fst(f) >>> fst(g)
+
+// Order must be irrelevant when piping & lifting:
+fst(arr(f))                == arr(fst(f))
+
+// Piping function simplification must be equivalen:
+fst(f) >>> arr(fst)        == arr(fst) >>> f
+
+// Piped function must be commutative:
+fst(f) >>> arr (id *** g)  == arr(id *** g) >>> fst(f)
+
+// Stacked bypasses can be flattened
+fst(first(f)) >>> arr assc == arr(assc) >>> fst(f)
+// assc[A,B,C]((A,B),C) = (A,(B,C))
+              </code></pre>
+              </td>
+              <td>
+              <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:70%;line-height:120%;">
+// Right identity: (ma: M[A] f: A => M[B])
+ma.flatMap(x => point(x)) == ma
+
+// Left identity: (a: A f: A => M[B])
+point(a).flatMap(f)       == f(a)
+
+// Associativity:
+// (ma: M[A] f: A => M[B], g: B => M[C])
+ma.flatMap(f).flatMap(g)  ==
+              ma.flatMap(a => f(a).flatMap(g))
+              </code></pre>
+              </td>
+            </tr>
+            <tr style="font-size:50%;">
+              <td width="50%" style="text-align:center;"><mark class="green">&nbsp;4&nbsp;</mark> Functions <b>AND</b> <mark class="green">&nbsp;6&nbsp;</mark> Laws</td>
+              <td width="50%" style="text-align:center;"><mark class="green">&nbsp;1&nbsp;</mark> Functions <b>AND</b> <mark class="green">&nbsp;3&nbsp;</mark> Laws</td>
+            </tr>
+          </table>
+        </section>
+
+        <section>
+          <table  cellspacing="0" cellpadding="0" style="width:100%;border:0px solid #F6921D;">
+            <tr>
+              <td colspan="2" style="text-align:left;">Functions:</td>
+            </tr>
+            <tr style="font-size:50%;">
+              <td width="50%" style="text-align:right;padding-right:5%;">Category (id/compose) <mark class="green">&nbsp;2&nbsp;</mark></td><td width="50%" style="text-align:left;padding-left:5%;"><mark class="green">&nbsp;1&nbsp;</mark> (map) Functor</td>
+            </tr>
+            <tr style="font-size:50%;">
+              <td width="50%" style="text-align:right;padding-right:5%;">Arrow (arr/first) <mark class="green">&nbsp;2&nbsp;</mark></td><td width="50%" style="text-align:left;padding-left:5%;"><mark class="green">&nbsp;2&nbsp;</mark> (point/ap) Applicative</td>
+            </tr>
+            <tr style="font-size:50%;">
+              <td width="50%" style="text-align:right;padding-right:5%;">Kleisli (flatMap) <mark class="green">&nbsp;1&nbsp;</mark></td><td width="50%" style="text-align:left;padding-left:5%;"><mark class="green">&nbsp;1&nbsp;</mark> (flatMap) Monad</td>
+            </tr>
+            <tr style="font-size:85%;">
+              <td width="50%" style="text-align:right;padding-right:5%;"><mark class="green">&nbsp;5&nbsp;</mark></td><td width="50%" style="text-align:left;padding-left:5%;"><mark class="green">&nbsp;4&nbsp;</mark></td>
+            </tr>
+            <tr>
+              <td colspan="2" style="text-align:left;">Laws:</td>
+            </tr>
+            <tr style="font-size:50%;">
+              <td width="50%" style="text-align:right;padding-right:5%;">Category <mark class="green">&nbsp;3&nbsp;</mark></td><td width="50%" style="text-align:left;padding-left:5%;"><mark class="green">&nbsp;2&nbsp;</mark> Functor</td>
+            </tr>
+            <tr style="font-size:50%;">
+              <td width="50%" style="text-align:right;padding-right:5%;">Arrow <mark class="green">&nbsp;6&nbsp;</mark></td><td width="50%" style="text-align:left;padding-left:5%;"><mark class="green">&nbsp;4&nbsp;</mark> Applicative</td>
+            </tr>
+            <tr style="font-size:50%;">
+              <td width="50%" style="text-align:right;padding-right:5%;">Kleisli <mark class="green">&nbsp;-&nbsp;</mark></td><td width="50%" style="text-align:left;padding-left:5%;"><mark class="green">&nbsp;3&nbsp;</mark> Monad</td>
+            </tr>
+            <tr style="font-size:85%;">
+              <td width="50%" style="text-align:right;padding-right:5%;"><mark class="green">&nbsp;9&nbsp;</mark></td><td width="50%" style="text-align:left;padding-left:5%;"><mark class="green">&nbsp;9&nbsp;</mark></td>
+            </tr>
+          </table>
+        </section>
+
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Arrows, Applicatives, Monads Summary</h3>
+
+        <div style="position:absolute;margin-left:50px;"><img src="assets/FP2.png" alt="url" title=""></div>
+        <div class="fragment current-visible" data-fragment-index="1" style="position:absolute;margin-left:50px;"><img src="assets/FP4.png" alt="url" title=""></div>
+        <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/FP5.png" alt="url" title=""></div>
 
       </section>
 
@@ -938,43 +985,44 @@ trait KleisliArrowApply[M[+ _]] extends ArrowApply[({type λ[-α, +β] = Kleisli
         </section>
 
         <section>
-          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Initial:</p>
-          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+          <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;margin-bottom:0px;">Initial:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:90%;line-height:120%;">
 case class User(id: Int, name: String, psswd: String, email: String)
-
 def getUserById: Int => Either[Err, User] = ???
 def updateDbUser: User => Either[Err, Int] = ???
-def validateName: String => Either[Err, String] = ???
 def updateName: String => User => User = ???
 def sendEmail: User => Unit = ???
+
+def id[T]: T => T = x => x
+def leftId[E, T]: Err => Either[E, T] = x => Left { x }
+def fst[A, B]: (A, B) => A = _._1
           </code></pre>
 
-          <div class="fragment current-visible">
-          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Track:</p>
-          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+          <div class="fragment current-visible" style="margin-top:20px;">
+          <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;margin-bottom:0px;">Track:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:90%;line-height:120%;">
 val run =
   getUserById >>>
   updateName(name).right >>>
-  ((sendEmail &&& id[User]) >>> { case (a, b) => b } ).right >>>
-  updateDbUser.right // Either[Err, Either[Err, Int]]
+  ((id[User] &&& sendEmail) >>> fst).right >>>
+  (leftId[Err, Int] ||| updateDbUser) // Either[Err, Int]
           </code></pre>
           </div>
 
-          <div class="fragment current-visible">
-          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Track with Kleisli:</p>
-          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
-val run = Kleisli[Either, Int, User] {
-  getUserById >>>
-  updateName(name).right >>>
-  ((sendEmail &&& id[User]) >>> { case (a, b) => b } ).right } >==>
-  updateDbUser // Either[Err, Int]
+          <div class="fragment current-visible" style="margin-top:20px;">
+          <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;margin-bottom:0px;">Track with Kleisli:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:90%;line-height:120%;">
+val run = Kleisli[Either[Err, +?], Int, User] {
+    getUserById >>>
+    updateName(name).right >>>
+    ((id[User] &&& sendEmail) >>> fst).right
+  } >==> updateDbUser // Either[Err, Int]
           </code></pre>
         </div>
 
         </section>
 
       </section>
-
 
 <!-- ------------------------------------------------------------------------------------- -->
       <section>
