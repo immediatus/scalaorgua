@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../../css/reveal.css">
     <link rel="stylesheet" href="../../css/theme2.css">
     <link rel="stylesheet" href="../../css/code2.css">
+    <!--<link rel="stylesheet" href="../../css/print/paper.css"> -->
+    <!--<link rel="stylesheet" href="../../css/print/pdf.css"> -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
   </head>
@@ -18,6 +20,7 @@
       <section>
         <div style="height:600px;"><div style="padding:200px 0px 0px 0px;">
         <h2>Functional programming with arrows</h2>
+        <h4>Scala Days, June 2015, Amsterdam</h4>
         <p>
           by&nbsp;
           <a href="http://linkedin.com/in/polyulya" class="roll"><span data-title="Yuriy Polyulya">Yuriy Polyulya</span></a>
@@ -44,12 +47,24 @@
               <p style="font-size:33%;text-align:left;margin-top:10px;">functional programming is not about pure functions any more. Eventually, programs will produce side-effects and side-effect management is a puzzle with many parts.</p>
             </li>
           </ul>
+
+        <aside class="notes">
+          The motivation of this presentation is fairly simple, and is repelled by the two most important ideas in modern vision of FP:</br>
+          first; all begins from data and then come relations between them;</br>
+          second; it is no program that can be defined in the form of "pure function", and this is why we allways should concern about the side effects;
+        </aside>
         </section>
+
         <section>
           <div style="height:600px;"><div style="padding:200px 0px 0px 0px;">
-          <p style="color:#703D5B;font-size:150%;font-family:'Lobster', sans-serif;">"to show one of technics of managing your data &amp; control side-effect"</p>
+          <p style="color:#703D5B;font-size:150%;font-family:'Lobster', sans-serif;">"to show one of techniques of managing your data &amp; control side-effect"</p>
           </div></div>
+
+          <aside class="notes">
+          The main purpose of this material is repelled by the motivation and this is “to show one of techniques of managing your data & control side-effect” 
+          </aside>
         </section>
+
       </section>
 
 <!-- ------------------------------------------------------------------------------------- -->
@@ -90,7 +105,15 @@ f("By!")   shouldEqual 3
           </code></pre>
           </div>
 
-        </div></section>
+        </div>
+
+          <aside class="notes">
+            Few words about functions:</br>
+            two objects; different types; has relations as a simple function; what look like arrow from one to other object and define relation between this objects</br>
+            In what follows I suggest to use block diagram for the convenience of the image but still refer to it as an arrow or function;</br>
+            And a simple sample of functions in Scala
+          </aside>
+        </section>
 
         <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
 
@@ -102,13 +125,18 @@ f("By!")   shouldEqual 3
 val f: String => Int = str => str.length
 val g: Int => Int    = i => i * 2
 
-val h = g compose f  //  f >>> h
+val h = g compose f  //  f >>> g
 
 h("Hello")   shouldEqual 10
 h("Workday") shouldEqual 14
           </code></pre>
           </div>
 
+          <aside class="notes">
+            Functions composition as a diagram. Blocks shown that the functions composition should be considered as a function;<br>
+            This is what we have in Scala FW out of the box; In other words Scala Predef provide few function conmbinators - high-order functions;</br>
+            Would be reasonable to use higher-order functions features in full power
+          </aside>
         </section>
 
       </section>
@@ -122,6 +150,9 @@ h("Workday") shouldEqual 14
           </div></div>
           <p style="font-size:50%;text-align:right;">- John Hughes Generalising Monads to Arrows</p>
 
+          <aside class="notes">
+            Combinators well described in words of John Hughes in “Generalising Monads to Arrows” and I have nothing to add here;
+          </aside>
       </section>
 
 <!-- ------------------------------------------------------------------------------------- -->
@@ -136,6 +167,13 @@ h("Workday") shouldEqual 14
              <div style="position:absolute;margin-left:50px;"><img src="assets/P12.png" alt="url" title=""></div>
              <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/P11.png" alt="url" title=""></div>
            </div>
+
+          <aside class="notes">
+            As you remember, we began our talk about data structures, and I would like to continue with them and let's look to some of the common data structures and their relationship to combinators;</br>
+            And first will be Product Type.</br>
+            Would like to note, in the FP world and in terms of category theory as universal modeling FW; data-types any data-types more correct to describe by functions exposed by these type; in other word; by methods of interaction with these types. Back to the declared Product Type; will be a right to say that it is a data-type for which the relation in diagram is correct; f == g >>> fst<br>
+            In Scala this type represented as Tuple
+          </aside>
         </section>
 
         <section>
@@ -159,6 +197,10 @@ forAll { (any: String) =>
   (h andThen snd)(any) == g(any)
 }
           </code></pre>
+
+          <aside class="notes">
+            Sample code what proving that my previous statement about Tuple is true
+          </aside>
         </section>
 
       </section>
@@ -181,6 +223,12 @@ val h = f &&& g
 h("Hello")   shouldEqual (5, "HELLO")
 h("Workday") shouldEqual (7, "WORKDAY")
           </code></pre>
+
+          <aside class="notes">
+            As we define first common data-type and next step it is use it for definition of few next combinators</br>
+            And firts will be: “split” combinator what combine two functions so that a parameter of final combinator will be splited and applied for two functions f and g in paralle and result type is a product of functions results; in other worlds Tuple of f and g results.</br>
+            And Scala sample below
+          </aside>
         </section>
 
         <section>
@@ -196,6 +244,11 @@ val h = f *** g
 
 h("Hello", "Workday") shouldEqual (5, "WORKDAY")
           </code></pre>
+
+          <aside class="notes">
+            The next one is “combine” combinator and it so closure to first one but combinator argument it is Tuple and result is Tuple too</br>
+            Scala semple show ways haw to use this combinator
+          </aside>
         </section>
 
         <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
@@ -221,7 +274,13 @@ trait Category[~>[-_, +_]] {
   def compose[A, B, C](f: B ~> C, g: A ~> B): A ~> C
 }
           </code></pre>
-        </div></section>
+        </div>
+
+        <aside class="notes">
+          This is a Scala implementation of Arrow type-class;</br>
+          As you can see Arrow type-class is sub type of Category type-class because composition of function is a property of category from category theory point of view; will back to category properties later
+        </aside>
+      </section>
 
       </section>
 
@@ -238,7 +297,8 @@ trait Category[~>[-_, +_]] {
              <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/P21.png" alt="url" title=""></div>
            </div>
 
-
+          <aside class="notes">
+          </aside>
         </section>
 
         <section>
@@ -264,6 +324,9 @@ forAll { (anyStr: String, anyInt: Int) =>
   (right andThen h)(anyStr) == g(anyStr)
 }
           </code></pre>
+
+          <aside class="notes">
+          </aside>
         </section>
 
       </section>
@@ -286,6 +349,9 @@ val h = f +++ g
 h apply Left[String, String]("Hello")  shouldEqual L[Int, String](5)
 h apply Right[String, String]("Hello") shouldEqual R[Int, String]("HELLO")
           </code></pre>
+
+          <aside class="notes">
+          </aside>
         </section>
 
         <section>
@@ -302,11 +368,14 @@ val h = f ||| g
 h apply Left[String, String]("Hello")  shouldEqual 5
 h apply Right[String, String]("Hello") shouldEqual "HELLO"
           </code></pre>
+
+          <aside class="notes">
+          </aside>
         </section>
 
         <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">ArrowChoice Type-Class:</p>
-          <p style="font-size:50%;text-align:left;">make a choice between two arrows, on the basis of a previous result</p>
+          <p style="font-size:50%;text-align:left;">make a choice between two arrows on the basis of a previous result</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
 trait ArrowChoice[~>[-_, +_]] extends Arrow[~>] {
   type E[A, B] = Either[A, B]
@@ -318,9 +387,13 @@ trait ArrowChoice[~>[-_, +_]] extends Arrow[~>] {
   def |||[B, C, D](a: B ~> D, b: C ~> D): E[B, C] ~> D
 }
           </code></pre>
-        </div></section>
-
+        </div>
+        <aside class="notes">
+        </aside>
       </section>
+
+    </section>
+
 
 <!-- ------------------------------------------------------------------------------------- -->
 
@@ -390,6 +463,8 @@ trait ArrowLoop[~>[-_, +_]] extends Arrow[~>] {
               <p style="font-size:100%;">Arrow is generalization of function, what provide more function combinators:</br>Like first/second/split/combine, ...</p>
           </div></div>
 
+          <aside class="notes">
+          </aside>
       </section>
 
 
@@ -398,7 +473,6 @@ trait ArrowLoop[~>[-_, +_]] extends Arrow[~>] {
         <h3 style="text-align:left;">Kleisli &amp; Co-Kleisli Arrow</h3>
 
         <section>
-
         <div style="position:absolute;width:100%;">
         <img style="width:initial;" src="assets/C1.png" alt="url" title="">
         <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
@@ -433,6 +507,8 @@ f(None)             shouldEqual ""
         </code></pre>
         </div>
 
+          <aside class="notes">
+          </aside>
         </section>
 
         <section>
@@ -458,6 +534,9 @@ trait KleisliCategory[M[+_]]
           <div style="font-size:60%;text-align:right;width:100%;max-width:100%;margin-top:100px;">
           <a href="https://github.com/non/kind-projector" class="roll"><span data-title="Erik Osheim, Kind Projector on GitHub">Erik Osheim, Kind Projector on GitHub</span></a>
           </div>
+
+          <aside class="notes">
+          </aside>
         </section>
 
         <section>
@@ -483,6 +562,8 @@ trait KleisliArrow[M[+_]]
             <p style="font-size:100%;">But what is <b><mark class="green">M[_]</mark> (only Option)</b>?
           </p></div>
 
+          <aside class="notes">
+          </aside>
         </section>
 
         <section>
@@ -551,6 +632,9 @@ read from environment
               </tr>
             </table>
           </div>
+
+          <aside class="notes">
+          </aside>
         </section>
 
       </section>
@@ -560,7 +644,7 @@ read from environment
         <h3 style="text-align:left;">Arrows &amp; Monads</h3>
 
         <section>
-          <h4 style="text-align:left;">Usual ways to Data manipulation for any side-effect container:</h4>
+          <h4 style="text-align:left;">Common data manipulation techniques for dealing with side-effecting containers:</h4>
 
           <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;">Functor &amp; Monad (essence):</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
@@ -581,6 +665,8 @@ Kleisli :  (A  => C[B]) >=> (B  => C[D])    =>   A  => C[D]
             <li>Arrows can have more then one input.</li>
           </ul>
 
+          <aside class="notes">
+          </aside>
         </section>
 
         <section>
@@ -613,6 +699,8 @@ def update(id: Int, update: User => Option[User]) =
 update(10, Kleisli { updateName(name) } >==> updatePassword(password))
           </code></pre>
 
+          <aside class="notes">
+          </aside>
         </section>
 
         <section>
@@ -637,6 +725,9 @@ trait KleisliArrow[M[+_]] extends Arrow[Kleisli[M, -?, +?]] with KleisliCategory
     Kleisli[M, (A, C), (B, C)] { case (a, c) => Monad.map(f.run(a), (b: B) => (b, c)) }
 }
           </code></pre>
+
+          <aside class="notes">
+          </aside>
         </section>
 
         <section>
@@ -668,6 +759,9 @@ trait KleisliArrowApply[M[+ _]] extends ArrowApply[Kleisli[M, -?, +?]] {
 }
           </code></pre>
           </div>
+
+          <aside class="notes">
+          </aside>
         </section>
 
         <section>
@@ -680,6 +774,9 @@ trait KleisliArrowApply[M[+ _]] extends ArrowApply[Kleisli[M, -?, +?]] {
             <img src="assets/F9.png" alt="url" title="">
           </div>
           </div>
+
+          <aside class="notes">
+          </aside>
         </section>
 
       </section>
@@ -728,6 +825,8 @@ trait KleisliArrowApply[M[+ _]] extends ArrowApply[Kleisli[M, -?, +?]] {
 
         </table>
 
+          <aside class="notes">
+          </aside>
       </section>
 
 <!-- ------------------------------------------------------------------------------------- -->
@@ -819,6 +918,9 @@ fa.map(f)             == pure(f) <*> fa
               <td width="50%" style="text-align:center;"><mark class="green">&nbsp;3&nbsp;</mark> Functions <b>AND</b> <mark class="green">&nbsp;4&nbsp;</mark> Laws</td>
             </tr>
           </table>
+
+          <aside class="notes">
+          </aside>
         </section>
 
         <section>
@@ -900,6 +1002,9 @@ ma.flatMap(f).flatMap(g)  ==
               <td width="50%" style="text-align:center;"><mark class="green">&nbsp;1&nbsp;</mark> Functions <b>AND</b> <mark class="green">&nbsp;3&nbsp;</mark> Laws</td>
             </tr>
           </table>
+
+          <aside class="notes">
+          </aside>
         </section>
 
         <section>
@@ -908,7 +1013,7 @@ ma.flatMap(f).flatMap(g)  ==
               <td colspan="2" style="text-align:left;">Functions:</td>
             </tr>
             <tr style="font-size:50%;">
-              <td width="50%" style="text-align:right;padding-right:5%;">Category (id/compose) <mark class="green">&nbsp;2&nbsp;</mark></td><td width="50%" style="text-align:left;padding-left:5%;"><mark class="green">&nbsp;1&nbsp;</mark> (map) Functor</td>
+              <td width="50%" style="text-align:right;padding-right:5%;">Category (id/compose - Predef) <mark class="green">&nbsp;0&nbsp;</mark></td><td width="50%" style="text-align:left;padding-left:5%;"><mark class="green">&nbsp;0&nbsp;</mark> (map - by Applicative &amp; Monad) Functor</td>
             </tr>
             <tr style="font-size:50%;">
               <td width="50%" style="text-align:right;padding-right:5%;">Arrow (arr/first) <mark class="green">&nbsp;2&nbsp;</mark></td><td width="50%" style="text-align:left;padding-left:5%;"><mark class="green">&nbsp;2&nbsp;</mark> (point/ap) Applicative</td>
@@ -917,7 +1022,7 @@ ma.flatMap(f).flatMap(g)  ==
               <td width="50%" style="text-align:right;padding-right:5%;">Kleisli (flatMap) <mark class="green">&nbsp;1&nbsp;</mark></td><td width="50%" style="text-align:left;padding-left:5%;"><mark class="green">&nbsp;1&nbsp;</mark> (flatMap) Monad</td>
             </tr>
             <tr style="font-size:85%;">
-              <td width="50%" style="text-align:right;padding-right:5%;"><mark class="green">&nbsp;5&nbsp;</mark></td><td width="50%" style="text-align:left;padding-left:5%;"><mark class="green">&nbsp;4&nbsp;</mark></td>
+              <td width="50%" style="text-align:right;padding-right:5%;"><mark class="green">&nbsp;3&nbsp;</mark></td><td width="50%" style="text-align:left;padding-left:5%;"><mark class="green">&nbsp;3&nbsp;</mark></td>
             </tr>
             <tr>
               <td colspan="2" style="text-align:left;">Laws:</td>
@@ -935,6 +1040,9 @@ ma.flatMap(f).flatMap(g)  ==
               <td width="50%" style="text-align:right;padding-right:5%;"><mark class="green">&nbsp;9&nbsp;</mark></td><td width="50%" style="text-align:left;padding-left:5%;"><mark class="green">&nbsp;9&nbsp;</mark></td>
             </tr>
           </table>
+
+          <aside class="notes">
+          </aside>
         </section>
 
       </section>
@@ -947,6 +1055,8 @@ ma.flatMap(f).flatMap(g)  ==
         <div class="fragment current-visible" data-fragment-index="1" style="position:absolute;margin-left:50px;"><img src="assets/FP4.png" alt="url" title=""></div>
         <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/FP5.png" alt="url" title=""></div>
 
+          <aside class="notes">
+          </aside>
       </section>
 
 <!-- ------------------------------------------------------------------------------------- -->
@@ -954,13 +1064,13 @@ ma.flatMap(f).flatMap(g)  ==
         <h3 style="text-align:left;">End user benefits:</h3>
 
         <section>
-
           <div class="fragment current-visible" data-fragment-index="2" style="height:300px;"><div style="padding:50px 0px 0px 0px;">
             <h1>Railway Oriented Programming</h1>
             <p style="font-size:50%;text-align:right;margin-top:10px;">- Scott Wlaschin (F# for fun and profit)</p>
           </div></div>
 
-
+          <aside class="notes">
+          </aside>
         </section>
 
         <section>
@@ -982,6 +1092,9 @@ ma.flatMap(f).flatMap(g)  ==
 
           </br></br>
           <h3 class="fragment current-visible" data-fragment-index="6">Dataflow programming (programming paradigm)</h3>
+
+          <aside class="notes">
+          </aside>
         </section>
 
         <section>
@@ -1020,6 +1133,8 @@ val run = Kleisli[Either[Err, +?], Int, User] {
           </code></pre>
         </div>
 
+          <aside class="notes">
+          </aside>
         </section>
 
       </section>
@@ -1075,13 +1190,13 @@ val run = Kleisli[Either[Err, +?], Int, User] {
       theme: Reveal.getQueryHash().theme,
 
       transition: 'linear',
-//      transitionSpeed: 'fast',
       backgroundTransition: 'slide',
 
       dependencies: [
           { src: '../../js/classList.js', condition: function() { return !document.body.classList; } },
           { src: '../../js/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: '../../js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }
+          { src: '../../js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../../js/notes.js', async: true }
         ]
      });
   </script>
