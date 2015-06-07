@@ -298,6 +298,10 @@ trait Category[~>[-_, +_]] {
            </div>
 
           <aside class="notes">
+            Next base type what I want to consider it is Co-Product and if you remember the diagram for Product type than not hard to notice that the all arrows in diagram are reversed</br>
+            As before for a type definition I offer to define it ways of interacting; and namely the relations that describes this type;</br>
+            And in this case type defined by equality f >>> left == g</br>
+            In Scala this type represented as Either
           </aside>
         </section>
 
@@ -326,9 +330,9 @@ forAll { (anyStr: String, anyInt: Int) =>
           </code></pre>
 
           <aside class="notes">
+            Sample code what proving that my previous statement about Either is true
           </aside>
         </section>
-
       </section>
 
 <!-- ------------------------------------------------------------------------------------- -->
@@ -351,6 +355,9 @@ h apply Right[String, String]("Hello") shouldEqual R[Int, String]("HELLO")
           </code></pre>
 
           <aside class="notes">
+            As before for Tuple type; and now for Either type we can define special combinators what will simplify using of fuctions with Either input or output.</br>
+            Taking to account internal specific of Either type; let’s look to first combinator “multiplex”; it combines two functions: f and g with next application strategy: f will be applied for Left type type of argument and g for Right type</br>
+            And sample; how to use of multiplexer combinator for Left and Right values.
           </aside>
         </section>
 
@@ -370,6 +377,8 @@ h apply Right[String, String]("Hello") shouldEqual "HELLO"
           </code></pre>
 
           <aside class="notes">
+            Next combinator is “merge”, and  essence of it is to combine two functions so that for Left and for Right will be applied accordingly f or g functions which has same result type; in other words it is a folding function what encapsulated left and right morphism</br>
+            And as usual Scala sample below
           </aside>
         </section>
 
@@ -389,6 +398,8 @@ trait ArrowChoice[~>[-_, +_]] extends Arrow[~>] {
           </code></pre>
         </div>
         <aside class="notes">
+          Scala implementation of ArrowChoise type-class;</br>
+          I do not consider the details of the scala syntax extension implementation; since extensions are rather templated and implementation enough common
         </aside>
       </section>
 
@@ -464,6 +475,7 @@ trait ArrowLoop[~>[-_, +_]] extends Arrow[~>] {
           </div></div>
 
           <aside class="notes">
+            Time to summarize “what is arrow”
           </aside>
       </section>
 
@@ -508,6 +520,9 @@ f(None)             shouldEqual ""
         </div>
 
           <aside class="notes">
+            Next kind of Arrows it’s Kleisli Arrow; And I would like to briefly return to categories and category properties; For any object type it should be possible to lift this type in category; for Option type it’s “apply” method in companion object; also it should be possible to lift relations between functions in our category; for Option type it’s “map” function;<br>
+            And what is Kleisli Arrow; this is diagonal arrow that begins in the category of simple types with one type and finishes in monadic category with other type</br>
+            For understanding Co-Kleisli Arrow, just enough to reverse this relation
           </aside>
         </section>
 
@@ -536,6 +551,8 @@ trait KleisliCategory[M[+_]]
           </div>
 
           <aside class="notes">
+            Type-Class  for Kleisli Arrow can be implemented as follows;</br>
+            I would like to digress for say thanks to Erik for Kind Projector plugin; that simplify any type lambas notation; You can see Kleisli type-class with Kind Projector and without it
           </aside>
         </section>
 
@@ -563,6 +580,7 @@ trait KleisliArrow[M[+_]]
           </p></div>
 
           <aside class="notes">
+            Back to our Kleisli Arrow type-class and actually it type-parameters M[_]
           </aside>
         </section>
 
@@ -634,6 +652,8 @@ read from environment
           </div>
 
           <aside class="notes">
+            Any math function has one parameter and one result; Everything else is side-effect; And general idea it is wrap side-effect to container; In other words, localise it for generalising of way to process with side-effect wrapper</br>
+            And namely what kind of side-effect and containers do we know:
           </aside>
         </section>
 
@@ -666,6 +686,8 @@ Kleisli :  (A  => C[B]) >=> (B  => C[D])    =>   A  => C[D]
           </ul>
 
           <aside class="notes">
+            Once we started talking about the side-effect would be good to decide on ways to work with containers with side-effect; Firs one it’s monadic-way; And its essence can be easily represented as the following two lines.</br>
+            But this is not the only way, as you might guess; Kleisli arrows is second one; And one of advantages is that arrow is container for function with side-effect
           </aside>
         </section>
 
@@ -684,8 +706,8 @@ def updatePassword: String => User => Option[User] = ...
           </br>
           <p style="font-size:100%;text-align:left;font-size:66%;font-family:'Lobster', sans-serif;">Monad usege:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:85%;line-height:140%;">
-def update(id: Int, update: User => Option[User]) =
-  getUserById(id).flatMap(update).flatMap(updateDbUser)
+def update(id: Int, updateUser: User => Option[User]) =
+  getUserById(id).flatMap(updateUser).flatMap(updateDbUser)
 
 update(10, (user: User) => updateName(name).flatMap(updatePassword(password)))
           </code></pre>
@@ -693,13 +715,16 @@ update(10, (user: User) => updateName(name).flatMap(updatePassword(password)))
           </br>
           <p style="font-size:100%;text-align:left;font-size:66%;font-family:'Lobster', sans-serif;">Kleisli usege:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:85%;line-height:140%;">
-def update(id: Int, update: User => Option[User]) =
-  Kleisli { getUserById(id) } >==> update >==> updateDbUser
+def update(id: Int, updateUser: User => Option[User]) =
+  Kleisli { getUserById(id) } >==> updateUser >==> updateDbUser
 
 update(10, Kleisli { updateName(name) } >==> updatePassword(password))
           </code></pre>
 
           <aside class="notes">
+            For example, consider the following data types and functions</br>
+            Monadic-way is well known and advantages of Arrow way is not so good visible at first sight;</br>
+            But as you can see; In first implementation we should to wrap our monadic function; but in second implementation this is just a function composition
           </aside>
         </section>
 
@@ -727,6 +752,8 @@ trait KleisliArrow[M[+_]] extends Arrow[Kleisli[M, -?, +?]] with KleisliCategory
           </code></pre>
 
           <aside class="notes">
+            Time to consider the implementation of Kleisli Arrow Type-Class;</br>
+            And the simplest implementation Kleisli Arrow will be on the based on monad implementation. It means that if monad already implemented then Kleisli arrows no need additional efforts to implementation
           </aside>
         </section>
 
@@ -761,7 +788,8 @@ trait KleisliArrowApply[M[+ _]] extends ArrowApply[Kleisli[M, -?, +?]] {
           </div>
 
           <aside class="notes">
-          </aside>
+            But I would like to go back to the arrow, and show that they are still self-sufficient; and show how to implement monads based on arrows;</br>
+            Here declared two additional classes ArrowApply and Arrow Monad</aside>
         </section>
 
         <section>
@@ -776,6 +804,9 @@ trait KleisliArrowApply[M[+ _]] extends ArrowApply[Kleisli[M, -?, +?]] {
           </div>
 
           <aside class="notes">
+            What is ArrowApply; by analogy of high-order function, this is high order arrow; Arrow where first argument is another arrow;</br>
+            And ArrowMonad is arrow where firs argument is empty type;</br>
+            As I have shown by this two arrow we can implement monad interface
           </aside>
         </section>
 
@@ -826,6 +857,7 @@ trait KleisliArrowApply[M[+ _]] extends ArrowApply[Kleisli[M, -?, +?]] {
         </table>
 
           <aside class="notes">
+            Some properties of Kleisli Arrow Type-Class based on type-parameters properties
           </aside>
       </section>
 
@@ -920,6 +952,9 @@ fa.map(f)             == pure(f) <*> fa
           </table>
 
           <aside class="notes">
+            I want to summarize all what I said before; And summarize efforts for implementing monads and arrow hierarchy;</br>
+            And goals: to compare how many function should to be implemented and how many laws should to be satisfied</br>
+            First will be Arrow and Applicative
           </aside>
         </section>
 
@@ -1004,6 +1039,7 @@ ma.flatMap(f).flatMap(g)  ==
           </table>
 
           <aside class="notes">
+            Second is Arrow and Monad
           </aside>
         </section>
 
@@ -1042,6 +1078,9 @@ ma.flatMap(f).flatMap(g)  ==
           </table>
 
           <aside class="notes">
+            Final comparison table; Efforts are enough equal;</br>
+            As I say; If you have implementation of monad you will get implementation of arrow with zero efforts and vice versa if you have implementation of Arrow you will get Monad for free.</br>
+            And difference only in chosen basis: composition or application of function with side-effect; But in any case you should to implement only two natural transformations: etta and nyu for your monadic category
           </aside>
         </section>
 
@@ -1056,6 +1095,8 @@ ma.flatMap(f).flatMap(g)  ==
         <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/FP5.png" alt="url" title=""></div>
 
           <aside class="notes">
+            If putting together hierarchy of Arrow and Monad;</br>
+            You can see a lot of the functionality intersection, I mean that many structures can be used for the same purposes and the final choice should always be based on the goals and expressiveness of code; after all code should be concise and readable
           </aside>
       </section>
 
@@ -1070,6 +1111,9 @@ ma.flatMap(f).flatMap(g)  ==
           </div></div>
 
           <aside class="notes">
+            And few arrows examples;</br>
+            For all whom who has a dream to be a train dispatcher; At this moment you are in one step from your dream; since then we will talk about the  RAILWAY ORIENTED PROGRAMMING.</br>
+            I like this metaphor and I first met it in Scott Wlaschin blog; and it good reflects essence of this approach;
           </aside>
         </section>
 
@@ -1094,6 +1138,8 @@ ma.flatMap(f).flatMap(g)  ==
           <h3 class="fragment current-visible" data-fragment-index="6">Dataflow programming (programming paradigm)</h3>
 
           <aside class="notes">
+            If we have a functions track like in diagram; We should to care about composition of steps what can rise errors; and single track function; or dead end functions; or handle both track</br>
+            And adventages of Arrow FW that we already have set of combinators for most of our needs; since it is fairly well-known programming paradigm - Dataflow Programm
           </aside>
         </section>
 
@@ -1134,9 +1180,11 @@ val run = Kleisli[Either[Err, +?], Int, User] {
         </div>
 
           <aside class="notes">
+            And the same track in Scala;</br>
+            First track is basen on Arrow Framework;<br>
+            And second one if we have monadic implementation for Either type-class and can use Kleisli arrow
           </aside>
         </section>
-
       </section>
 
 <!-- ------------------------------------------------------------------------------------- -->
