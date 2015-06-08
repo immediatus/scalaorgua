@@ -40,7 +40,7 @@
               It's all about data
               <p style="font-size:33%;text-align:left;margin-top:10px;">functional programming is all about putting data first.
               The first is defining what kinds of data we have in a problem domain, and what kinds of transformations we want on them.
-              Then we building up the data structures and the code to do the transformations.</p>
+              Then we are building up the data structures and the code to do the transformations.</p>
             </li>
             <li style="padding-top:50px;" data-fragment-index="1">
               Managing of side-effect
@@ -151,7 +151,7 @@ h("Workday") shouldEqual 14
           <p style="font-size:50%;text-align:right;">- John Hughes Generalising Monads to Arrows</p>
 
           <aside class="notes">
-            Combinators well described in words of John Hughes in “Generalising Monads to Arrows” and I have nothing to add here;
+            Combinators are well described in words of John Hughes in “Generalising Monads to Arrows” and I have nothing to add here;
           </aside>
       </section>
 
@@ -169,9 +169,9 @@ h("Workday") shouldEqual 14
            </div>
 
           <aside class="notes">
-            As you remember, we began our talk about data structures, and I would like to continue with them and let's look to some of the common data structures and their relationship to combinators;</br>
+            As you remember, we began our conversation about data structures, so I would like to continue with them and let's look to some of the common data structures and their relationship to combinators;</br>
             And first will be Product Type.</br>
-            Would like to note, in the FP world and in terms of category theory as universal modeling FW; data-types any data-types more correct to describe by functions exposed by these type; in other word; by methods of interaction with these types. Back to the declared Product Type; will be a right to say that it is a data-type for which the relation in diagram is correct; f == g >>> fst<br>
+            I would like to note, in the FP world and in terms of category theory as universal modeling FW; it's more correct any data-types by functions exposed by these type; in other word; by methods of interaction with these types. Back to the declared Product Type; it will be a right to say that it is a data-type for which the relation in diagram is correct; f == g >>> fst<br>
             In Scala this type represented as Tuple
           </aside>
         </section>
@@ -225,7 +225,7 @@ h("Workday") shouldEqual (7, "WORKDAY")
           </code></pre>
 
           <aside class="notes">
-            As we define first common data-type and next step it is use it for definition of few next combinators</br>
+            As we define first common data-type and the next step it is use it for definition of few next combinators</br>
             And firts will be: “split” combinator what combine two functions so that a parameter of final combinator will be splited and applied for two functions f and g in paralle and result type is a product of functions results; in other worlds Tuple of f and g results.</br>
             And Scala sample below
           </aside>
@@ -298,8 +298,8 @@ trait Category[~>[-_, +_]] {
            </div>
 
           <aside class="notes">
-            Next base type what I want to consider it is Co-Product and if you remember the diagram for Product type than not hard to notice that the all arrows in diagram are reversed</br>
-            As before for a type definition I offer to define it ways of interacting; and namely the relations that describes this type;</br>
+            Next base type which I want to consider it is Co-Product and if you remember the diagram for Product type then it's not hard to notice that the all arrows in diagram are reversed</br>
+            And as before for a type definition I offer to define its ways of interacting; and namely the relations that describes this type;</br>
             And in this case type defined by equality f >>> left == g</br>
             In Scala this type represented as Either
           </aside>
@@ -355,7 +355,7 @@ h apply Right[String, String]("Hello") shouldEqual R[Int, String]("HELLO")
           </code></pre>
 
           <aside class="notes">
-            As before for Tuple type; and now for Either type we can define special combinators what will simplify using of fuctions with Either input or output.</br>
+            As before made for Tuple type; and now for Either type we can define special combinators which will simplify using of fuctions with Either input or output.</br>
             Taking to account internal specific of Either type; let’s look to first combinator “multiplex”; it combines two functions: f and g with next application strategy: f will be applied for Left type type of argument and g for Right type</br>
             And sample; how to use of multiplexer combinator for Left and Right values.
           </aside>
@@ -471,11 +471,11 @@ trait ArrowLoop[~>[-_, +_]] extends Arrow[~>] {
         <h3 style="text-align:left;">Arrows</h3>
 
           <div style="height:600px;"><div style="padding:150px 0px 0px 0px;">
-              <p style="font-size:100%;">Arrow is generalization of function, what provide more function combinators:</br>Like first/second/split/combine, ...</p>
+              <p style="font-size:100%;">Arrow is generalization of function, which provides more function combinators:</br>Like first/second/split/combine, ...</p>
           </div></div>
 
           <aside class="notes">
-            Time to summarize “what is arrow”
+            And now it is time to summarize “what is arrow”
           </aside>
       </section>
 
@@ -520,7 +520,7 @@ f(None)             shouldEqual ""
         </div>
 
           <aside class="notes">
-            Next kind of Arrows it’s Kleisli Arrow; And I would like to briefly return to categories and category properties; For any object type it should be possible to lift this type in category; for Option type it’s “apply” method in companion object; also it should be possible to lift relations between functions in our category; for Option type it’s “map” function;<br>
+            Next kind of Arrows it’s Kleisli Arrow; And I would like to return briefly to categories and category properties; For any object type it should be possible to lift this type in category; for Option type it’s “apply” method in companion object; also it should be possible to lift relations between functions in our category; for Option type it’s “map” function;<br>
             And what is Kleisli Arrow; this is diagonal arrow that begins in the category of simple types with one type and finishes in monadic category with other type</br>
             For understanding Co-Kleisli Arrow, just enough to reverse this relation
           </aside>
@@ -686,7 +686,7 @@ Kleisli :  (A  => C[B]) >=> (B  => C[D])    =>   A  => C[D]
           </ul>
 
           <aside class="notes">
-            Once we started talking about the side-effect would be good to decide on ways to work with containers with side-effect; Firs one it’s monadic-way; And its essence can be easily represented as the following two lines.</br>
+            Once we have started talking about the side-effect it would be good to decide on ways to work with containers with side-effect; Firs one it’s monadic-way; And its essence can be easily represented as the following two lines.</br>
             But this is not the only way, as you might guess; Kleisli arrows is second one; And one of advantages is that arrow is container for function with side-effect
           </aside>
         </section>
@@ -1095,7 +1095,7 @@ ma.flatMap(f).flatMap(g)  ==
         <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/FP5.png" alt="url" title=""></div>
 
           <aside class="notes">
-            If putting together hierarchy of Arrow and Monad;</br>
+            If to put together hierarchy of Arrow and Monad;</br>
             You can see a lot of the functionality intersection, I mean that many structures can be used for the same purposes and the final choice should always be based on the goals and expressiveness of code; after all code should be concise and readable
           </aside>
       </section>
@@ -1112,8 +1112,8 @@ ma.flatMap(f).flatMap(g)  ==
 
           <aside class="notes">
             And few arrows examples;</br>
-            For all whom who has a dream to be a train dispatcher; At this moment you are in one step from your dream; since then we will talk about the  RAILWAY ORIENTED PROGRAMMING.</br>
-            I like this metaphor and I first met it in Scott Wlaschin blog; and it good reflects essence of this approach;
+            For all who has a dream to be a train dispatcher; At this moment you are in one step from your dream; since then we will talk about the  RAILWAY ORIENTED PROGRAMMING.</br>
+            I like this metaphor and I first time met it in Scott Wlaschin blog; and it good reflects essence of this approach;
           </aside>
         </section>
 
