@@ -50,7 +50,7 @@
 
         <aside class="notes">
           The motivation of this presentation is fairly simple, and is repelled by the two most important ideas in modern vision of FP:</br>
-          first; all begins from data and then come relations between them;</br>
+          first; all begins from data and then come relations between data-structure; and relation it is what program is</br>
           second; it is no program that can be defined in the form of "pure function", and this is why we allways should concern about the side effects;
         </aside>
         </section>
@@ -90,12 +90,12 @@
           </div>
           </br>
 
-          <div class="fragment current-visible">
+          <div class="fragment current-visible" data-fragment-index="4">
           <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;">Abstraction:</p>
           <img src="assets/F1.png" alt="url" title="">
           </div>
 
-          <div class="fragment current-visible">
+          <div class="fragment current-visible" data-fragment-index="4">
           <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
 val f: String => Int = str => str.length
@@ -110,8 +110,8 @@ f("By!")   shouldEqual 3
           <aside class="notes">
             Few words about functions:</br>
             two objects; different types; has relations as a simple function; what looks like arrow from one to other object and define relation between this objects</br>
-            In what follows I suggest to use block diagram for the convenience of the image but still refer to it as an arrow or function;</br>
-            And a simple sample of functions in Scala
+            In what follows I suggest to use block diagram for the function representation; it is for the convenience of the image but still refer to it as an arrow or function;</br>
+            And a simple sample of functions in Scala on the bottom of slide
           </aside>
         </section>
 
@@ -346,17 +346,17 @@ forAll { (anyStr: String, anyInt: Int) =>
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
 val f: String => Int    = str => str.length
-val g: String => String = str => str.toUpperCase
+val g: Int    => String = n => "-" * n
 
 val h = f +++ g
 
-h apply Left[String, String]("Hello")  shouldEqual L[Int, String](5)
-h apply Right[String, String]("Hello") shouldEqual R[Int, String]("HELLO")
+h apply Left[String, Int]("Hello")  shouldEqual L[Int, String](5)
+h apply Right[String, Int](5) shouldEqual R[Int, String]("-----")
           </code></pre>
 
           <aside class="notes">
             As before made for Tuple type; and now for Either type we can define special combinators which will simplify using of fuctions with Either input or output.</br>
-            Taking to account internal specific of Either type; let’s look to first combinator “multiplex”; it combines two functions: f and g with next application strategy: f will be applied for Left type type of argument and g for Right type</br>
+            Taking to account internal specific of Either type; let’s look to first combinator “multiplex”; it combines two functions: f and g with next application strategy: f will be applied for Left type of argument and g for Right type</br>
             And sample; how to use of multiplexer combinator for Left and Right values.
           </aside>
         </section>
@@ -368,12 +368,12 @@ h apply Right[String, String]("Hello") shouldEqual R[Int, String]("HELLO")
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
 val f: String => Int    = str => str.length
-val g: String => String = str => str.toUpperCase
+val g: Int    => String = n => "-" * n
 
 val h = f ||| g
 
-h apply Left[String, String]("Hello")  shouldEqual 5
-h apply Right[String, String]("Hello") shouldEqual "HELLO"
+h apply Left[String, Int]("Hello")  shouldEqual 5
+h apply Right[String, Int](5) shouldEqual "-----"
           </code></pre>
 
           <aside class="notes">
@@ -398,6 +398,7 @@ trait ArrowChoice[~>[-_, +_]] extends Arrow[~>] {
           </code></pre>
         </div>
         <aside class="notes">
+          These combinators are part of ArrowChoise type-class;</br>
           Scala implementation of ArrowChoise type-class;</br>
           I do not consider the details of the scala syntax extension implementation; since extensions are rather templated and implementation is enough common
         </aside>
@@ -520,7 +521,7 @@ f(None)             shouldEqual ""
         </div>
 
           <aside class="notes">
-            Next kind of Arrows it’s Kleisli Arrow; And I would like to return briefly to categories and category properties; For any object type it should be possible to lift this type in category; for Option type it’s “apply” method in companion object; also it should be possible to lift relations between functions in our category; for Option type it’s “map” function;<br>
+            Next kind of Arrows it’s Kleisli Arrow; And I would like to return briefly to categories and category properties; For any object type it should be possible to lift this type in category; for Option type it’s “apply” method in companion object; also it should be possible to lift relations between lifted types in our category; for Option type it’s “map” function;<br>
             And what is Kleisli Arrow; this is diagonal arrow which begins in the category of simple types with one type and finishes in monadic category with other type</br>
             For understanding Co-Kleisli Arrow, just enough to reverse this relation
           </aside>
@@ -687,7 +688,7 @@ Kleisli :  (A  => C[B]) >=> (B  => C[D])    =>   A  => C[D]
 
           <aside class="notes">
             Once we have started talking about the side-effect it would be good to decide on ways to work with containers with side-effect; Firs one it’s monadic-way; And its essence can be easily represented as the following two lines.</br>
-            But this is not the only way, as you might guess; Kleisli arrows is second one; And one of advantages is that arrow is container for function with side-effect
+            But this is not the only way, as you might guess; Kleisli arrows is second one; And one of advantages of Arrows, this is that arrow build a container for whole functions with side-effect
           </aside>
         </section>
 
@@ -752,7 +753,7 @@ trait KleisliArrow[M[+_]] extends Arrow[Kleisli[M, -?, +?]] with KleisliCategory
           </code></pre>
 
           <aside class="notes">
-            Time to consider the implementation of Kleisli Arrow Type-Class;</br>
+            Time to define the implementation of Kleisli Arrow Type-Class;</br>
             And the simplest implementation Kleisli Arrow will be on the based on monad implementation. It means that if monad already implemented then Kleisli arrows no need additional efforts to implementation
           </aside>
         </section>
@@ -1139,7 +1140,8 @@ ma.flatMap(f).flatMap(g)  ==
 
           <aside class="notes">
             If we have a functions track like in diagram; We should to care about composition of steps what can rise errors; and single track function; or dead end functions; or handle both track</br>
-            And adventages of Arrow FW that we already have set of combinators for most of our needs; since it is fairly well-known programming paradigm - Dataflow Programm
+            And adventages of Arrow FW that we already have set of combinators for most of our needs;</br>
+            since it is fairly well-known programming paradigm - Dataflow Programm
           </aside>
         </section>
 
