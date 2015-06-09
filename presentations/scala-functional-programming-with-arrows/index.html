@@ -109,7 +109,7 @@ f("By!")   shouldEqual 3
 
           <aside class="notes">
             Few words about functions:</br>
-            two objects; different types; has relations as a simple function; what look like arrow from one to other object and define relation between this objects</br>
+            two objects; different types; has relations as a simple function; what looks like arrow from one to other object and define relation between this objects</br>
             In what follows I suggest to use block diagram for the convenience of the image but still refer to it as an arrow or function;</br>
             And a simple sample of functions in Scala
           </aside>
@@ -133,7 +133,7 @@ h("Workday") shouldEqual 14
           </div>
 
           <aside class="notes">
-            Functions composition as a diagram. Blocks shown that the functions composition should be considered as a function;<br>
+            Functions composition as a diagram. Blocks show that the functions composition should be considered as a function;<br>
             This is what we have in Scala FW out of the box; In other words Scala Predef provide few function conmbinators - high-order functions;</br>
             Would be reasonable to use higher-order functions features in full power
           </aside>
@@ -171,7 +171,7 @@ h("Workday") shouldEqual 14
           <aside class="notes">
             As you remember, we began our conversation about data structures, so I would like to continue with them and let's look to some of the common data structures and their relationship to combinators;</br>
             And first will be Product Type.</br>
-            I would like to note, in the FP world and in terms of category theory as universal modeling FW; it's more correct any data-types by functions exposed by these type; in other word; by methods of interaction with these types. Back to the declared Product Type; it will be a right to say that it is a data-type for which the relation in diagram is correct; f == g >>> fst<br>
+            I would like to note, in the FP world and in terms of category theory as universal modeling FW; it's more correct to describe any types by functions exposed by these type; in other word; by methods of interaction with these types. Back to the declared Product Type; it will be a right to say that it is a data-type for which the relation in diagram is correct; f == g >>> fst<br>
             In Scala this type represented as Tuple
           </aside>
         </section>
@@ -199,7 +199,7 @@ forAll { (any: String) =>
           </code></pre>
 
           <aside class="notes">
-            Sample code what proving that my previous statement about Tuple is true
+            Sample code which proves that my previous statement about Tuple is true
           </aside>
         </section>
 
@@ -226,7 +226,7 @@ h("Workday") shouldEqual (7, "WORKDAY")
 
           <aside class="notes">
             As we define first common data-type and the next step it is use it for definition of few next combinators</br>
-            And firts will be: “split” combinator what combine two functions so that a parameter of final combinator will be splited and applied for two functions f and g in paralle and result type is a product of functions results; in other worlds Tuple of f and g results.</br>
+            And firts will be: “split” combinator what combine two functions so that a parameter of final combinator will be doubled (tupled) and applied for two functions f and g in paralle and result type is a product of functions results; in other worlds Tuple of f and g functions results.</br>
             And Scala sample below
           </aside>
         </section>
@@ -246,8 +246,8 @@ h("Hello", "Workday") shouldEqual (5, "WORKDAY")
           </code></pre>
 
           <aside class="notes">
-            The next one is “combine” combinator and it so closure to first one but combinator argument it is Tuple and result is Tuple too</br>
-            Scala semple show ways haw to use this combinator
+            The next one is “combine” combinator and it's close to first one but combinator's argument is Tuple and result is Tuple too</br>
+            Scala semple shows ways haw to use this combinator
           </aside>
         </section>
 
@@ -278,7 +278,7 @@ trait Category[~>[-_, +_]] {
 
         <aside class="notes">
           This is a Scala implementation of Arrow type-class;</br>
-          As you can see Arrow type-class is sub type of Category type-class because composition of function is a property of category from category theory point of view; will back to category properties later
+          As you can see Arrow type-class is sub type of Category type-class because composition of function is a property of category from category theory point of view; we will back to category properties later
         </aside>
       </section>
 
@@ -330,7 +330,7 @@ forAll { (anyStr: String, anyInt: Int) =>
           </code></pre>
 
           <aside class="notes">
-            Sample code what proving that my previous statement about Either is true
+            Sample code which provs that my previous statement about Either is true
           </aside>
         </section>
       </section>
@@ -377,7 +377,7 @@ h apply Right[String, String]("Hello") shouldEqual "HELLO"
           </code></pre>
 
           <aside class="notes">
-            Next combinator is “merge”, and  essence of it is to combine two functions so that for Left and for Right will be applied accordingly f or g functions which has same result type; in other words it is a folding function what encapsulated left and right morphism</br>
+            Next combinator is “merge”, and  essence of it is to combine two functions so that for Left and for Right will be applied accordingly f or g functions which has same result type; in other words it is a folding function which encapsulated left and right morphism</br>
             And as usual Scala sample below
           </aside>
         </section>
@@ -399,7 +399,7 @@ trait ArrowChoice[~>[-_, +_]] extends Arrow[~>] {
         </div>
         <aside class="notes">
           Scala implementation of ArrowChoise type-class;</br>
-          I do not consider the details of the scala syntax extension implementation; since extensions are rather templated and implementation enough common
+          I do not consider the details of the scala syntax extension implementation; since extensions are rather templated and implementation is enough common
         </aside>
       </section>
 
@@ -521,7 +521,7 @@ f(None)             shouldEqual ""
 
           <aside class="notes">
             Next kind of Arrows it’s Kleisli Arrow; And I would like to return briefly to categories and category properties; For any object type it should be possible to lift this type in category; for Option type it’s “apply” method in companion object; also it should be possible to lift relations between functions in our category; for Option type it’s “map” function;<br>
-            And what is Kleisli Arrow; this is diagonal arrow that begins in the category of simple types with one type and finishes in monadic category with other type</br>
+            And what is Kleisli Arrow; this is diagonal arrow which begins in the category of simple types with one type and finishes in monadic category with other type</br>
             For understanding Co-Kleisli Arrow, just enough to reverse this relation
           </aside>
         </section>
@@ -722,7 +722,7 @@ update(10, Kleisli { updateName(name) } >==> updatePassword(password))
           </code></pre>
 
           <aside class="notes">
-            For example, consider the following data types and functions</br>
+            For example, let's  consider the following data types and functions</br>
             Monadic-way is well known and advantages of Arrow way is not so good visible at first sight;</br>
             But as you can see; In first implementation we should to wrap our monadic function; but in second implementation this is just a function composition
           </aside>
@@ -789,7 +789,7 @@ trait KleisliArrowApply[M[+ _]] extends ArrowApply[Kleisli[M, -?, +?]] {
 
           <aside class="notes">
             But I would like to go back to the arrow, and show that they are still self-sufficient; and show how to implement monads based on arrows;</br>
-            Here declared two additional classes ArrowApply and Arrow Monad</aside>
+            Here was declared two additional classes ArrowApply and Arrow Monad</aside>
         </section>
 
         <section>
