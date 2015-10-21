@@ -95,21 +95,92 @@ f("By!")   shouldEqual 3
         </section>
 
         <section>
+          <ul style="list-style-type:square;font-size:75%;width:100%;line-height:1.8;">
+            <li>first category property:</b></li>
+          </ul>
 
+          </br>
+          <div style="height:150px;">
+            <div style="position:absolute;margin-left:50px;"><img src="assets/A7.png" alt="url" title=""></div>
+            <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/A8.png" alt="url" title=""></div>
+          </div>
+          </br>
+
+          <div class="fragment current-visible" data-fragment-index="3">
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
 val f: String => Int = str => str.length
-val g: Int => Int    = i => i * 2
+val g: Int => String = len => "*" * len
 
-val h = g compose f  //  f >>> g
+val hide = g compose f  //  g o f
 
-h("Hello")   shouldEqual 10
-h("Workday") shouldEqual 14
+hide("Hello")   shouldEqual "*****"
+hide("Workday") shouldEqual "*******"
+          </code></pre>
+          </div>
+
+          <aside class="notes">
+          </aside>
+        </section>
+
+        <section>
+          <ul style="list-style-type:square;font-size:75%;width:100%;line-height:1.8;">
+            <li>second category property:</b></li>
+          </ul>
+
+          </br>
+          <img src="assets/A10.png" alt="url" title="">
+          </br>
+
+          <div class="fragment current-visible" data-fragment-index="3">
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+// identity function
+def id[A](a: A): A = a
+
+id("Hello")   shouldEqual "Hello"
+id("Workday") shouldEqual "Workday"
+          </code></pre>
+          </div>
+
+          <aside class="notes">
+          </aside>
+        </section>
+
+
+        <section>
+          <ul style="list-style-type:square;font-size:75%;width:100%;line-height:1.8;">
+            <li>category laws:</b></li>
+          </ul>
+
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+// identity function
+def id[A](a: A): A = a
+
+
+val f: String => Int    = str => str.length
+val g: Int    => String = len => "*" * len
+val h: String => String = str => str.replace("*", ".")
+
+
+//Associative Law:
+forAll { str: String =>
+  ((h compose g) compose f)(str) shouldEqual (h compose (g compose f))(str)
+}
+
+
+//Identity Laws:
+forAll { str: String =>
+  (id compose f)(str) shouldEqual (f compose id)(str)
+  (id compose f)(str) shouldEqual f(str)
+}
           </code></pre>
 
           <aside class="notes">
           </aside>
         </section>
+
 
       </section>
 
@@ -301,17 +372,17 @@ read from environment
 
           <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;">Functor &amp; Monad (essence):</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
-Functor   :   A  =>   B                        =>   C[A]  =>  C[B]
-Monad     :   A  => C[B]                       =>   C[A]  =>  C[B]
-CoMonad   : C[A] =>   B                        =>   C[A]  =>  C[B]
+Functor   :   A  =>   B                          =>   C[A]  =>  C[B]
+Monad     :   A  => C[B]                         =>   C[A]  =>  C[B]
+CoMonad   : C[A] =>   B                          =>   C[A]  =>  C[B]
           </code></pre>
 
           </br>
           <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;">Arrow (essence):</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
-Arrow     :  (A    =>   B ) >>> (  B  =>   D ) =>     A  =>   D
-Kleisli   :  (A    => C[B]) >=> (  B  => C[D]) =>     A  => C[D]
-CoKleisli :  (C[A] =>   B ) =>= (C[B] =>   D ) =>   C[A] =>   D
+Arrow     :  (A    =>   B ) >>> (  B  =>   D )   =>     A  =>   D
+Kleisli   :  (A    => C[B]) >=> (  B  => C[D])   =>     A  => C[D]
+CoKleisli :  (C[A] =>   B ) =>= (C[B] =>   D )   =>   C[A] =>   D
           </code></pre>
 
           </br>
@@ -387,7 +458,7 @@ trait KleisliArrow[M[+_]] extends Arrow[Kleisli[M, -?, +?]] with KleisliCategory
 
           <aside class="notes">
             Time to define the implementation of Kleisli Arrow Type-Class;</br>
-            And the simplest implementation Kleisli Arrow will be on the based on monad implementation. It means that if monad already implemented then Kleisli arrows no need additional efforts to implementation
+            And the simplest implementation Kleisli Arrow is based on monad implementation. It means that if monad already implemented then Kleisli arrows no need additional efforts to implementation
           </aside>
         </section>
 
