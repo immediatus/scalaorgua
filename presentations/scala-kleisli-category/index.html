@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Functional programming with arrows</title>
+    <link rel="stylesheet" href="../../css/reveal.css">
+    <link rel="stylesheet" href="../../css/theme2.css">
+    <link rel="stylesheet" href="../../css/code2.css">
+    <!--<link rel="stylesheet" href="../../css/print/paper.css"> -->
+    <!--<link rel="stylesheet" href="../../css/print/pdf.css"> -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <div style="height:600px;"><div style="padding:200px 0px 0px 0px;">
+        <h2>Few words about Kleisli category</h2>
+        <h4>Scala Meetup, October 2015, Dublin</h4>
+        <p>
+          by&nbsp;
+          <a href="http://linkedin.com/in/polyulya" class="roll"><span data-title="Yuriy Polyulya">Yuriy Polyulya</span></a>
+          &nbsp;@
+          <a href="http://workday.github.io/" class="roll"><span data-title="Workday">Workday</span></a>
+        </p>
+        </div></div>
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Baseline & Goals:</h3>
+        <p style="font-size:50%;text-align:left;">The most imaportant ideas in modern functional programming are:</p>
+        <ul style="list-style-type:decimal;font-size:150%;width:100%;padding-bottom:100px;">
+          <li style="padding-top:50px;" data-fragment-index="0">
+            It's all about data
+            <p style="font-size:33%;text-align:left;margin-top:10px;">functional programming is all about putting data first.
+              The first is defining what kinds of data we have in a problem domain, and what kinds of transformations we want on them.
+              Then we are building up the data structures and the code to do the transformations.</p>
+          </li>
+          <li style="padding-top:50px;" data-fragment-index="1">
+            Managing of side-effect
+            <p style="font-size:33%;text-align:left;margin-top:10px;">functional programming is not about pure functions any more. Eventually, programs will produce side-effects and side-effect management is a puzzle with many parts.</p>
+          </li>
+        </ul>
+
+        <aside class="notes">
+          The motivation of this presentation is fairly simple, and is repelled by the two most important ideas in modern vision of FP:</br>
+          first; all begins from data and then come relations between data-structure; and relation it is what program is</br>
+          second; it is no program that can be defined in the form of "pure function", and this is why we allways should concern about the side effects;
+        </aside>
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Category &amp; Arrow</h3>
+        <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
+          <div style="height:150px;">
+            <div style="position:absolute;margin-left:50px;"><img src="assets/A1.png" alt="url" title=""></div>
+            <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/A2.png" alt="url" title=""></div>
+            <div class="fragment current-visible" data-fragment-index="3" style="position:absolute;margin-left:50px;"><img src="assets/A3.png" alt="url" title=""></div>
+            <div class="fragment current-visible" data-fragment-index="4" style="position:absolute;margin-left:50px;"><img src="assets/A4.png" alt="url" title=""></div>
+          </div>
+          </br>
+
+          <style>
+            .nav li {display:inline;}
+          </style>
+          <div class="nav">
+            <ul style="font-size:75%;font-weight:bold;">
+              <li class="fragment roll-in" data-fragment-index="1">2 <mark class="green">Objects</mark> ("Hello" &amp; 5) </li>
+              <li class="fragment roll-in" data-fragment-index="2"> with <mark class="green">Types</mark> (String &amp; Int)</li>
+              <li class="fragment roll-in" data-fragment-index="3"> and <mark class="green">Relation</mark> (String => Int)</li>
+            </ul>
+          </div>
+          </br>
+
+          <div class="fragment current-visible" data-fragment-index="4">
+          <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+val f: String => Int = str => str.length
+
+f("Hello") shouldEqual 5
+f("By!")   shouldEqual 3
+          </code></pre>
+          </div>
+
+        </div>
+
+          <aside class="notes">
+          </aside>
+        </section>
+
+        <section>
+
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+val f: String => Int = str => str.length
+val g: Int => Int    = i => i * 2
+
+val h = g compose f  //  f >>> g
+
+h("Hello")   shouldEqual 10
+h("Workday") shouldEqual 14
+          </code></pre>
+
+          <aside class="notes">
+          </aside>
+        </section>
+
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Kleisli &amp; Co-Kleisli Category &amp; Arrow</h3>
+
+        <section>
+        <div style="position:absolute;width:100%;">
+        <img style="width:initial;" src="assets/C1.png" alt="url" title="">
+        <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+val f: String => Int = str => str.length
+
+f("Hello")              shouldEqual 5
+Option("Hello").map(f)  shouldEqual Option(5)
+        </code></pre>
+        </div>
+
+        <div class="fragment current-visible" data-fragment-index="1" style="position:absolute;width:100%;">
+        <img style="width:initial;" src="assets/C2.png" alt="url" title="">
+        <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+val f: String => Option[Int] = str =>
+  if(str.length <6) None
+  else Option(str.length)
+
+f("Hello")    shouldEqual None
+f("Workday")  shouldEqual Option(7)
+        </code></pre>
+        </div>
+
+        <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;width:100%;">
+        <img style="width:initial;" src="assets/C3.png" alt="url" title="">
+        <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+val f: Option[String] => Int = str =>
+  str.map(_.toUpperCase).getOrElse("")
+
+
+f(Option("Hello"))  shouldEqual "HELLO"
+f(None)             shouldEqual ""
+        </code></pre>
+        </div>
+
+          <aside class="notes">
+            Next kind of Arrows it’s Kleisli Arrow; And I would like to return briefly to categories and category properties; For any object type it should be possible to lift this type in category; for Option type it’s “apply” method in companion object; also it should be possible to lift relations between lifted types in our category; for Option type it’s “map” function;<br>
+            And what is Kleisli Arrow; this is diagonal arrow which begins in the category of simple types with one type and finishes in monadic category with other type</br>
+            For understanding Co-Kleisli Arrow, just enough to reverse this relation
+          </aside>
+        </section>
+
+        <section>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">KleisliCategory Type-Class:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:90%;line-height:140%;">
+type Kleisli[M[+_], -A, +B] = A => M[A]
+
+trait KleisliCategory[M[+_]]
+  extends Category[({type λ[-α, +β] = Kleisli[M, α, β]})#λ] {
+  // ...
+}
+          </code></pre>
+
+          </br>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">KleisliCategory Type-Class (with Kind Projector plugin):</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:90%;line-height:140%;">
+trait KleisliCategory[M[+_]]
+  extends Category[Kleisli[M, -?, +?]] {
+  // ...
+}
+          </code></pre>
+
+          <div style="font-size:60%;text-align:right;width:100%;max-width:100%;margin-top:100px;">
+          <a href="https://github.com/non/kind-projector" class="roll"><span data-title="Erik Osheim, Kind Projector on GitHub">Erik Osheim, Kind Projector on GitHub</span></a>
+          </div>
+
+          <aside class="notes">
+            Type-Class  for Kleisli Arrow can be implemented as follows;</br>
+            I would like to digress for say thanks to Erik for Kind Projector plugin; that simplify any type lambas notation; You can see Kleisli type-class with Kind Projector and without it
+          </aside>
+        </section>
+
+        <section>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">KleisliArrow Type-Class:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+type Kleisli[M[+_], -A, +B] = A => M[A]
+
+trait KleisliCategory[M[+_]]
+  extends Category[Kleisli[M, -?, +?]] {
+// ...
+}
+
+trait KleisliArrow[M[+_]]
+  extends Arrow[Kleisli[M, -?, +?]]
+  with KleisliCategory[M] {
+
+// ...
+}
+          </code></pre>
+
+          <div>
+            </br>
+            <p style="font-size:100%;">But what is <b><mark class="green">M[_]</mark> (only Option)</b>?
+          </p></div>
+
+          <aside class="notes">
+            Back to our Kleisli Arrow type-class and actually it type-parameters M[_]
+          </aside>
+        </section>
+
+        <section>
+          <ul style="font-size:66%;width:100%;line-height:1.2;">
+            <li style="margin: 0 0 20px 0;">
+              All functions have effects, the things the function does. The simplest effect is just accepting parameters and returning a single value as a result.
+            </li>
+            <li>
+            Everything else we might conceive a function doing is a side-effect. By <mark class="green"><b>wrapping a value in a container</b></mark>, we can emulate all the various side-effects that are possible.
+            </li>
+          </ul>
+
+          <div class="fragment current-visible" data-fragment-index="2">
+            </br><p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;">Examples:</p>
+
+            <table cellspacing="0" cellpadding="0" style="width:100%;border:0px solid #F6921D;">
+              <tr>
+                <td width="30%" style="text-align:left;">
+                  <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+A => List[B]
+                  </code></pre>
+                </td>
+                <td width="70%" style="text-align:left;font-size:88%;">
+have many results
+                </td>
+              </tr>
+              <tr>
+                <td width="30%" style="text-align:left;">
+                  <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+A => Option[B]
+                  </code></pre>
+                </td>
+                <td width="70%" style="text-align:left;font-size:88%;">
+sometimes have no result
+                </td>
+              </tr>
+              <tr>
+                <td width="30%" style="text-align:left;">
+                  <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+A => Future[B]
+                  </code></pre>
+                </td>
+                <td width="70%" style="text-align:left;font-size:88%;">
+postponed result or may be no result
+                </td>
+              </tr>
+              <tr>
+                <td width="30%" style="text-align:left;">
+                  <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+A => (S, B)
+                  </code></pre>
+                </td>
+                <td width="70%" style="text-align:left;font-size:88%;">
+write to log
+                </td>
+              </tr>
+              <tr>
+                <td width="30%" style="text-align:left;">
+                  <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+A => (Unit => E, B)
+                  </code></pre>
+                </td>
+                <td width="70%" style="text-align:left;font-size:88%;">
+read from environment
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <aside class="notes">
+            Any math function has one parameter and one result; Everything else is side-effect; And general idea it is wrap side-effect to container; In other words, localise it for generalising of way to process with side-effect wrapper</br>
+            And namely what kind of side-effect and containers do we know:
+          </aside>
+        </section>
+
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Arrows &amp; Monads</h3>
+
+        <section>
+          <h4 style="text-align:left;">Common data manipulation techniques for dealing with side-effecting containers:</h4>
+
+          <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;">Functor &amp; Monad (essence):</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+Functor   :   A  =>   B                        =>   C[A]  =>  C[B]
+Monad     :   A  => C[B]                       =>   C[A]  =>  C[B]
+CoMonad   : C[A] =>   B                        =>   C[A]  =>  C[B]
+          </code></pre>
+
+          </br>
+          <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;">Arrow (essence):</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+Arrow     :  (A    =>   B ) >>> (  B  =>   D ) =>     A  =>   D
+Kleisli   :  (A    => C[B]) >=> (  B  => C[D]) =>     A  => C[D]
+CoKleisli :  (C[A] =>   B ) =>= (C[B] =>   D ) =>   C[A] =>   D
+          </code></pre>
+
+          </br>
+          <ul style="font-size:60%;width:100%;line-height:2;">
+            <li>Arrows build a container for the whole functions, where Monads just give a common structure for their outputs.</li>
+          </ul>
+
+          <aside class="notes">
+            Once we have started talking about the side-effect it would be good to decide on ways to work with containers with side-effect; Firs one it’s monadic-way; And its essence can be easily represented as the following two lines.</br>
+            But this is not the only way, as you might guess; Kleisli arrows is second one; And one of advantages of Arrows, this is that arrow build a container for whole functions with side-effect
+          </aside>
+        </section>
+
+        <section>
+          <p style="font-size:100%;text-align:left;font-size:66%;font-family:'Lobster', sans-serif;">For:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:85%;line-height:140%;">
+case class User(id: Int, name: String, password: String)
+
+def getUserById: Int => Option[User] = ...
+def updateDbUser: User => Option[Int] = ...
+
+def updateName: String => User => Option[User] = ...
+def updatePassword: String => User => Option[User] = ...
+          </code></pre>
+
+          </br>
+          <p style="font-size:100%;text-align:left;font-size:66%;font-family:'Lobster', sans-serif;">Monad usege:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:85%;line-height:140%;">
+def update(id: Int, updateUser: User => Option[User]): Option[User] =
+  getUserById(id).flatMap(updateUser).flatMap(updateDbUser)
+
+update(10, (user: User) => updateName(name).flatMap(updatePassword(password)))
+          </code></pre>
+
+          </br>
+          <p style="font-size:100%;text-align:left;font-size:66%;font-family:'Lobster', sans-serif;">Kleisli usege:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:85%;line-height:140%;">
+def update: (User => Option[User]) => Int => Option[User] =
+  updateFunc => Kleisli { getUserById } >==> updateFunc >==> updateDbUser
+
+update(Kleisli { updateName(name) } >==> updatePassword(password))(10)
+          </code></pre>
+
+          <aside class="notes">
+            For example, let's  consider the following data types and functions</br>
+            Monadic-way is well known and advantages of Arrow way is not so good visible at first sight;</br>
+            But as you can see; In first implementation we should to wrap our monadic function; but in second implementation this is just a function composition
+          </aside>
+        </section>
+
+        <section>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">KleisliArrow Type-Class (based on Monad):</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:90%;line-height:140%;">
+case class Kleisli[M[+ _], -A, +B](run: A => M[B])
+
+trait KleisliCategory[M[+_]] extends Category[(Kleisli[M, -?, +?]] {
+  implicit def Monad: Monad[M]
+
+  def id[A]: Kleisli[M, A, A] = Kleisli(a => Monad.point(a))
+
+  def compose[A, B, C](bc: Kleisli[M, B, C], ab: Kleisli[M, A, B]): Kleisli[M, A, C] =
+    bc.flatMap(run(ac), k.run(_: B)))
+}
+
+trait KleisliArrow[M[+_]] extends Arrow[Kleisli[M, -?, +?]] with KleisliCategory[M] {
+
+  def arr[A, B](f: A => B): Kleisli[M, A, B] = Kleisli(a => Monad.point(f(a)))
+
+  def first[A, B, C](f: Kleisli[M, A, B]): Kleisli[M, (A, C), (B, C)] =
+    Kleisli[M, (A, C), (B, C)] { case (a, c) => Monad.map(f.run(a), (b: B) => (b, c)) }
+}
+          </code></pre>
+
+          <aside class="notes">
+            Time to define the implementation of Kleisli Arrow Type-Class;</br>
+            And the simplest implementation Kleisli Arrow will be on the based on monad implementation. It means that if monad already implemented then Kleisli arrows no need additional efforts to implementation
+          </aside>
+        </section>
+
+        <section>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;margin: 0px;">And back to the Arrow</p>
+          <p style="font-size:50%;text-align:left;">Motivation, is to find a generic interface for arrow wich cannot be based on monad.</p><br>
+
+          <div class="fragment current-visible" data-fragment-index="1">
+          <p style="font-size:100%;text-align:left;font-size:66%;font-family:'Lobster', sans-serif;margin: 0px;">ArrowMonad Type-Class:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:85%;line-height:130%;">
+trait ArrowApply[~>[-_, +_]] extends Arrow[~>] {
+  def app[A, B]: (A ~> B, A) ~> B
+}
+
+case class ArrowMonad[~>[-_, +_], +A](run: Unit ~> A)
+
+implicit def _asMonad[~>[-_, +_]](implicit i: ArrowApply[~>]):
+  Monad[ArrowMonad[~>, +?]] = new Monad[ArrowMonad[~>, +?]] {
+
+    type M[+A] = ArrowMonad[~>, A]
+
+    def point[A](x: => A): M[A] = ArrowMonad { i.arr(_ => x) }
+    def flatMap[A, B](m: M[A], f: A => M[B]): M[B] =
+      ArrowMonad[~>, B] { m.run >>> i.arr((x: A) => (f(x).run, ())) >>> i.app[Unit, B] }
+  }
+
+trait KleisliArrowApply[M[+ _]] extends ArrowApply[Kleisli[M, -?, +?]] {
+  private type ~>[-A, +B] = Kleisli[M, A, B]
+  def app[A, B]: (A ~> B, A) ~> B = Kleisli { case (f, a) => (f.run)(a) }
+}
+          </code></pre>
+          </div>
+
+          <aside class="notes">
+            But I would like to go back to the arrow, and show that they are still self-sufficient; and show how to implement monads based on arrows;</br>
+            Here was declared two additional classes ArrowApply and Arrow Monad</aside>
+        </section>
+
+        <section>
+          <div style="height:600px;">
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">High order Arrow Definition (ArrowApply):</p>
+          <img src="assets/F8.png" alt="url" title="">
+          </br>
+          <div>
+            <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">MonadArrow:</p>
+            <img src="assets/F9.png" alt="url" title="">
+          </div>
+          </div>
+
+          <aside class="notes">
+            What is ArrowApply; by analogy of high-order function, this is high order arrow; Arrow where first argument is another arrow;</br>
+            And ArrowMonad is arrow where firs argument is empty type;</br>
+            And by using this two arrow we can implement monad interface
+          </aside>
+        </section>
+
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Kliesli Arrow type-constructor</h3>
+
+        <table cellspacing="5" cellpadding="5" style="width:100%;border:0px solid #F6921D;padding: 50px 0px 0px 0px;">
+
+          <tr style="font-size:65%;text-align:left;">
+            <td width="20%"><b>Type-Class</b></td>
+            <td width="20%"><b>Kind</b></td>
+            <td width="35%"><b>Condition</b></td>
+            <td width="20%"><b>Similar type</b></td>
+          </tr>
+
+          <tr style="font-size:65%;text-align:left;">
+            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">Kleisli[_[_], _, _]</code></pre></td>
+            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">(*->*)->*->*->*</code></pre></td>
+            <td style="background: #0E080D;"></td>
+            <td style="background: #0E080D;">(Kleisli Arrow)</td>
+          </tr>
+
+          <tr style="font-size:65%;text-align:left;border: 1px solid;">
+            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">Kleisli[M, _, _]</code></pre></td>
+            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">* -> * -> *</code></pre></td>
+            <td style="background: #0E080D;">M[_] has Monad instance</td>
+            <td style="background: #0E080D;">Arrow</td>
+          </tr>
+
+          <tr style="font-size:65%;text-align:left;">
+            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">Kleisli[F, A, _]</code></pre></td>
+            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">* -> *</code></pre></td>
+            <td style="background: #0E080D;">F[_] has Functor instance for A</td>
+            <td style="background: #0E080D;">Functor</td>
+          </tr>
+
+          <tr style="font-size:65%;text-align:left;">
+            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">Kleisli[F, A, B]</code></pre></td>
+            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">*</code></pre></td>
+            <td style="background: #0E080D;">have Monoid instance for F[B]</td>
+            <td style="background: #0E080D;">Monoid for any A</td>
+          </tr>
+
+        </table>
+
+        <aside class="notes">
+          Some properties of Kleisli Arrow Type-Class based on type-parameters properties
+        </aside>
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <section>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">CoKleisliArrow Type-Class (based on CoMonad):</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:90%;line-height:140%;">
+a
+          </code></pre>
+
+          <aside class="notes">
+            Lets define the implementation of CoKleisli Arrow Type-Class;</br>
+            And the simplest implementation Kleisli Arrow will be on the based on monad implementation.
+            It means that if monad already implemented then Kleisli arrows no need additional efforts to implementation
+          </aside>
+        </section>
+
+
+
+        <aside class="notes">
+        </aside>
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Used materials and References:</h3>
+        <ul style="list-style-type:decimal;font-size:50%;width:100%;line-height:1.8;">
+          <li>John Hughes. November 10, 1998, <b>Generalising Monads to Arrows.</b></li>
+          <li>Chris Heunen and Bart Jacobs, <b>Arrows, like Monads, are Monoids.</b></li>
+          <li>Ted Cooper (theod@pdx.edu), CS510 – Spring 2014, <b>Arrow Basics</b>.</li>
+          <li>John Hughes, S-41296 Sweden, <b>Programming with Arrows.</b></li>
+          <li>Robert Atkey, LFCS, 2008, <b>What is a Categorical Model of Arrows?</b></li>
+          <li>Kazuyuki Asada, Kyoto 606-8502, Japan, <b>Arrows are Strong Monads.</b></li>
+          <li>K. Asada and I. Hasuo, (CMCS 2010)., 2010, <b>Categorifying computations into components via arrows as profunctors.</b></li>
+          <li>Sam Lindley, Philip Wadler and Jeremy Yallop, 2008, <b>Idioms are oblivious, arrows are meticulous, monads are promiscuous</b></li>
+        </ul>
+        <h4 style="text-align:left;"></br>Blogs & Blogposts:</h4>
+        <ul style="list-style-type:decimal;font-size:50%;width:100%;line-height:1.8;">
+          <li>Ruminations of a Programmer, Debasish Ghosh</li>
+          <li>Programming Cafe, Bartosz Milewski's</li>
+        </ul>
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <div style="height:600px;"><div style="padding:200px 0px 0px 0px;">
+        <ul style="width:100%;list-style-type:none;list-style:none;align:center;text-align:center;">
+          <li data-fragment-index="0"><h2>Questions?</h2><br/></li>
+          <li class="fragment roll-in" data-fragment-index="1"><h2>Remarks?</h2></li>
+        </ul>
+        </div></div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="../../js/reveal.min.js"></script>
+  <script src="../../js/head.min.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      rollingLinks: true,
+      history: true,
+      center: false,
+      theme: Reveal.getQueryHash().theme,
+
+      transition: 'linear',
+      backgroundTransition: 'slide',
+
+      dependencies: [
+          { src: '../../js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../../js/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '../../js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: '../../js/notes.js', async: true }
+        ]
+     });
+  </script>
+  <script type="text/javascript" src="../../js/highlight.js"></script>
+  <script type="text/javascript" src="../../js/zoom.js"></script>
+</body>
+</html>
