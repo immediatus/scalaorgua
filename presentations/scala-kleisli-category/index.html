@@ -56,7 +56,7 @@
 
 <!-- ------------------------------------------------------------------------------------- -->
       <section>
-        <h3 style="text-align:left;">Category &amp; Arrow</h3>
+        <h3 style="text-align:left;">Category</h3>
         <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
           <div style="height:150px;">
             <div style="position:absolute;margin-left:50px;"><img src="assets/A1.png" alt="url" title=""></div>
@@ -84,7 +84,7 @@
 val f: String => Int = str => str.length
 
 f("Hello") shouldEqual 5
-f("By!")   shouldEqual 3
+f("Bye")   shouldEqual 3
           </code></pre>
           </div>
 
@@ -96,7 +96,7 @@ f("By!")   shouldEqual 3
 
         <section>
           <ul style="list-style-type:square;font-size:75%;width:100%;line-height:1.8;">
-            <li>first category property:</b></li>
+            <li>first category property:</li>
           </ul>
 
           </br>
@@ -125,7 +125,7 @@ hide("Workday") shouldEqual "*******"
 
         <section>
           <ul style="list-style-type:square;font-size:75%;width:100%;line-height:1.8;">
-            <li>second category property:</b></li>
+            <li>second category property:</li>
           </ul>
 
           </br>
@@ -136,10 +136,10 @@ hide("Workday") shouldEqual "*******"
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
 // identity function
-def id[A](a: A): A = a
+def identity[A](a: A): A = a
 
-id("Hello")   shouldEqual "Hello"
-id("Workday") shouldEqual "Workday"
+identity("Hello")   shouldEqual "Hello"
+identity("Workday") shouldEqual "Workday"
           </code></pre>
           </div>
 
@@ -147,33 +147,12 @@ id("Workday") shouldEqual "Workday"
           </aside>
         </section>
 
-
         <section>
-          <ul style="list-style-type:square;font-size:75%;width:100%;line-height:1.8;">
-            <li>category laws:</b></li>
-          </ul>
-
-          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
-          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
-// identity function
-def id[A](a: A): A = a
-
-
-val f: String => Int    = str => str.length
-val g: Int    => String = len => "*" * len
-val h: String => String = str => str.replace("*", ".")
-
-
-//Associative Law:
-forAll { str: String =>
-  ((h compose g) compose f)(str) shouldEqual (h compose (g compose f))(str)
-}
-
-
-//Identity Laws:
-forAll { str: String =>
-  (id compose f)(str) shouldEqual (f compose id)(str)
-  (id compose f)(str) shouldEqual f(str)
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Category Type-Class:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:100%;line-height:150%;">
+trait Category[~>[-_, +_]]{
+  def id[A]: A ~> A
+  def compose[A, B, C](f: B ~> C, g: A ~> B): A ~> C
 }
           </code></pre>
 
@@ -181,7 +160,116 @@ forAll { str: String =>
           </aside>
         </section>
 
+        <section>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Category Laws:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
+// identity function
+def identity[A](a: A): A = a
 
+val f: String => Int    = str => str.length
+val g: Int    => String = len => "*" * len
+val h: String => String = str => str.replace("*", ".")
+
+
+//Associative Law:
+(h compose g) compose f <-> h compose (g compose f))
+
+//Identity Laws:
+(identity compose f) <-> (f compose identity) <-> f
+          </code></pre>
+
+          <aside class="notes">
+          </aside>
+        </section>
+
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Arrow</h3>
+
+        <section>
+
+          <div style="position:absolute;margin-left:50px;">
+            <div style="height:600px;width:85%;"><div style="padding:150px 0px 0px 0px;">
+              <p style="font-size:90%;">“a function which builds program fragments from program fragments; in a sense the programmer using combinators constructs much of the desired program automatically, rather than writing every detail by hand”</p>
+              <p style="font-size:50%;text-align:right;">- John Hughes Generalising Monads to Arrows</p>
+            </div></div>
+          </div>
+
+          <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;margin-left:50px;">
+            <div style="height:600px;background:#130912;"><div style="padding:150px 0px 0px 0px;">
+              <p style="font-size:100%;">Arrow is generalization of function, which provides more function combinators:</br>Like first/second/split/combine, ...</p>
+            </div></div>
+          </div>
+
+            <div class="fragment current-visible" data-fragment-index="3" style="position:absolute;margin-left:50px;width:100%;background:#130912;">
+              <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Split:</p></br>
+              <img src="assets/F3.png" alt="url" title="">
+            </div>
+            <div class="fragment current-visible" data-fragment-index="4" style="position:absolute;margin-left:50px;width:100%;background:#130912;">
+              <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Combine:</p></br>
+              <img src="assets/F4.png" alt="url" title="">
+            </div>
+            <div class="fragment current-visible" data-fragment-index="5" style="position:absolute;margin-left:50px;width:100%;background:#130912;">
+              <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Multiplex:</p></br>
+              <img src="assets/F5.png" alt="url" title="">
+            </div>
+            <div class="fragment current-visible" data-fragment-index="6" style="position:absolute;margin-left:50px;width:100%;background:#130912;">
+              <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Merge:</p></br>
+              <img src="assets/F6.png" alt="url" title="">
+            </div>
+
+
+          <aside class="notes">
+            Combinators are well described in words of John Hughes in “Generalising Monads to Arrows” and I have nothing to add here;
+            And now it is time to define “what is arrow”
+          </aside>
+        </section>
+
+        <section>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Arrow:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:100%;line-height:150%;">
+trait Arrow[~>[-_, +_]] extends Category[~>] {
+  def arr[B, C](f: B => C): B ~> C
+  def first[B, C, D](f: B ~> C): (B, D) ~> (C, D)
+}
+          </code></pre>
+
+          <aside class="notes">
+          </aside>
+        </section>
+
+        <section>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Laws:</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:80%;line-height:130%;">
+def fst[A, B](p: (A, B)): A = p._1
+def assoc[A, B, C](p: ((A, B), C)): (A, (B, C)) = (p._1._1, (p._1._2, p._2))
+
+// Identity:
+arr(identity)              <-> id
+
+// Distribute over Composition:
+arr(f >>> g)               <-> arr(f) >>> arr(g)
+fst(f >>> g)               <-> fst(f) >>> fst(g)
+
+// Order must be irrelevant when piping & lifting:
+fst(arr(f))                <-> arr(fst(f))
+
+// Piping function simplification must be equivalen:
+fst(f) >>> arr(fst)        <-> arr(fst) >>> f
+
+// Piped function must be commutative:
+fst(f) >>> arr (id *** g)  <-> arr(id *** g) >>> fst(f)
+
+// Stacked bypasses can be flattened
+fst(first(f)) >>> arr(assc) <-> arr(assc)
+          </code></pre>
+
+
+          <aside class="notes">
+          </aside>
+        </section>
       </section>
 
 <!-- ------------------------------------------------------------------------------------- -->
@@ -365,7 +453,7 @@ read from environment
 
 <!-- ------------------------------------------------------------------------------------- -->
       <section>
-        <h3 style="text-align:left;">Arrows &amp; Monads</h3>
+        <h3 style="text-align:left;">Kleisli Arrows &amp; Monads</h3>
 
         <section>
           <h4 style="text-align:left;">Common data manipulation techniques for dealing with side-effecting containers:</h4>
@@ -380,8 +468,8 @@ CoMonad   : C[A] =>   B                          =>   C[A]  =>  C[B]
           </br>
           <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;">Arrow (essence):</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
-Arrow     :  (A    =>   B ) >>> (  B  =>   D )   =>     A  =>   D
-Kleisli   :  (A    => C[B]) >=> (  B  => C[D])   =>     A  => C[D]
+Arrow     :  (  A  =>   B ) >>> (  B  =>   D )   =>     A  =>   D
+Kleisli   :  (  A  => C[B]) >=> (  B  => C[D])   =>     A  => C[D]
 CoKleisli :  (C[A] =>   B ) =>= (C[B] =>   D )   =>   C[A] =>   D
           </code></pre>
 
@@ -412,7 +500,7 @@ def updatePassword: String => User => Option[User] = ...
           <p style="font-size:100%;text-align:left;font-size:66%;font-family:'Lobster', sans-serif;">Monad usege:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:85%;line-height:140%;">
 def update(id: Int, updateUser: User => Option[User]): Option[User] =
-  getUserById(id).flatMap(updateUser).flatMap(updateDbUser)
+  getUserById(id).flatMap(user => updateUser(user)).flatMap(user => updateDbUser(user))
 
 update(10, (user: User) => updateName(name).flatMap(updatePassword(password)))
           </code></pre>
@@ -432,6 +520,12 @@ update(Kleisli { updateName(name) } >==> updatePassword(password))(10)
             But as you can see; In first implementation we should to wrap our monadic function; but in second implementation this is just a function composition
           </aside>
         </section>
+
+      </section>
+
+<!-- ------------------------------------------------------------------------------------- -->
+      <section>
+        <h3 style="text-align:left;">Kleisli &amp; CoKleisli Arrow with Monad &amp; Comonad</h3>
 
         <section>
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">KleisliArrow Type-Class (based on Monad):</p>
@@ -459,6 +553,35 @@ trait KleisliArrow[M[+_]] extends Arrow[Kleisli[M, -?, +?]] with KleisliCategory
           <aside class="notes">
             Time to define the implementation of Kleisli Arrow Type-Class;</br>
             And the simplest implementation Kleisli Arrow is based on monad implementation. It means that if monad already implemented then Kleisli arrows no need additional efforts to implementation
+          </aside>
+        </section>
+
+        <section>
+          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">CoKleisliArrow Type-Class (based on CoMonad):</p>
+          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:90%;line-height:140%;">
+case class Cokleisli[M[_], A, B](run: M[A] => B)
+
+trait CokleisliCategory[M[+_]] extends Category[(Cokleisli[M, -?, +?]] {
+  implicit def Comonad: Comonad[M]
+
+  def id[A]: Cokleisli[M, A, A] = Cokleisli { ma => Comonad.extract(ma) }
+
+  def compose[A, B, C](bc: Cokleisli[M, B, C], ab: Cokleisli[M, A, B]): Cokleisli[M, A, C] =
+    Cokleisli { ma => ab.run(Comonad.extend(ma)(bc)) }
+}
+
+trait CokleisliArrow[M[+_]] extends Arrow[Cokleisli[M, -?, +?]] with CokleisliCategory[M] {
+
+  def arr[A, B](f: A => B): Cokleisli[M, A, B] = Cokleisli { ma => f(Comonad.extract(ma)) }
+
+  def first[A, B, C](f: Cokleisli[M, A, B]) =
+    Cokleisli[M, (A, C), (B, C)] { 
+      w => (f.run(Comonad.map(w)(ac => ac._1)), Comonad.extract(w)._2)
+    }
+}
+          </code></pre>
+
+          <aside class="notes">
           </aside>
         </section>
 
@@ -494,7 +617,8 @@ trait KleisliArrowApply[M[+ _]] extends ArrowApply[Kleisli[M, -?, +?]] {
 
           <aside class="notes">
             But I would like to go back to the arrow, and show that they are still self-sufficient; and show how to implement monads based on arrows;</br>
-            Here was declared two additional classes ArrowApply and Arrow Monad</aside>
+            Here was declared two additional classes ArrowApply and Arrow Monad
+          </aside>
         </section>
 
         <section>
@@ -519,71 +643,55 @@ trait KleisliArrowApply[M[+ _]] extends ArrowApply[Kleisli[M, -?, +?]] {
 
 <!-- ------------------------------------------------------------------------------------- -->
       <section>
-        <h3 style="text-align:left;">Kliesli Arrow type-constructor</h3>
+        <h3 style="text-align:left;">Kleisli &amp; CoKleisli Arrows and Id Category</h3>
 
-        <table cellspacing="5" cellpadding="5" style="width:100%;border:0px solid #F6921D;padding: 50px 0px 0px 0px;">
+        <div data-fragment-index="1">
+        <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;margin: 0px;">Id Category &amp; (Co/)Monad Type-Class instances:</p>
+        <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:85%;line-height:130%;">
+case class Id[A](a: A)
 
-          <tr style="font-size:65%;text-align:left;">
-            <td width="20%"><b>Type-Class</b></td>
-            <td width="20%"><b>Kind</b></td>
-            <td width="35%"><b>Condition</b></td>
-            <td width="20%"><b>Similar type</b></td>
-          </tr>
+implicit def IdMonadInstance[A]: Monad[Id[A]] = ...
+implicit def IdComonadInstance[A]: Comonad[Id[A]] = ...
+        </code></pre>
+        </div>
+        </br>
 
-          <tr style="font-size:65%;text-align:left;">
-            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">Kleisli[_[_], _, _]</code></pre></td>
-            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">(*->*)->*->*->*</code></pre></td>
-            <td style="background: #0E080D;"></td>
-            <td style="background: #0E080D;">(Kleisli Arrow)</td>
-          </tr>
+        <div class="fragment roll-in" data-fragment-index="2">
+        <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;margin: 0px;">Reader Type-Class:</p>
+        <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:85%;line-height:130%;">
+type Reader[A, B] = Kleisli[Id, A, B]
+// OR (completely symmetric with respect to Id Category)
+type Reader[A, B] = Cokleisli[Id, A, B]
+        </code></pre>
+        </div>
+        </br>
 
-          <tr style="font-size:65%;text-align:left;border: 1px solid;">
-            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">Kleisli[M, _, _]</code></pre></td>
-            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">* -> * -> *</code></pre></td>
-            <td style="background: #0E080D;">M[_] has Monad instance</td>
-            <td style="background: #0E080D;">Arrow</td>
-          </tr>
+        <div class="fragment roll-in" data-fragment-index="3">
+        <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;margin: 0px;">Reader transformer Type-Class:</p>
+        <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:85%;line-height:130%;">
+type ReaderT[M[_], A, B] = Kleisli[M, A, B]
+// OR (in some exotic case)
+type ReaderT[M[_], A, B] = Cokleisli[M, A, B]
+        </code></pre>
+        </div>
+        </br>
 
-          <tr style="font-size:65%;text-align:left;">
-            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">Kleisli[F, A, _]</code></pre></td>
-            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">* -> *</code></pre></td>
-            <td style="background: #0E080D;">F[_] has Functor instance for A</td>
-            <td style="background: #0E080D;">Functor</td>
-          </tr>
-
-          <tr style="font-size:65%;text-align:left;">
-            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">Kleisli[F, A, B]</code></pre></td>
-            <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">*</code></pre></td>
-            <td style="background: #0E080D;">have Monoid instance for F[B]</td>
-            <td style="background: #0E080D;">Monoid for any A</td>
-          </tr>
-
-        </table>
-
-        <aside class="notes">
-          Some properties of Kleisli Arrow Type-Class based on type-parameters properties
-        </aside>
       </section>
 
 <!-- ------------------------------------------------------------------------------------- -->
       <section>
-        <section>
-          <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">CoKleisliArrow Type-Class (based on CoMonad):</p>
-          <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:90%;line-height:140%;">
-a
-          </code></pre>
+        <h3 style="text-align:left;">Arrows, Applicatives, Monads Summary</h3>
+
+        <div style="position:absolute;margin-left:50px;"><img src="assets/FP1.png" alt="url" title=""></div>
+        <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/FP2.png" alt="url" title=""></div>
+        <div class="fragment current-visible" data-fragment-index="3" style="position:absolute;margin-left:50px;"><img src="assets/FP3.png" alt="url" title=""></div>
+        <div class="fragment current-visible" data-fragment-index="4" style="position:absolute;margin-left:50px;"><img src="assets/FP4.png" alt="url" title=""></div>
+        <div class="fragment current-visible" data-fragment-index="5" style="position:absolute;margin-left:50px;"><img src="assets/FP5.png" alt="url" title=""></div>
 
           <aside class="notes">
-            Lets define the implementation of CoKleisli Arrow Type-Class;</br>
-            And the simplest implementation Kleisli Arrow will be on the based on monad implementation.
-            It means that if monad already implemented then Kleisli arrows no need additional efforts to implementation
+            If to put together hierarchy of Arrow and Monad;</br>
+            You can see a lot of the functionality intersection, I mean that many structures can be used for the same purposes and the final choice should always be based on the goals and expressiveness of code; after all code should be concise and readable
           </aside>
-        </section>
-
-
-
-        <aside class="notes">
-        </aside>
       </section>
 
 <!-- ------------------------------------------------------------------------------------- -->
