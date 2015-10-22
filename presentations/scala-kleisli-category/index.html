@@ -670,8 +670,6 @@ type Reader[A, B] = Cokleisli[Id, A, B]
         <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;margin: 0px;">Reader transformer Type-Class:</p>
         <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:85%;line-height:130%;">
 type ReaderT[M[_], A, B] = Kleisli[M, A, B]
-// OR (in some exotic case)
-type ReaderT[M[_], A, B] = Cokleisli[M, A, B]
         </code></pre>
         </div>
         </br>
