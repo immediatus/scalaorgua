@@ -4,7 +4,7 @@
     <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Functional programming with arrows</title>
-    <link rel="stylesheet" href="../../css/reveal.css">
+    <link rel="stylesheet" href="../../css/reveal2.css">
     <link rel="stylesheet" href="../../css/theme2.css">
     <link rel="stylesheet" href="../../css/code2.css">
     <!--<link rel="stylesheet" href="../../css/print/paper.css"> -->
@@ -73,9 +73,9 @@
         <section><div style="height:600px;"><div style="padding:0px 0px 0px 0px;">
           <div style="height:150px;">
             <div style="position:absolute;margin-left:50px;"><img src="assets/A1.png" alt="url" title=""></div>
-            <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/A2.png" alt="url" title=""></div>
-            <div class="fragment current-visible" data-fragment-index="3" style="position:absolute;margin-left:50px;"><img src="assets/A3.png" alt="url" title=""></div>
-            <div class="fragment current-visible" data-fragment-index="4" style="position:absolute;margin-left:50px;"><img src="assets/A4.png" alt="url" title=""></div>
+            <div class="fragment" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/A2.png" alt="url" title=""></div>
+            <div class="fragment" data-fragment-index="3" style="position:absolute;margin-left:50px;"><img src="assets/A3.png" alt="url" title=""></div>
+            <div class="fragment" data-fragment-index="4" style="position:absolute;margin-left:50px;"><img src="assets/A4.png" alt="url" title=""></div>
           </div>
 
           <style>
@@ -90,12 +90,12 @@
           </div>
           </br>
 
-          <div class="fragment current-visible" data-fragment-index="4">
+          <div class="fragment" data-fragment-index="4">
           <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;">Abstraction:</p>
           <img src="assets/F1.png" alt="url" title="">
           </div>
 
-          <div class="fragment current-visible" data-fragment-index="4">
+          <div class="fragment" data-fragment-index="4">
           <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;">Code:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
 val f: String => Int = str => str.length
@@ -165,7 +165,7 @@ h("Workday") shouldEqual 14
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;">Definition:</p>
            <div  style="padding-left:100px;">
              <div style="position:absolute;margin-left:50px;"><img src="assets/P12.png" alt="url" title=""></div>
-             <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/P11.png" alt="url" title=""></div>
+             <div class="fragment" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/P11.png" alt="url" title=""></div>
            </div>
 
           <aside class="notes">
@@ -294,7 +294,7 @@ trait Category[~>[-_, +_]] {
 
            <div style="padding-left:100px;">
              <div style="position:absolute;margin-left:50px;"><img src="assets/P22.png" alt="url" title=""></div>
-             <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/P21.png" alt="url" title=""></div>
+             <div class="fragment" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/P21.png" alt="url" title=""></div>
            </div>
 
           <aside class="notes">
@@ -496,7 +496,7 @@ Option("Hello").map(f)  shouldEqual Option(5)
         </code></pre>
         </div>
 
-        <div class="fragment current-visible" data-fragment-index="1" style="position:absolute;width:100%;">
+        <div class="fragment" data-fragment-index="1" style="position:absolute;width:100%;">
         <img style="width:initial;" src="assets/C2.png" alt="url" title="">
         <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
 val f: String => Option[Int] = str =>
@@ -508,7 +508,7 @@ f("Workday")  shouldEqual Option(7)
         </code></pre>
         </div>
 
-        <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;width:100%;">
+        <div class="fragment" data-fragment-index="2" style="position:absolute;width:100%;">
         <img style="width:initial;" src="assets/C3.png" alt="url" title="">
         <pre><code data-trim class="scala" style="max-height:100%;height:100%;">
 val f: Option[String] => Int = str =>
@@ -595,7 +595,7 @@ trait KleisliArrow[M[+_]]
             </li>
           </ul>
 
-          <div class="fragment current-visible" data-fragment-index="2">
+          <div class="fragment" data-fragment-index="2">
             </br><p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;">Examples:</p>
 
             <table cellspacing="0" cellpadding="0" style="width:100%;border:0px solid #F6921D;">
@@ -762,7 +762,7 @@ trait KleisliArrow[M[+_]] extends Arrow[Kleisli[M, -?, +?]] with KleisliCategory
           <p style="font-size:100%;text-align:left;font-family:'Lobster', sans-serif;margin: 0px;">And back to the Arrow</p>
           <p style="font-size:50%;text-align:left;">Motivation, is to find a generic interface for arrow wich cannot be based on monad.</p><br>
 
-          <div class="fragment current-visible" data-fragment-index="1">
+          <div class="fragment" data-fragment-index="1">
           <p style="font-size:100%;text-align:left;font-size:66%;font-family:'Lobster', sans-serif;margin: 0px;">ArrowMonad Type-Class:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:85%;line-height:130%;">
 trait ArrowApply[~>[-_, +_]] extends Arrow[~>] {
@@ -834,7 +834,7 @@ trait KleisliArrowApply[M[+ _]] extends ArrowApply[Kleisli[M, -?, +?]] {
           </tr>
 
 
-          <tr style="font-size:65%;text-align:left;border: 1px solid;">
+          <tr style="font-size:65%;text-align:left;">
             <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">Kleisli[M, _, _]</code></pre></td>
             <td style="background: #0E080D;"><pre><code data-trim class="scala" style="font-size:150%;">* -> * -> *</code></pre></td>
             <td style="background: #0E080D;">M[_] has Monad instance</td>
@@ -1092,8 +1092,8 @@ ma.flatMap(f).flatMap(g)  ==
         <h3 style="text-align:left;">Arrows, Applicatives, Monads Summary</h3>
 
         <div style="position:absolute;margin-left:50px;"><img src="assets/FP2.png" alt="url" title=""></div>
-        <div class="fragment current-visible" data-fragment-index="1" style="position:absolute;margin-left:50px;"><img src="assets/FP4.png" alt="url" title=""></div>
-        <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/FP5.png" alt="url" title=""></div>
+        <div class="fragment" data-fragment-index="1" style="position:absolute;margin-left:50px;"><img src="assets/FP4.png" alt="url" title=""></div>
+        <div class="fragment" data-fragment-index="2" style="position:absolute;margin-left:50px;"><img src="assets/FP5.png" alt="url" title=""></div>
 
           <aside class="notes">
             If to put together hierarchy of Arrow and Monad;</br>
@@ -1106,7 +1106,7 @@ ma.flatMap(f).flatMap(g)  ==
         <h3 style="text-align:left;">End user benefits:</h3>
 
         <section>
-          <div class="fragment current-visible" data-fragment-index="2" style="height:300px;"><div style="padding:50px 0px 0px 0px;">
+          <div class="fragment" data-fragment-index="2" style="height:300px;"><div style="padding:50px 0px 0px 0px;">
             <h1>Railway Oriented Programming</h1>
             <p style="font-size:50%;text-align:right;margin-top:10px;">- Scott Wlaschin (F# for fun and profit)</p>
           </div></div>
@@ -1122,21 +1122,21 @@ ma.flatMap(f).flatMap(g)  ==
           <p style="font-size:100%;text-align:left;font-size:90%;font-family:'Lobster', sans-serif;margin: 0px;">Railway tracks:</p>
           <div style="height:250px;">
           <div style="position:absolute;"><img src="assets/R1.png" alt="url" title=""></div>
-          <div class="fragment current-visible" data-fragment-index="2" style="position:absolute;"><img src="assets/R2.png" alt="url" title=""></div>
-          <div class="fragment current-visible" data-fragment-index="3" style="position:absolute;"><img src="assets/R3.png" alt="url" title=""></div>
-          <div class="fragment current-visible" data-fragment-index="4" style="position:absolute;"><img src="assets/R4.png" alt="url" title=""></div>
+          <div class="fragment" data-fragment-index="2" style="position:absolute;"><img src="assets/R2.png" alt="url" title=""></div>
+          <div class="fragment" data-fragment-index="3" style="position:absolute;"><img src="assets/R3.png" alt="url" title=""></div>
+          <div class="fragment" data-fragment-index="4" style="position:absolute;"><img src="assets/R4.png" alt="url" title=""></div>
           </div>
 
           <p style="font-size:100%;text-align:left;font-size:90%;font-family:'Lobster', sans-serif;margin: 0px;">Arrow as Framework for:</p></br>
           <ul style="list-style-type:decimal;font-size:60%;width:100%;line-height:1.5;">
-            <li class="fragment current-visible" data-fragment-index="2">Error handling</li>
-            <li class="fragment current-visible" data-fragment-index="3">Single Track Function</li>
-            <li class="fragment current-visible" data-fragment-index="4">Dead-end Function</li>
-            <li class="fragment current-visible" data-fragment-index="5">Supervisory Function (handle "both track")</li>
+            <li class="fragment" data-fragment-index="2">Error handling</li>
+            <li class="fragment" data-fragment-index="3">Single Track Function</li>
+            <li class="fragment" data-fragment-index="4">Dead-end Function</li>
+            <li class="fragment" data-fragment-index="5">Supervisory Function (handle "both track")</li>
           </ul>
 
           </br></br>
-          <h3 class="fragment current-visible" data-fragment-index="6">Dataflow programming (programming paradigm)</h3>
+          <h3 class="fragment" data-fragment-index="6">Dataflow programming (programming paradigm)</h3>
 
           <aside class="notes">
             If we have a functions track like in diagram; We should to care about composition of steps what can rise errors; and single track function; or dead end functions; or handle both track</br>
@@ -1159,7 +1159,7 @@ def leftId[E, T]: Err => Either[E, T] = x => Left { x }
 def fst[A, B]: (A, B) => A = _._1
           </code></pre>
 
-          <div class="fragment current-visible" style="margin-top:20px;">
+          <div class="fragment" style="margin-top:20px;">
           <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;margin-bottom:0px;">Track:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:90%;line-height:120%;">
 val run =
@@ -1170,7 +1170,7 @@ val run =
           </code></pre>
           </div>
 
-          <div class="fragment current-visible" style="margin-top:20px;">
+          <div class="fragment" style="margin-top:20px;">
           <p style="font-size:75%;text-align:left;font-family:'Lobster', sans-serif;margin-bottom:0px;">Track with Kleisli:</p>
           <pre><code data-trim class="scala" style="max-height:100%;height:100%;font-size:90%;line-height:120%;">
 val run = Kleisli[Either[Err, +?], Int, User] {
